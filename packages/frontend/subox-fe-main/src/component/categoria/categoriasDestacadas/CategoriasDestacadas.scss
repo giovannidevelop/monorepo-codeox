@@ -1,0 +1,22 @@
+.categorias {
+  padding: 2rem 1rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #2e1e74;
+  }
+
+  &__scroll {
+    display: flex;
+    justify-content: center; // centra en desktop
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+
+  &__scroll::-webkit-scrollbar {
+    display: none;
+  }
+}

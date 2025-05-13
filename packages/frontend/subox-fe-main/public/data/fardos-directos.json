@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "tipoDirecto": "Poleras Mixtas",
+    "pesoKg": 45,
+    "pesoKgInicial": 45,
+    "precioCompra": 80000,
+    "fechaCompra": "2025-04-01",
+    "origen": "Estación Central",
+    "proveedor": "Proveedor A",
+    "contactoProveedor": "+56912340001",
+    "estadoCompra": "nuevo",
+    "ubicacionActual": "En proveedor",
+    "ventaDirecta": false,
+    "fardosArmados": []
+  },
+  {
+    "id": 2,
+    "tipoDirecto": "Jeans Hombre",
+    "pesoKg": 10,
+    "pesoKgInicial": 45,
+    "precioCompra": 85000,
+    "fechaCompra": "2025-04-02",
+    "origen": "Estación Central",
+    "proveedor": "Proveedor B",
+    "contactoProveedor": "+56912340002",
+    "estadoCompra": "en proceso",
+    "ubicacionActual": "En bodega",
+    "ventaDirecta": false,
+    "fardosArmados": [
+      {
+        "idArmado": 101,
+        "tipo": "Jeans Hombre Selección",
+        "pesoFardo": 20,
+        "calidad": "Primera",
+        "precioVenta": 40000,
+        "merma": 0,
+        "fechaArmado": "2025-04-28",
+        "stock": 1,
+        "notas": ""
+      },
+      {
+        "idArmado": 102,
+        "tipo": "Jeans Hombre Mixtos",
+        "pesoFardo": 15,
+        "calidad": "Segunda",
+        "precioVenta": 30000,
+        "merma": 0,
+        "fechaArmado": "2025-04-28",
+        "stock": 1,
+        "notas": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "tipoDirecto": "Polerones Deportivos",
+    "pesoKg": 45,
+    "pesoKgInicial": 45,
+    "precioCompra": 87000,
+    "fechaCompra": "2025-04-03",
+    "origen": "Estación Central",
+    "proveedor": "Proveedor C",
+    "contactoProveedor": "+56912340003",
+    "estadoCompra": "nuevo",
+    "ubicacionActual": "En proveedor",
+    "ventaDirecta": true,
+    "fardosArmados": []
+  },
+  {
+    "id": 4,
+    "tipoDirecto": "Ropa de Casa Mixta",
+    "pesoKg": 30,
+    "pesoKgInicial": 45,
+    "precioCompra": 75000,
+    "fechaCompra": "2025-04-04",
+    "origen": "Estación Central",
+    "proveedor": "Proveedor D",
+    "contactoProveedor": "+56912340004",
+    "estadoCompra": "en proceso",
+    "ubicacionActual": "En bodega",
+    "ventaDirecta": false,
+    "fardosArmados": [
+      {
+        "idArmado": 103,
+        "tipo": "Toallas y Sábanas",
+        "pesoFardo": 15,
+        "calidad": "Primera",
+        "precioVenta": 25000,
+        "merma": 0,
+        "fechaArmado": "2025-04-28",
+        "stock": 1,
+        "notas": "Con marcas premium"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "tipoDirecto": "Chaquetas de Invierno",
+    "pesoKg": 45,
+    "pesoKgInicial": 45,
+    "precioCompra": 95000,
+    "fechaCompra": "2025-04-05",
+    "origen": "Estación Central",
+    "proveedor": "Proveedor E",
+    "contactoProveedor": "+56912340005",
+    "estadoCompra": "nuevo",
+    "ubicacionActual": "En bodega",
+    "ventaDirecta": false,
+    "fardosArmados": []
+  }
+]

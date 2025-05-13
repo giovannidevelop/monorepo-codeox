@@ -1,0 +1,28 @@
+.carousel {
+
+  .carousel__item {
+    max-width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta el contenido si hay un tamaño específico */
+    border-radius: 8px; 
+    &-image {
+      width: 300px; /* Ancho fijo */
+      height: 200px; /* Alto fijo */
+      object-fit: cover; /* Recorta la imagen para llenar el área */
+      border-radius: 8px; 
+      &-container {
+        width: 300px; /* Ancho deseado */
+        height: 200px; /* Alto deseado */
+        overflow: hidden; /* Oculta el contenido que sobrepase */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-title {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+  }
+}

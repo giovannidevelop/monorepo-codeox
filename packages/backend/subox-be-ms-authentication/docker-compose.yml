@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+          - mynetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: adu
+      MYSQL_USER: giovanni
+      MYSQL_PASSWORD: sasa
+  java_app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 7000:7000
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:

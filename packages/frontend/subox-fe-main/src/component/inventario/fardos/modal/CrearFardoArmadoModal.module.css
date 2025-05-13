@@ -1,0 +1,83 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .error {
+    background: #ffdddd;
+    color: #a00;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  
+  .createButton {
+    background-color: #28a745;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .createButton:hover {
+    background-color: #218838;
+  }
+  
+  .cancelButton {
+    background-color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cancelButton:hover {
+    background-color: #5a6268;
+  }
+  

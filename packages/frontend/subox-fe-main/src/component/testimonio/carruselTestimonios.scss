@@ -1,0 +1,20 @@
+.carrusel-testimonios {
+  padding: 2rem 1rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #2e1e74;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    animation: fade 1s ease-in-out;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

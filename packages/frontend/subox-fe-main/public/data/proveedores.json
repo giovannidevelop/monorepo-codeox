@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "nombre": "Ropa América Spa",
+      "rut": "76.123.456-7",
+      "telefono": "+56912345678",
+      "direccion": "Estación Central, Santiago",
+      "confiabilidad": "Alta",
+      "tiposRopa": [
+        "Polerones",
+        "Poleras",
+        "Cortavientos"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Distribuidora FashionMix",
+      "rut": "76.987.654-3",
+      "telefono": "+56933445566",
+      "direccion": "Meiggs 1200, Santiago",
+      "confiabilidad": "Media",
+      "tiposRopa": [
+        "Vestidos",
+        "Camisas",
+        "Chaquetas"
+      ]
+    }
+  ]

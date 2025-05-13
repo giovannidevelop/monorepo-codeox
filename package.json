@@ -1,0 +1,14 @@
+{
+  "name": "monorepo-subox",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces"
+  },
+  "dependencies": {
+    "monorepo-subox": "file:"
+  }
+}

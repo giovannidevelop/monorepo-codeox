@@ -1,0 +1,56 @@
+<mxfile host="65bd71144e" pages="2">
+    <diagram id="0HU46KkyjtzvDW4RI8ni" name="diagrama-casos-uso-fct-main-navBar">
+        <mxGraphModel dx="833" dy="488" grid="1" gridSize="22" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="_x4GbzpmpXb_HhyhnGOF" name="diagrama_db_persona">
+        <mxGraphModel dx="2136" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="jkX31n3UU7EVpoHe0_Bt-3" value="administrador de usuarios" style="shape=umlFrame;whiteSpace=wrap;html=1;shadow=0;swimlaneFillColor=none;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=0;fontFamily=Comic Sans MS;width=270;height=20;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="30" width="630" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="jkX31n3UU7EVpoHe0_Bt-4" value="usuario &lt;br&gt;no authentificado" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;sketch=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+                    <mxGeometry y="130" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="jkX31n3UU7EVpoHe0_Bt-6" value="Registar en el sistema" style="ellipse;whiteSpace=wrap;html=1;shadow=0;sketch=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="70" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="jkX31n3UU7EVpoHe0_Bt-7" value="ingresar &lt;br&gt;al sistema" style="ellipse;whiteSpace=wrap;html=1;shadow=0;sketch=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="170" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="jkX31n3UU7EVpoHe0_Bt-8" value="ingresar &lt;br&gt;al sistema" style="ellipse;whiteSpace=wrap;html=1;shadow=0;sketch=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="270" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="-x-SqMYYVLJPjyFQKIsZ" name="Page-3">
+        <mxGraphModel dx="833" dy="488" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="Fg5U_mDjFoONuB92lFsD-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="54" y="87" width="710" height="296" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fg5U_mDjFoONuB92lFsD-5" value="&lt;h1&gt;A la orden&lt;/h1&gt;&lt;p&gt;Sistema para obtener prendas mensuales&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="71" y="117" width="339" height="241" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fg5U_mDjFoONuB92lFsD-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="431" y="117" width="296" height="243" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fg5U_mDjFoONuB92lFsD-8" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="446" y="317" width="271" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fg5U_mDjFoONuB92lFsD-9" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="431" y="118" width="295" height="181" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

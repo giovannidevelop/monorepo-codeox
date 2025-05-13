@@ -1,0 +1,17 @@
+
+.submitButton {
+    border: 1px solid;
+    height: 2.7rem;
+    font-family: monospace;
+    width: calc(100% - 5rem);
+    background-color: #dbfffa;
+    color: #465094;
+    border-radius: 0.3rem;
+    font-size: larger;
+    text-transform: uppercase;
+}
+
+.submitButton:hover {
+    background-color: #b2d9f0;
+    color: #0b0b0b;
+}

@@ -1,0 +1,49 @@
+
+
+.auth-button {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+        &-google {
+            font-size: medium;
+            border: 1px solid;
+            padding: 6px 0;
+            margin: 8px 0rem;
+            display: flex;
+            font-family: monospace;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            background-color: #FFFFFF;
+            color: #000000;
+            border-radius: 0.3rem;
+            &-icon {
+                position: relative;
+                right: 3px;
+            }
+        }
+
+        &-facebook {
+            border-radius: 0.3rem;
+            border: 1px solid rgb(23, 96, 231);
+            font-size: medium;
+            background-color: #4c76ce;
+            color: #FFFFFF;
+            padding: 6px 0;
+            margin: 8px 0rem;
+            display: flex;
+            font-family: monospace;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            &-icon {
+                position: relative;
+                right: 3px;
+            }
+        }
+
+}
+

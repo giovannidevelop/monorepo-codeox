@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.outlet {
+    display: flex;
+    flex-direction: column;
+}
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0.5rem 0.5rem;
+    @media screen and (max-width: 768px) {
+        margin: 0;
+      }
+     
+}
+body {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(#dfe9e8 20%, #eeeee7c9 50%, #a0d4d0 95%);
+    
+
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

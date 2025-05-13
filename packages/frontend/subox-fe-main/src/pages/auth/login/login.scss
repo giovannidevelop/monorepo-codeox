@@ -1,0 +1,64 @@
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.login-instructions {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.login-content {
+    margin: 20px 0;
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+.divider-text {
+    margin: 0 10px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-signup-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

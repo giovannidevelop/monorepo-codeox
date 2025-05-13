@@ -1,0 +1,399 @@
+.inventory-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+.inventory-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.inventory-container h2 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+  color: #444;
+}
+
+.inventory-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.inventory-search {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.inventory-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.inventory-btn:hover {
+  transform: scale(1.03);
+}
+
+.inventory-btn.add {
+  background-color: #4caf50;
+  color: white;
+}
+
+.inventory-btn.add:hover {
+  background-color: #45a049;
+}
+
+.inventory-btn.export {
+  background-color: #007bff;
+  color: white;
+}
+
+.inventory-btn.export:hover {
+  background-color: #0056b3;
+}
+
+.inventory-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inventory-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.table-btn {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table-btn:hover {
+  transform: scale(1.03);
+}
+
+.table-btn.edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.table-btn.edit:hover {
+  background-color: #e0a800;
+}
+
+.table-btn.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.table-btn.delete:hover {
+  background-color: #c82333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination-btn {
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #ccc;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: #6c757d;
+}
+
+.badge.abarrotes {
+  background-color: #f39c12;
+}
+
+.badge.carnes {
+  background-color: #e74c3c;
+}
+
+.badge.ropa {
+  background-color: #2980b9;
+}
+
+.stock-warning {
+  color: red;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .inventory-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inventory-search {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .inventory-table {
+    font-size: 0.9rem;
+  }
+
+  .inventory-table-container {
+    overflow-x: auto;
+  }
+
+  .table-btn {
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Tabs styles */
+.tab-container {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  background-color: #f1f1f1;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow-x: auto;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-buttons button.active {
+  border-bottom: 3px solid #007bff;
+  background-color: #ffffff;
+  color: #007bff;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+/* Enhanced Tabs CSS */
+.tab-container {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  background-color: #f8f9fa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.tab-buttons button:hover {
+  background-color: #e9ecef;
+  color: #000;
+}
+
+.tab-buttons button.active {
+  color: #007bff;
+  background-color: #ffffff;
+  border-bottom: 3px solid #007bff;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.inventory-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.inventory-subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+/* Tabla dentro de cada tab */
+.inventory-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.95rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-section th,
+.inventory-section td {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.inventory-section th {
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+}
+
+.inventory-section td {
+  background-color: #fff;
+  color: #444;
+}
+
+.inventory-section .table-btn {
+  margin: 0 5px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.inventory-section .table-btn.edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.inventory-section .table-btn.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.inventory-section button {
+  margin-top: 1rem;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.inventory-section button:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .inventory-section table {
+    font-size: 0.85rem;
+  }
+
+  .inventory-section th, .inventory-section td {
+    padding: 8px;
+  }
+
+  .tab-buttons button {
+    font-size: 0.9rem;
+    min-width: 110px;
+  }
+}

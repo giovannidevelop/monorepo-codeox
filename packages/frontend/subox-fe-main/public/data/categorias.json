@@ -1,0 +1,32 @@
+[
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=6",
+    "title": "Ofertas",
+    "altText": "Ofertas de ropa"
+  },
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=9",
+    "title": "Temporada",
+    "altText": "Ropa de temporada"
+  },
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=16",
+    "title": "Mujer",
+    "altText": "Ropa para mujer"
+  },
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=36",
+    "title": "Fardos",
+    "altText": "Fardos de ropa"
+  },
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=22",
+    "title": "Niños",
+    "altText": "Ropa para niños"
+  },
+  {
+    "imgSrc": "https://picsum.photos/300/200?random=24",
+    "title": "Hombre",
+    "altText": "Ropa para hombre"
+  }
+]

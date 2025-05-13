@@ -1,0 +1,409 @@
+{
+  "categorias": [
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=6",
+      "title": "Ofertas",
+      "altText": "Ofertas de ropa",
+      "id": "768c"
+    },
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=9",
+      "title": "Temporada",
+      "altText": "Ropa de temporada",
+      "id": "dc03"
+    },
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=16",
+      "title": "Mujer",
+      "altText": "Ropa para mujer",
+      "id": "6ba0"
+    },
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=36",
+      "title": "Fardos",
+      "altText": "Fardos de ropa",
+      "id": "0fb1"
+    },
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=22",
+      "title": "Niños",
+      "altText": "Ropa para niños",
+      "id": "e434"
+    },
+    {
+      "imgSrc": "https://picsum.photos/300/200?random=24",
+      "title": "Hombre",
+      "altText": "Ropa para hombre",
+      "id": "c028"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Raglert Barra Peña",
+      "rut": "20.818.194-7",
+      "telefono": "+56935023829",
+      "email": "teste@exemplo.us",
+      "direccion": "Calle Blanco Encalada 660, Pitrufquen"
+    },
+    {
+      "id": "2",
+      "nombre": "Marjorie Vanessa Parra Zamorano",
+      "rut": "17.747.362-6",
+      "telefono": "+56971200967",
+      "email": "cristobalpino8@gmail.com",
+      "direccion": "Sucursal San Fernando"
+    },
+    {
+      "id": "3",
+      "nombre": "Claudia Figueroa",
+      "rut": "18.693.389-3",
+      "telefono": "+56958836793",
+      "email": "claudia.figueroa.pavez@gmail.com",
+      "direccion": "Psj. el molino 0560 - Temuco (localidad de lobranza)"
+    },
+    {
+      "id": "4",
+      "nombre": "Rodolfo Villalobos Faundez",
+      "rut": "21.209.723-3",
+      "telefono": "+56998041967",
+      "email": "rodolfo10faundezenriquez@gmail.com",
+      "direccion": "San Javier"
+    },
+    {
+      "id": "5",
+      "nombre": "Nicolas Aguilera",
+      "rut": "17.705.011-3",
+      "telefono": "+56931261140",
+      "email": "naguilerac@gmail.com",
+      "direccion": "Panoramica Sur 10623, lo barnechea"
+    },
+    {
+      "id": "6",
+      "nombre": "Emilia Morales bravo",
+      "rut": "21.035.217-1",
+      "telefono": "+56951846007",
+      "email": "emilia.morales.bravo2003@gmail.com",
+      "direccion": "Curico"
+    },
+    {
+      "id": "7",
+      "nombre": "Dazmin Noemi Aguayo",
+      "rut": "20.253.810-k",
+      "telefono": "+56962787089",
+      "email": "Dazminnoemi@gmail.com",
+      "direccion": "San Jose de la Mariquina, Los Rios, estacion mariquina los cataños con abedules º4 casa esquina"
+    },
+    {
+      "id": "8",
+      "nombre": "Frank Pailapichun Toledo",
+      "rut": "19.556.853-7",
+      "telefono": "+56997779876",
+      "email": "pailapichun@hotmail.com",
+      "direccion": "Puerto Montt (sucursal tvp)"
+    },
+    {
+      "id": 1746545072823,
+      "nombre": "giovanni poblete",
+      "rut": "19.419.095-6",
+      "telefono": "928839376",
+      "email": "giovannipoblete55@gmail.com",
+      "direccion": "genciana 4358 - Cerrillos"
+    },
+    {
+      "id": "7315",
+      "nombre": "Debora Pinilla",
+      "rut": "19130240-0",
+      "telefono": "944896063",
+      "email": "",
+      "direccion": "Diego de Almagro 1010, San Felipe"
+    },
+    {
+      "id": "f81e",
+      "nombre": "Cristian Castillo",
+      "rut": "21187261-6",
+      "telefono": "951714522",
+      "email": "",
+      "direccion": "Los Ángeles"
+    }
+  ],
+  "fardosDirectos": [
+    {
+      "id": "1",
+      "tipoDirecto": "Poleras Mixtas",
+      "pesoKg": 45,
+      "pesoKgInicial": 45,
+      "precioCompra": 80000,
+      "fechaCompra": "2025-04-01",
+      "origen": "Estación Central",
+      "proveedor": "Proveedor A",
+      "contactoProveedor": "+56912340001",
+      "estadoCompra": "nuevo",
+      "ubicacionActual": "En proveedor",
+      "ventaDirecta": false,
+      "fardosArmados": []
+    },
+    {
+      "id": "2",
+      "tipoDirecto": "Jeans Hombre",
+      "pesoKg": 10,
+      "pesoKgInicial": 45,
+      "precioCompra": 85000,
+      "fechaCompra": "2025-04-02",
+      "origen": "Estación Central",
+      "proveedor": "Proveedor B",
+      "contactoProveedor": "+56912340002",
+      "estadoCompra": "en proceso",
+      "ubicacionActual": "En bodega",
+      "ventaDirecta": false,
+      "fardosArmados": [
+        {
+          "idArmado": 101,
+          "tipo": "Jeans Hombre Selección",
+          "pesoFardo": 20,
+          "calidad": "Primera",
+          "precioVenta": 40000,
+          "merma": 0,
+          "fechaArmado": "2025-04-28",
+          "stock": 1,
+          "notas": ""
+        },
+        {
+          "idArmado": 102,
+          "tipo": "Jeans Hombre Mixtos",
+          "pesoFardo": 15,
+          "calidad": "Segunda",
+          "precioVenta": 30000,
+          "merma": 0,
+          "fechaArmado": "2025-04-28",
+          "stock": 1,
+          "notas": ""
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "tipoDirecto": "Polerones Deportivos",
+      "pesoKg": 45,
+      "pesoKgInicial": 45,
+      "precioCompra": 87000,
+      "fechaCompra": "2025-04-03",
+      "origen": "Estación Central",
+      "proveedor": "Proveedor C",
+      "contactoProveedor": "+56912340003",
+      "estadoCompra": "nuevo",
+      "ubicacionActual": "En proveedor",
+      "ventaDirecta": true,
+      "fardosArmados": []
+    },
+    {
+      "id": "4",
+      "tipoDirecto": "Ropa de Casa Mixta",
+      "pesoKg": 30,
+      "pesoKgInicial": 45,
+      "precioCompra": 75000,
+      "fechaCompra": "2025-04-04",
+      "origen": "Estación Central",
+      "proveedor": "Proveedor D",
+      "contactoProveedor": "+56912340004",
+      "estadoCompra": "en proceso",
+      "ubicacionActual": "En bodega",
+      "ventaDirecta": false,
+      "fardosArmados": [
+        {
+          "idArmado": 103,
+          "tipo": "Toallas y Sábanas",
+          "pesoFardo": 15,
+          "calidad": "Primera",
+          "precioVenta": 25000,
+          "merma": 0,
+          "fechaArmado": "2025-04-28",
+          "stock": 1,
+          "notas": "Con marcas premium"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "tipoDirecto": "Chaquetas de Invierno",
+      "pesoKg": 45,
+      "pesoKgInicial": 45,
+      "precioCompra": 95000,
+      "fechaCompra": "2025-04-05",
+      "origen": "Estación Central",
+      "proveedor": "Proveedor E",
+      "contactoProveedor": "+56912340005",
+      "estadoCompra": "nuevo",
+      "ubicacionActual": "En bodega",
+      "ventaDirecta": false,
+      "fardosArmados": []
+    }
+  ],
+  "historialClientes": [
+    {
+      "clienteId": 1,
+      "compras": [
+        {
+          "fecha": "2025-04-20",
+          "producto": "Fardo Cortaviento Primera",
+          "cantidad": 2,
+          "total": 23000
+        },
+        {
+          "fecha": "2025-04-15",
+          "producto": "Polerones Nike",
+          "cantidad": 3,
+          "total": 36000
+        }
+      ],
+      "id": "1204"
+    },
+    {
+      "clienteId": 2,
+      "compras": [
+        {
+          "fecha": "2025-04-10",
+          "producto": "Fardo Selección Hogar",
+          "cantidad": 1,
+          "total": 18000
+        }
+      ],
+      "id": "1905"
+    }
+  ],
+  "instagramGaleria": [
+    {
+      "src": "/clientes/cliente1.jpg",
+      "alt": "Cliente feliz 1",
+      "link": "https://www.instagram.com/p/COD1Q9uDYrF/",
+      "id": "2a85"
+    },
+    {
+      "src": "/clientes/cliente2.jpg",
+      "alt": "Cliente feliz 2",
+      "link": "https://www.instagram.com/p/COD1RfHDYmY/",
+      "id": "f9ea"
+    },
+    {
+      "src": "/clientes/cliente3.jpg",
+      "alt": "Cliente feliz 3",
+      "link": "https://www.instagram.com/p/COD1YQqj2Jj/",
+      "id": "f936"
+    },
+    {
+      "src": "/clientes/cliente4.jpg",
+      "alt": "Cliente feliz 4",
+      "link": "https://www.instagram.com/p/COD1Q9uDYrF/",
+      "id": "4150"
+    }
+  ],
+  "jumbotron": [
+    {
+      "imgSrc": "https://picsum.photos/600/300?random=2",
+      "altText": "Imagen Jumbotron 1",
+      "id": "38ed"
+    },
+    {
+      "imgSrc": "https://picsum.photos/600/300?random=1",
+      "altText": "Imagen Jumbotron 2",
+      "id": "f479"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Fardo Mujer Verano",
+      "precio": 24990,
+      "categoria": "Mujer",
+      "imagen": "https://picsum.photos/300/200?random=1"
+    },
+    {
+      "id": "2",
+      "nombre": "Fardo Mujer Invierno",
+      "precio": 24990,
+      "categoria": "Mujer",
+      "imagen": "https://picsum.photos/300/200?random=2"
+    },
+    {
+      "id": "3",
+      "nombre": "Fardo Mujer Premium",
+      "precio": 39990,
+      "categoria": "Mujer",
+      "imagen": "https://picsum.photos/300/200?random=3"
+    },
+    {
+      "id": "4",
+      "nombre": "Fardo Hombre Casual",
+      "precio": 29990,
+      "categoria": "Hombre",
+      "imagen": "https://picsum.photos/300/200?random=4"
+    },
+    {
+      "id": "5",
+      "nombre": "Fardo Hombre Invierno",
+      "precio": 34990,
+      "categoria": "Hombre",
+      "imagen": "https://picsum.photos/300/200?random=5"
+    },
+    {
+      "id": "6",
+      "nombre": "Fardo Hombre Mixto",
+      "precio": 24990,
+      "categoria": "Hombre",
+      "imagen": "https://picsum.photos/300/200?random=6"
+    },
+    {
+      "id": "7",
+      "nombre": "Fardo Niños Verano",
+      "precio": 39990,
+      "categoria": "Niños",
+      "imagen": "https://picsum.photos/300/200?random=7"
+    }
+  ],
+  "proveedores": [
+    {
+      "id": "1",
+      "nombre": "Ropa América Spa",
+      "rut": "76.123.456-7",
+      "telefono": "+56912345678",
+      "direccion": "Estación Central, Santiago",
+      "confiabilidad": "Alta",
+      "tiposRopa": [
+        "Polerones",
+        "Poleras",
+        "Cortavientos"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Distribuidora FashionMix",
+      "rut": "76.987.654-3",
+      "telefono": "+56933445566",
+      "direccion": "Meiggs 1200, Santiago",
+      "confiabilidad": "Media",
+      "tiposRopa": [
+        "Vestidos",
+        "Camisas",
+        "Chaquetas"
+      ]
+    }
+  ],
+  "ventas": [
+    {
+      "id": "1",
+      "fardoId": 1,
+      "fecha": "2025-04-19",
+      "cliente": "Juan Pérez",
+      "precioVenta": 120000,
+      "formaPago": "Transferencia"
+    },
+    {
+      "id": "2",
+      "fardoId": 2,
+      "fecha": "2025-04-20",
+      "cliente": "Marcela Rojas",
+      "precioVenta": 59000,
+      "formaPago": "Efectivo"
+    }
+  ]
+}

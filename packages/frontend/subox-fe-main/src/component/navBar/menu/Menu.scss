@@ -1,0 +1,55 @@
+$main-side-bar: #f2f2f2;
+
+.Menu {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  &__button:hover {
+    border: 1px solid #ffffff;
+    background-color: #8f299c;
+    color: #d4dbeb;
+  }
+
+  &__button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 0.5rem;
+    border-radius: 3px;
+    font-size: larger;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-weight: 400;
+    &__iconUser {
+      font-size: 1.2rem;
+      position: relative;
+      bottom: 2px;
+    }
+    //&__iconDown {
+    //}
+
+  }
+
+  &__list {
+    width: 20vw;
+    background-color: #ffffff;
+    right: 0;
+    position: absolute;
+    top: 100%;
+
+    &__link {
+
+      width: calc(100% - 2rem - 1px);
+      height: 3rem;
+      border: 1px solid #000000;
+      margin: 6px 1rem 6px 1rem;
+      list-style: none;
+    }
+  }
+}

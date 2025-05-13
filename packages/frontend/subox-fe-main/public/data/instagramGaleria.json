@@ -1,0 +1,23 @@
+[
+    {
+      "src": "/clientes/cliente1.jpg",
+      "alt": "Cliente feliz 1",
+      "link": "https://www.instagram.com/p/COD1Q9uDYrF/"
+    },
+    {
+      "src": "/clientes/cliente2.jpg",
+      "alt": "Cliente feliz 2",
+      "link": "https://www.instagram.com/p/COD1RfHDYmY/"
+    },
+    {
+      "src": "/clientes/cliente3.jpg",
+      "alt": "Cliente feliz 3",
+      "link": "https://www.instagram.com/p/COD1YQqj2Jj/"
+    },
+    {
+      "src": "/clientes/cliente4.jpg",
+      "alt": "Cliente feliz 4",
+      "link": "https://www.instagram.com/p/COD1Q9uDYrF/"
+    }
+  ]
+  

@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "nombre": "Raglert Barra Peña",
+      "rut": "20.818.194-7",
+      "telefono": "+56935023829",
+      "email": "Poleron de primera",
+      "direccion": "Calle Blanco Encalada 660, Pitrufquen"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos Rodr\u00edguez",
+      "rut": "20.456.789-0",
+      "telefono": "+56998765432",
+      "email": "carlos.rodri@example.com",
+      "direccion": "Calle Balmaceda 987, Valpara\u00edso"
+    },
+    {
+      "id": 3,
+      "nombre": "Ana Mar\u00eda P\u00e9rez",
+      "rut": "16.789.234-5",
+      "telefono": "+56945678901",
+      "email": "ana.perez@example.com",
+      "direccion": "Camino del Inca 555, La Serena"
+    },
+    {
+      "id": 4,
+      "nombre": "Francisco S\u00e1nchez",
+      "rut": "13.222.111-6",
+      "telefono": "+56911223344",
+      "email": "fran.sanchez@example.com",
+      "direccion": "Ruta 5 Sur, Km 300, Talca"
+    },
+    {
+      "id": 5,
+      "nombre": "Valentina Castro",
+      "rut": "18.123.456-7",
+      "telefono": "+56977665544",
+      "email": "valen.castro@example.com",
+      "direccion": "Avenida Alemania 1001, Temuco"
+    }
+  ]

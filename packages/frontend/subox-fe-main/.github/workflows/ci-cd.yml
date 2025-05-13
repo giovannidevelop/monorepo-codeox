@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+# Definir cuándo se debe ejecutar el pipeline
+on:
+  push:
+    branches:
+      - master  # Se ejecuta en cada push al branch main
+  pull_request:
+    branches:
+      - master  # También se ejecuta en cada pull request
+
+# Definir los jobs (tareas) del pipeline
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Ejecutar el job en un contenedor Ubuntu
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3  # Descargar el código del repo
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Puedes cambiar a la versión que uses en tu proyecto
+
+      - name: Install Dependencies
+        run: npm install  # Instalar dependencias, si es un proyecto en Node.js
+
+      #- name: Run Tests
+      #  run: npm test  # Ejecutar pruebas
+      
+      # Step 5: Construir el proyecto de React
+      - name: Build React App
+        run: CI=false npm run build
+  deploy:
+    needs: build  # El job de deploy depende del éxito de build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to production..." 
+          # Aquí va el comando para tu despliegue, dependiendo de tu infraestructura (Docker, Kubernetes, AWS, etc.)
+
+      # Desplegar a GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

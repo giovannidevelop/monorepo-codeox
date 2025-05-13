@@ -1,0 +1,57 @@
+{
+  "productos": [
+    {
+      "nombre": "Jugo de Limón",
+      "precio": 100,
+      "id": 9
+    },
+    {
+      "nombre": "naticome pene doble",
+      "precio": 123123,
+      "id": 11
+    },
+    {
+      "nombre": "sdfdfsdfgsdf",
+      "precio": 12312312,
+      "id": 12
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "correo": "test@test.cl",
+      "userName": "giovanni",
+      "password": "1047aa7e7fa38fc60e2cc3e9b672a6a50570fdd869b3f0e54ffa32326bafa9d0873dd68a8b90c46aab443a359941667e90c9a54a328698b2f7e49e1ca780caa0"
+    },
+    {
+      "id": 1,
+      "correo": "test2@test2.cl",
+      "userName": "andreas",
+      "password": "1047aa7e7fa38fc60e2cc3e9b672a6a50570fdd869b3f0e54ffa32326bafa9d0873dd68a8b90c46aab443a359941667e90c9a54a328698b2f7e49e1ca780caa0"
+    },
+    {
+      "id": 2,
+      "correo": "test3@test3.cl",
+      "userName": "poblete",
+      "password": "1047aa7e7fa38fc60e2cc3e9b672a6a50570fdd869b3f0e54ffa32326bafa9d0873dd68a8b90c46aab443a359941667e90c9a54a328698b2f7e49e1ca780caa0"
+    },
+    {
+      "id": 3,
+      "correo": "test4@test4.cl",
+      "userName": "sanchez",
+      "password": "1047aa7e7fa38fc60e2cc3e9b672a6a50570fdd869b3f0e54ffa32326bafa9d0873dd68a8b90c46aab443a359941667e90c9a54a328698b2f7e49e1ca780caa0"
+    },
+    {
+      "userName": "giovanniox",
+      "correo": "giovannipoblete55@gmail.com",
+      "password": "123123",
+      "id": 4
+    },
+    {
+      "userName": "giovanniOp",
+      "correo": "giovannipoblete55@gmail.com",
+      "password": "123123",
+      "id": 5
+    }
+  ]
+}

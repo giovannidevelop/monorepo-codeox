@@ -1,0 +1,87 @@
+$main-side-bar: #f2f2f2;
+$transition-duration: 0.5s;
+$close-button-color: #ffffff;
+$sidenav-width: calc(100% - 12px - 2.5rem - 8px - 1.7px);
+
+.sidenav {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 100vh;
+  background-color: $main-side-bar;
+  z-index: 2;
+  transition: width 0.5s ease, opacity 0.8s ease;
+  overflow: hidden;
+
+
+  &Open {
+    opacity: 2;
+    width: $sidenav-width;
+  }
+
+  &Left {
+    left: 0;
+    .containerUno {
+      .closebtn {
+      left: 1rem;
+      }
+    }
+  }
+
+  &Right {
+    right: 0;
+    .containerUno {
+      .closebtn {
+        right: 1rem;
+      }
+    }
+  }
+
+  // Estilos comunes
+  .containerUno {
+    display: flex;
+    height: 60px;
+    background-color: #007fb2;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    .closebtn {
+      position: absolute;
+      height: 2rem;
+      width: 2rem;
+      margin: 4px;
+      padding: 5px;
+      font-size: large;
+      border: 1.7px solid #ffffff;
+      background-color: #ffffff;
+      border-radius: 4px;
+    }
+  }
+
+  .containerDos {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    overflow: auto;
+
+    .menuUno,
+    .menuDos {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menuLink {
+      width: calc(100% - 2rem - 1px);
+      height: 3rem;
+      margin: 6px 1rem;
+      border: 1px solid #000;
+      list-style: none;
+      background-color: $main-side-bar;
+    }
+  }
+}

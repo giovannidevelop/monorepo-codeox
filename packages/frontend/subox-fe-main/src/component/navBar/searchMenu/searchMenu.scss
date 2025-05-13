@@ -1,0 +1,48 @@
+.searchMenu:hover {
+  border: 1px solid #ffffff;
+  background-color: #8f299c;
+
+}
+$main-side-bar: #f2f2f2;
+
+.searchMenu {
+  @media screen and (max-width: 768px) {
+    display: none;
+    }
+    
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+  transition: 0.5s;
+
+  &__container {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    width: 30vw;
+    background-color: $main-side-bar;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__iconSearchMenu {
+      width: 1rem;
+      color: #211e20cc;
+      font-size: medium;
+      margin-bottom: 7px;
+      margin-left: 5px;
+    }
+  }
+
+
+}

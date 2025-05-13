@@ -1,0 +1,123 @@
+$font-path: "./../navBar/resourse/font/outrunFuture.otf";
+$primary-color: #8de2dc;
+$secondary-color: #000000;
+$terceary-color: #f5f5f5;
+$container-margin: 2rem;
+$container-padding: 20px;
+$main-side-bar: #ddc6c6;
+$background-navbar: #2ce454;
+$background-navbar-closeWrapper: rgba(93, 86, 86, 0.6705882353);
+
+@font-face {
+  font-family: OutRun;
+  src: url("#{$font-path}") format("opentype");
+}
+
+.navba_container {
+  display: flex;
+  user-select: none;
+  border-radius: 0.5rem;
+  background: #86b7b1;
+  position: relative;
+  z-index: 1;
+  .navba_container_giHamburgerMenu,
+  .navba_container_faRegUser {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-top: 0rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    align-items: center;
+    justify-content: center;
+    .navba_container_faRegUser {
+      display: flex;
+      position: absolute;
+      right: 1rem;
+    }
+
+    .navba_container_giHamburgerMenu {
+      display: flex;
+      position: absolute;
+      left: 1rem;
+    }
+    .navba_container_logo__container{
+      margin-left: 50%;
+      @media screen and (max-width: 320px) {
+        scale: 70%;
+      }
+    }
+  }
+
+
+  &_giHamburgerMenu,
+  &_faRegUser {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    margin: 4px;
+    padding: 5px;
+    font-size: large;
+    border: 1.7px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+
+  &_landscape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    perspective: 215px;
+    perspective-origin: 50% 0%;
+    overflow: hidden;
+    z-index: -1;
+
+
+    &_object {
+      background-image: -webkit-linear-gradient(top, rgb(120 106 223 / 31%) 1px, #65181800 1px), -webkit-linear-gradient(left, rgba(6, 161, 239, 0.26) 1px, transparent 2px);
+      background-size: 1px 27px, 31px 12px;
+      transform: rotateX(47deg);
+      animation: Navbar_moveUp__fp9Sd 1s infinite linear;
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+
+  &_closeWrapper {
+    width: 100vw;
+    height: 200%;
+    background-color: $background-navbar-closeWrapper;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+  }
+
+  &_logo__container {
+    text-decoration: none;
+    display: flex;
+    z-index: 3;
+    bottom: 0.3rem;
+    position: relative;
+    height: 60px;
+    margin-left: 10%;
+  }
+
+  &_panel__container {
+    display: flex;
+    -webkit-user-select: none;
+    user-select: none;
+    flex: 1;
+    justify-content: flex-end;
+
+  }
+
+  &_menu__container {
+    user-select: none;
+    @media screen and (max-width: 768px) {}
+
+
+  }
+}

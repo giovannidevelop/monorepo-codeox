@@ -1,0 +1,93 @@
+:root {
+    --color-white: rgb(64, 96, 114);
+    --color-primary: rgb(104, 190, 239);
+    --color-label: rgb(28, 28, 28);
+    --color-transparent: #e0a5ec;
+}
+
+
+.wrapper-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.input-container {
+    position: relative;
+    margin: 10px 1rem;
+    width: 90%;
+}
+.input-container-input {
+    width: 100%;
+    color: #2021249a;
+    padding: 10px 0px 5px 2px;
+    border: none;
+    font-size: larger;
+    border-radius: 0.3rem;
+    outline: 2px solid #adb9de85;;
+    background-color: #ffffff;
+    transition: outline-color 500ms;
+}
+
+.input-container-input:is(:focus) {
+    outline-color: #202124;
+}
+.input-container-input:is(:valid) {
+    outline-color: #3e8feb;
+}
+
+.input-container-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 8px;
+    color: #157be6;
+    transition: translate 500ms, scale 500ms;
+    font-size: smaller;
+}
+
+.input-container-input:focus + .input-container-label,
+.input-container-input:valid + .input-container-label {
+    padding-inline: 10px;
+    translate: -2rem -1rem;
+    scale: 0.6;
+    background-color: #91fd9f;
+    font-size: 20px;
+}
+
+
+
+.btnRegister{
+    border: 1px solid;
+    padding: 6px 0;
+    height: 2.5rem;
+    margin: 8px 0rem;
+    display: flex;
+    font-family: monospace;
+    align-items: center;
+    width: 90%;
+    justify-content: center;
+    background-color: #dbfffa;
+    color: #4c76ce;
+    border-radius: 0.3rem;
+    font-weight: 400;
+    font-size: x-large;
+    text-transform: capitalize;
+}
+.btnRegister:hover{
+    background-color: #b2d9f0;
+    color: #0b0b0b;
+}
+
+.error-message {
+    color: #f50f2d;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: 400;
+    text-align: justify;
+}
+.icon-eye {
+    position: absolute;
+    top: 30%;
+    right: 10px;
+}

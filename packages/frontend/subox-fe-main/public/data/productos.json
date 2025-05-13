@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nombre": "Fardo Mujer Verano",
+    "precio": 24990,
+    "categoria": "Mujer",
+    "imagen": "https://picsum.photos/300/200?random=1"
+  },
+  {
+    "id": 2,
+    "nombre": "Fardo Mujer Invierno",
+    "precio": 24990,
+    "categoria": "Mujer",
+    "imagen": "https://picsum.photos/300/200?random=2"
+  },
+  {
+    "id": 3,
+    "nombre": "Fardo Mujer Premium",
+    "precio": 39990,
+    "categoria": "Mujer",
+    "imagen": "https://picsum.photos/300/200?random=3"
+  },
+  {
+    "id": 4,
+    "nombre": "Fardo Hombre Casual",
+    "precio": 29990,
+    "categoria": "Hombre",
+    "imagen": "https://picsum.photos/300/200?random=4"
+  },
+  {
+    "id": 5,
+    "nombre": "Fardo Hombre Invierno",
+    "precio": 34990,
+    "categoria": "Hombre",
+    "imagen": "https://picsum.photos/300/200?random=5"
+  },
+  {
+    "id": 6,
+    "nombre": "Fardo Hombre Mixto",
+    "precio": 24990,
+    "categoria": "Hombre",
+    "imagen": "https://picsum.photos/300/200?random=6"
+  },
+  {
+    "id": 7,
+    "nombre": "Fardo Ni\u00f1os Verano",
+    "precio": 39990,
+    "categoria": "Ni\u00f1os",
+    "imagen": "https://picsum.photos/300/200?random=7"
+  }
+
+]

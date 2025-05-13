@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "fardoId": 1,
+      "fecha": "2025-04-19",
+      "cliente": "Juan Pérez",
+      "precioVenta": 120000,
+      "formaPago": "Transferencia"
+    },
+    {
+      "id": 2,
+      "fardoId": 2,
+      "fecha": "2025-04-20",
+      "cliente": "Marcela Rojas",
+      "precioVenta": 59000,
+      "formaPago": "Efectivo"
+    }
+  ]

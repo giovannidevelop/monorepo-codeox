@@ -1,0 +1,16 @@
+[
+    {
+      "clienteId": 1,
+      "compras": [
+        { "fecha": "2025-04-20", "producto": "Fardo Cortaviento Primera", "cantidad": 2, "total": 23000 },
+        { "fecha": "2025-04-15", "producto": "Polerones Nike", "cantidad": 3, "total": 36000 }
+      ]
+    },
+    {
+      "clienteId": 2,
+      "compras": [
+        { "fecha": "2025-04-10", "producto": "Fardo Selección Hogar", "cantidad": 1, "total": 18000 }
+      ]
+    }
+  ]
+  

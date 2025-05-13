@@ -1,0 +1,56 @@
+.footer {
+    background-color: #2e1e74;
+    color: white;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  
+    &__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    &__brand h3 {
+      font-size: 1.5rem;
+      color: #d1ac5a;
+    }
+  
+    &__links ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin: 0.3rem 0;
+      }
+  
+      a {
+        color: white;
+        text-decoration: none;
+  
+        &:hover {
+          color: #d1ac5a;
+        }
+      }
+    }
+  
+    &__contacto a {
+      color: #d1ac5a;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    &__bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+  

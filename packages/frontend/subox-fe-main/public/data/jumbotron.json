@@ -1,0 +1,10 @@
+[
+  {
+    "imgSrc": "https://picsum.photos/600/300?random=2",
+    "altText": "Imagen Jumbotron 1"
+  },
+  {
+    "imgSrc": "https://picsum.photos/600/300?random=1",
+    "altText": "Imagen Jumbotron 2"
+  }
+]

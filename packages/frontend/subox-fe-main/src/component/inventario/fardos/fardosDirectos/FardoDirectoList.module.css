@@ -1,0 +1,293 @@
+/* =================== CONTENEDORES =================== */
+
+.container {
+    padding: 1rem;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  
+  /* =================== TABLAS =================== */
+  
+  .tableContainer {
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .subTable {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+  
+  .subTable th, .subTable td {
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  
+  /* =================== BADGES =================== */
+  
+  .badgeVentaDirecta {
+    background-color: #3498db;
+  }
+  
+  .badgeClasificado {
+    background-color: #2ecc71;
+  }
+  
+  .badgeProceso {
+    background-color: #f1c40f;
+  }
+  
+  .badgeStock {
+    background-color: #95a5a6;
+  }
+  
+  .badgeVentaDirecta, .badgeClasificado, .badgeProceso, .badgeStock {
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    display: inline-block;
+  }
+  
+  /* =================== BOTONES =================== */
+  
+  .actionButton, .expandButton, .expandButtonActive, .sellButton, .dropdownButton {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .actionButton {
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .actionButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .expandButton {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expandButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .expandButtonActive {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expandButtonActive:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .sellButton {
+    background-color: #28a745;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .sellButton:hover {
+    background-color: #218838;
+  }
+  
+  .dropdownButton {
+    background: none;
+    font-size: 1.5rem;
+  }
+  
+  /* =================== DROPDOWNS =================== */
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdownContent {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    padding: 8px 0;
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 9999;
+  }
+  
+  .dropdownContent button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .dropdownContent button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* =================== PAGINACIÓN =================== */
+  
+  .pagination {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .page, .activePage {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .page {
+    background-color: #e0e0e0;
+  }
+  
+  .activePage {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* =================== CONTENEDORES DE ARMADOS =================== */
+  
+  .armadosContainer {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 1000px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 1;
+  }
+  
+  .armadosContainerCollapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  
+  /* =================== SCROLLBAR PERSONALIZADO =================== */
+  
+  .tableContainer::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .tableContainer::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  /* =================== RESPONSIVE =================== */
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    th, td {
+      font-size: 0.8rem;
+    }
+    
+    .input {
+      font-size: 0.8rem;
+    }
+  }
+  .sinStockText {
+    color: #999;
+    font-size: 0.8rem;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .dashboardItem {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 20px;
+    flex: 1 1 150px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .dashboardItem h4 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .dashboardItem p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
