@@ -1,0 +1,96 @@
+/* EtiquetaCliente.css */
+
+/* Estilo del overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Estilo del modal */
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 95%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Estilo del encabezado */
+.header {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+/* Estilo del input para cantidad */
+.input-cantidad {
+  padding: 8px;
+  width: 60px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Estilo de las etiquetas y los datos */
+.etiqueta-contenido {
+  border: 1px dashed #ccc;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo del logo */
+.logo {
+  max-height: 70px;
+  margin-right: 2rem;
+}
+
+/* Estilo del QR */
+.qr {
+  max-height: 100px;
+  margin-left: 2rem;
+}
+
+/* Estilo de los campos */
+.datos {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.campo {
+  margin: 10px 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Estilo de los botones */
+.button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: #fff;
+}

@@ -15,12 +15,9 @@ import {
 const ClienteList = () => {
   const [clientes, setClientes] = useState([]);
   const [editing, setEditing] = useState(null);
-  const [adding, setAdding] = useState(false);
-  const [selectedCliente, setSelectedCliente] = useState(null);
-  const [menuOpenId, setMenuOpenId] = useState(null);
-  const [confirmDelete, setConfirmDelete] = useState(null);
-  const [alertMessage, setAlertMessage] = useState(null);
-  const [clienteEtiqueta, setClienteEtiqueta] = useState(null);
+  const [adding, setAdding] = useState(null);
+  const [clienteRegistrado, setClienteRegistrado] = useState(null); // Estado para almacenar el cliente registrado
+
   const [filters, setFilters] = useState({
     nombre: "",
     rut: "",
@@ -31,10 +28,24 @@ const ClienteList = () => {
   const [sortKey, setSortKey] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 7;
+  const rowsPerPage = 4;
+
+  // Estados para los modales y otras variables
+  const [modals, setModals] = useState({
+    clienteFormModal: false,     // Modal para agregar/editar cliente
+    clienteHistorialModal: false, // Modal para ver historial de cliente
+    clienteEtiquetaModal: false, // Modal para agregar etiqueta a cliente
+    modalMenuAcciones: false, // Modal para acciones de cliente
+    idClienteELiminar: null,      // ID del cliente a eliminar
+    idClienteMenu: null,   // ID del cliente cuyo menú está abierto
+    idClienteEtiqueta: null,    // Cliente seleccionado para agregar etiqueta
+    selectedCliente: null, // Agregamos selectedCliente aquí
+    alertMessage: null,   // Mensaje de alerta
+  });
+
   const menuRefs = useRef({});
 
-  // Carga inicial
+  // Cargar clientes
   useEffect(() => {
     loadClientes();
   }, []);
@@ -45,7 +56,7 @@ const ClienteList = () => {
       setClientes(data);
     } catch (err) {
       console.error(err);
-      setAlertMessage("Error al cargar clientes.");
+      setModals((prevState) => ({ ...prevState, alertMessage: "Error al cargar clientes." }));
     }
   };
 
@@ -86,6 +97,7 @@ const ClienteList = () => {
     currentPage * rowsPerPage
   );
 
+  // Manejo de ordenamiento
   const handleSort = (key) => {
     setSortKey(key);
     setSortOrder((prev) => (sortKey === key && prev === "asc" ? "desc" : "asc"));
@@ -93,63 +105,124 @@ const ClienteList = () => {
 
   // Guardar (POST/PUT)
   const handleSave = async (form) => {
+    console.log("Guardando cliente:", form);
+
     try {
       if (editing) {
-        await updateCliente(form.id, form);
+        console.log("Editando cliente");
+        let response = await updateCliente(form.id, form);
+        console.log("Cliente editado:", response);
+        // Actualizamos el cliente editado en la lista
         setClientes((prev) => prev.map((c) => (c.id === form.id ? form : c)));
         setEditing(null);
+        setModals((prevState) => ({
+          ...prevState,
+          clienteFormModal: false,  // Cerrar el modal de cliente
+          alertMessage: "Cliente Editado correctamente.", // Mostrar mensaje de éxito
+        }));
       } else {
+        console.log("Creando cliente");
         const nuevo = await createCliente(form);
-        setClientes((prev) => [...prev, nuevo]);
-        setAdding(false);
+        setClientes((prev) => [...prev, nuevo]); // Agregar el cliente creado a la lista
+
+        setClienteRegistrado(nuevo); // Guardar el cliente registrado para mostrarlo en el modal
+
+        // Actualizamos todos los modales a la vez
+        setModals((prevState) => ({
+          ...prevState,
+          clienteFormModal: false,  // Cerrar el modal de cliente
+          alertMessage: "Cliente registrado correctamente.", // Mostrar mensaje de éxito
+        }));
+
+        console.log("Modal de cliente registrado abierto");
       }
-      setMenuOpenId(null);
     } catch (err) {
       console.error(err);
-      setAlertMessage("Error al guardar cliente.");
+      setModals((prevState) => ({ ...prevState, alertMessage: "Error al guardar cliente." }));
     }
   };
 
-  // Solicita confirmación de borrado
+  // Solicitar confirmación de borrado
   const handleDelete = (id) => {
-    setConfirmDelete(id);
-    setMenuOpenId(null);
+    setModals((prevState) => ({ ...prevState, idClienteELiminar: id }));
   };
-
-  const confirmDeleteAction = async () => {
-    try {
-      await deleteCliente(confirmDelete);
-      setClientes((prev) => prev.filter((c) => c.id !== confirmDelete));
-      if (selectedCliente?.id === confirmDelete) setSelectedCliente(null);
-      setAlertMessage("Cliente eliminado correctamente.");
-    } catch (err) {
-      console.error(err);
-      setAlertMessage("Error al eliminar cliente.");
-    } finally {
-      setConfirmDelete(null);
+const confirmDeleteAction = async () => {
+  try {
+    const response = await deleteCliente(modals.idClienteELiminar);
+    
+    // Si la respuesta es null (204 No Content), no necesitamos hacer nada con ella
+    if (response === null) {
+      console.log("Cliente eliminado correctamente.");
+    } else {
+      console.log("Cliente eliminado:", response);
     }
-  };
 
+    // Actualizamos la lista de clientes, eliminando el cliente con el ID correspondiente
+    setClientes((prev) => prev.filter((c) => c.id !== modals.idClienteELiminar));
+
+    // Si el cliente eliminado es el seleccionado, actualizamos el estado de selectedCliente
+    if (modals.selectedCliente?.id === modals.idClienteELiminar) {
+      setModals((prevState) => ({ ...prevState, selectedCliente: null }));
+    }
+
+    // Mostrar mensaje de éxito
+    setModals((prevState) => ({ ...prevState, alertMessage: "Cliente eliminado correctamente." }));
+  } catch (err) {
+    console.error('Error al eliminar cliente:', err);
+    setModals((prevState) => ({ ...prevState, alertMessage: "Error al eliminar cliente." }));
+  } finally {
+    // Restablecer la variable idClienteELiminar en el estado de los modales
+    setModals((prevState) => ({ ...prevState, idClienteELiminar: null }));
+  }
+};
+
+  // Cerrar todos los modales
   const closeAllModals = () => {
-    setConfirmDelete(null);
-    setAlertMessage(null);
-    setSelectedCliente(null);
+    setModals({
+      clienteFormModal: false,
+      modalMenuAcciones: false,
+      clienteHistorialModal: false,
+      clienteEtiquetaModal: false,
+      idClienteELiminar: null,
+      alertMessage: null,
+      idClienteMenu: null,
+      idClienteEtiqueta: null,
+      selectedCliente: null,
+    });
     setEditing(null);
     setAdding(false);
-    setMenuOpenId(null);
   };
+
+  const closeAlertModal = () => {
+    setModals((prevState) => ({ ...prevState, alertMessage: null }));
+    setClienteRegistrado(null); // Limpiar el cliente registrado
+  };
+
+  const abrirModalMenuAcciones = (cliente) => {
+    console.log("Abriendo modal de acciones para cliente:", cliente);
+    // Cerrar todos los modales antes de abrir el nuevo
+    closeAllModals();
+    // Abrir el modal de acciones
+    setModals((prevState) => ({
+      ...prevState,
+      modalMenuAcciones: true,
+      idClienteMenu: prevState.idClienteMenu === cliente.id ?
+        null :
+        cliente.id
+    }))
+  }
 
   return (
     <div style={{ padding: "1rem" }}>
       <ClienteModalForm
-        isOpen={adding || editing}
-        onClose={closeAllModals}
+        isOpen={modals.clienteFormModal}
+        onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}
         initialData={editing || {}}
         onSave={handleSave}
       />
 
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
-        <button onClick={() => setAdding(true)} style={styles.btnAdd}>
+        <button onClick={() => setModals((prevState) => ({ ...prevState, clienteFormModal: true }))} style={styles.btnAdd}>
           ➕ Agregar Cliente
         </button>
       </div>
@@ -158,19 +231,18 @@ const ClienteList = () => {
         <table style={styles.table}>
           <thead>
             <tr>
-              {['id','nombre','rut','telefono','email','direccion'].map((col) => (
+              {['id', 'nombre', 'rut', 'telefono', 'email', 'direccion'].map((col) => (
                 <th key={col} style={styles.th}>
                   <label style={styles.label} onClick={() => handleSort(col)}>
-                    {col.toUpperCase()} {sortKey===col?(sortOrder==='asc'?'🔼':'🔽'):null}
+                    {col.toUpperCase()} {sortKey === col ? (sortOrder === "asc" ? '🔼' : '🔽') : null}
                   </label>
-                  {col!=='id' && (
+                  {col !== 'id' && (
                     <input
                       type="text"
                       placeholder={`Filtrar ${col}`}
                       value={filters[col]}
                       onChange={(e) =>
-                        setFilters((f) => ({ ...f, [col]: e.target.value.toLowerCase() }))
-                      }
+                        setFilters((f) => ({ ...f, [col]: e.target.value.toLowerCase() }))}
                       style={styles.filterInput}
                     />
                   )}
@@ -180,8 +252,8 @@ const ClienteList = () => {
             </tr>
           </thead>
           <tbody>
-            {paginated.map((c,i) => (
-              <tr key={c.id} style={{ backgroundColor: i%2===0?'#fdfdfd':'#f7f7f7' }}>
+            {paginated.map((c, i) => (
+              <tr key={c.id} style={{ backgroundColor: i % 2 === 0 ? '#fdfdfd' : '#f7f7f7' }}>
                 <td style={styles.td}>{c.id}</td>
                 <td style={styles.td}>{c.nombre}</td>
                 <td style={styles.td}>{c.rut}</td>
@@ -191,16 +263,47 @@ const ClienteList = () => {
                 <td style={{ ...styles.td, position: 'relative' }}>
                   <button
                     ref={(el) => (menuRefs.current[c.id] = el)}
-                    onClick={() => setMenuOpenId(menuOpenId===c.id?null:c.id)}
+                    onClick={() => { abrirModalMenuAcciones(c) }}
                     style={styles.menuBtn}
-                  >⋯</button>
+                  >
+                    ⋯
+                  </button>
                   <ClienteMenu
-                    isOpen={menuOpenId===c.id}
+                    isOpen={modals.idClienteMenu === c.id && modals.modalMenuAcciones}
                     onClose={closeAllModals}
-                    onEdit={() => { setEditing(c); }}
-                    onDelete={() => handleDelete(c.id)}
-                    onHistorial={() => { setSelectedCliente(c); }}
-                    onEtiqueta={() => { setClienteEtiqueta(c); }}
+                    onEdit={() => {
+                      setEditing(c);
+                      setModals((prevState) => ({
+                        ...prevState,
+                        modalMenuAcciones: false,
+                        clienteFormModal: true,
+                      }));
+                    }}
+                    onDelete={() => {
+                      handleDelete(c.id)
+                      setModals((prevState) => ({
+                        ...prevState,
+                        modalMenuAcciones: false,
+                        idClienteELiminar: c.id
+                      }));
+                    }}
+                    onHistorial={() => {
+                      setModals((prevState) => ({
+                        ...prevState,
+                        selectedCliente: c,
+                        modalMenuAcciones: false,
+                        clienteHistorialModal: true
+                      }));
+                    }}
+                    onEtiqueta={() => {
+                      setModals((prevState) => ({
+                        ...prevState,
+                        idClienteEtiqueta: c,
+                        clienteEtiquetaModal: true,
+                        modalMenuAcciones: false,
+
+                      }));
+                    }}
                     triggerRef={{ current: menuRefs.current[c.id] }}
                   />
                 </td>
@@ -212,36 +315,56 @@ const ClienteList = () => {
 
       {/* Paginación */}
       <div style={styles.pagination}>
-        {Array.from({ length: Math.ceil(sortedData.length/rowsPerPage) }, (_,i) => (
+        {Array.from({ length: Math.ceil(sortedData.length / rowsPerPage) }, (_, i) => (
           <button
             key={i}
-            onClick={() => setCurrentPage(i+1)}
+            onClick={() => setCurrentPage(i + 1)}
             style={{
               ...styles.pageBtn,
-              backgroundColor: currentPage===i+1?'#007bff':'#e0e0e0',
-              color: currentPage===i+1?'#fff':'#000',
+              backgroundColor: currentPage === i + 1 ? '#007bff' : '#e0e0e0',
+              color: currentPage === i + 1 ? '#fff' : '#000',
             }}
-          >{i+1}</button>
+          >
+            {i + 1}
+          </button>
         ))}
       </div>
 
-      {selectedCliente && (
-        <HistorialClienteModal cliente={selectedCliente} onClose={closeAllModals} />
+      {modals.selectedCliente && (
+        <HistorialClienteModal
+          cliente={modals.selectedCliente}
+          isOpen={modals.clienteHistorialModal}
+          onClose={() => {
+            closeAllModals();
+          }}
+        />
       )}
-      {clienteEtiqueta && (
-        <EtiquetaCliente cliente={clienteEtiqueta} onClose={closeAllModals} />
-      )}
+        <EtiquetaCliente
+          cliente={modals.idClienteEtiqueta}
+          isOpen={modals.clienteEtiquetaModal}
+          onClose={() => {
+            closeAllModals();
+          }}
+        />
       <ConfirmModal
-        isOpen={!!confirmDelete}
+        isOpen={!!modals.idClienteELiminar}
         onClose={closeAllModals}
         onConfirm={confirmDeleteAction}
         message="¿Estás seguro que deseas eliminar este cliente?"
       />
       <AlertModal
-        isOpen={!!alertMessage}
+        isOpen={!!modals.alertMessage}
         onClose={closeAllModals}
-        message={alertMessage}
+        message={modals.alertMessage}
       />
+      {/* Mostrar modal con mensaje de cliente registrado */}
+      {clienteRegistrado && (
+        <AlertModal
+          isOpen={!!modals.alertMessage}
+          onClose={closeAlertModal}
+          message={`Cliente registrado: ${clienteRegistrado.nombre} - ${clienteRegistrado.rut}`}
+        />
+      )}
     </div>
   );
 };

@@ -5,7 +5,6 @@
 const BASE_URL = (process.env.REACT_APP_CLIENTES_API_URL || '').replace(/\/+$/, '');
 
 async function request(path, options = {}) {
-  // 2) Asegúrate de que `path` empiece con "/"
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const url = `${BASE_URL}${cleanPath}`;
 
@@ -20,8 +19,15 @@ async function request(path, options = {}) {
     const text = await res.text();
     throw new Error(text || 'Error en la API');
   }
-  return res.json();
+
+  // Si la respuesta es 204 No Content, no intentamos convertirla a JSON
+  if (res.status === 204) {
+    return null; // Retornar null cuando la respuesta no tiene contenido
+  }
+
+  return res.json(); // Si la respuesta tiene contenido, procesarla como JSON
 }
+
 
 export function getClientes() {
   return request('/api/clientes');
@@ -41,5 +47,9 @@ export function updateCliente(id, cliente) {
 export function deleteCliente(id) {
   return request(`/api/clientes/${id}`, {
     method: 'DELETE',
+  }).catch((err) => {
+    console.error('Error al eliminar cliente:', err); // Aquí vemos el error completo
+    throw err; // Vuelve a lanzar el error para que sea manejado en el frontend
   });
 }
+
