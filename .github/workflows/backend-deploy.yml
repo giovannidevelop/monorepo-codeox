@@ -1,0 +1,31 @@
+name: Backend Deployment
+
+on:
+  push:
+    paths:
+      - 'packages/backend/cliente-service/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build
+        run: |
+          cd packages/backend/cliente-service
+          mvn clean install
+      - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: ClienteService
+          environment_name: ClienteService-env
+          version_label: ${{ github.sha }}
+          region: us-east-2
+          deployment_package: packages/backend/cliente-service/target/*.jar
