@@ -36,7 +36,7 @@ jobs:
       - name: Invalidate CloudFront Cache
         uses: chetan/invalidate-cloudfront-action@v2
         with:
-          distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          distribution_id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           paths: "/*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
