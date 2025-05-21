@@ -53,7 +53,7 @@ jobs:
             aws elasticbeanstalk create-environment \
               --application-name cliente-service \
               --environment-name cliente-service-env \
-              --solution-stack-name "Corretto 17 running on 64bit Amazon Linux 2"
+              --solution-stack-name "64bit Amazon Linux 2 v5.10.1 running Corretto 17"
             echo "Environment created."
           else
             echo "Environment already exists."
