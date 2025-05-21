@@ -34,6 +34,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
+      # (Opcional/Debug) Lista los Solution Stacks disponibles (mira el log y copia el nombre exacto que necesitas)
+      - name: List available solution stacks (debug)
+        run: aws elasticbeanstalk list-available-solution-stacks
+
       # Crea la aplicación SOLO si no existe (idempotente)
       - name: Ensure Elastic Beanstalk Application exists
         run: |
@@ -45,7 +49,7 @@ jobs:
             echo "Application already exists."
           fi
 
-      # Crea el environment SOLO si no existe (idempotente, puedes comentar después de la primera vez)
+      # Crea el environment SOLO si no existe (idempotente, usa el Solution Stack correcto que copiaste del paso anterior)
       - name: Ensure Elastic Beanstalk Environment exists
         run: |
           set -e
@@ -53,7 +57,7 @@ jobs:
             aws elasticbeanstalk create-environment \
               --application-name cliente-service \
               --environment-name cliente-service-env \
-              --solution-stack-name "64bit Amazon Linux 2 v5.10.1 running Corretto 17"
+              --solution-stack-name "64bit Amazon Linux 2 v5.11.1 running Corretto 17"
             echo "Environment created."
           else
             echo "Environment already exists."
