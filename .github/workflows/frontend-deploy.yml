@@ -77,10 +77,23 @@ jobs:
           aws cloudfront get-distribution-config --id $DIST_ID > cf-config.json
           ETag=$(jq -r .ETag cf-config.json)
           jq .DistributionConfig cf-config.json > dist-config.json
-          jq '.CustomErrorResponses = [
-            {"ErrorCode":404,"ResponsePagePath":"/index.html","ResponseCode":"200","ErrorCachingMinTTL":0},
-            {"ErrorCode":403,"ResponsePagePath":"/index.html","ResponseCode":"200","ErrorCachingMinTTL":0}
-          ]' dist-config.json > new-dist-config.json
+          jq '.CustomErrorResponses = {
+            "Quantity": 2,
+            "Items": [
+              {
+                "ErrorCode": 404,
+                "ResponsePagePath": "/index.html",
+                "ResponseCode": "200",
+                "ErrorCachingMinTTL": 0
+              },
+              {
+                "ErrorCode": 403,
+                "ResponsePagePath": "/index.html",
+                "ResponseCode": "200",
+                "ErrorCachingMinTTL": 0
+              }
+            ]
+          }' dist-config.json > new-dist-config.json
           aws cloudfront update-distribution \
             --id $DIST_ID \
             --distribution-config file://new-dist-config.json \
