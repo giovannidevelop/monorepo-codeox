@@ -41,6 +41,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
+      - name: Set S3 public read policy (solo si quieres acceso público)
+        run: |
+          aws s3api put-bucket-policy \
+            --bucket ${{ secrets.AWS_S3_BUCKET }} \
+            --policy '{
+              "Version": "2012-10-17",
+              "Statement": [{
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::${{ secrets.AWS_S3_BUCKET }}/*"
+              }]
+            }'
+
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
