@@ -32,6 +32,7 @@ jobs:
           environment_name: ClienteService-env
           version_label: ${{ github.sha }}
           region: us-east-2
-          deployment_package: packages/backend/cliente-service/target/*.jar
+          deployment_package: packages/backend/cliente-service/target/cliente-service-0.0.1-SNAPSHOT.jar
+
 
       
