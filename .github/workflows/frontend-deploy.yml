@@ -69,3 +69,18 @@ jobs:
             --id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
             --distribution-config file://dist-config.json \
             --if-match $ETag
+      - name: Set CloudFront Custom Error Responses for SPA
+        run: |
+            DIST_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+            ETag=$(aws cloudfront get-distribution-config --id $DIST_ID --query 'ETag' --output text)
+            aws cloudfront get-distribution-config --id $DIST_ID > cf-config.json
+            jq '.DistributionConfig.CustomErrorResponses |= [
+                .[] | select(.ErrorCode!=404 and .ErrorCode!=403)
+            ] + [
+                {ErrorCode:404, ResponsePagePath:"/index.html", ResponseCode:"200", ErrorCachingMinTTL:0},
+                {ErrorCode:403, ResponsePagePath:"/index.html", ResponseCode:"200", ErrorCachingMinTTL:0}
+            ]' cf-config.json > new-cf-config.json
+            aws cloudfront update-distribution \
+            --id $DIST_ID \
+            --distribution-config file://new-cf-config.json \
+            --if-match $ETag
