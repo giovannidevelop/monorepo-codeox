@@ -33,7 +33,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      # Crea la aplicación SOLO si no existe (idempotente)
       - name: Ensure Elastic Beanstalk Application exists
         run: |
           set -e
@@ -44,7 +43,6 @@ jobs:
             echo "Application already exists."
           fi
 
-      # Crea el environment SOLO si no existe (idempotente, ya con el nombre correcto)
       - name: Ensure Elastic Beanstalk Environment exists
         run: |
           set -e
@@ -68,9 +66,3 @@ jobs:
           version_label: ${{ github.sha }}
           region: us-east-2
           deployment_package: packages/backend/cliente-service/target/cliente-service-0.0.1-SNAPSHOT.jar
-
-      # (Opcional) Health check de backend
-      # - name: Health check (opcional)
-      #   run: |
-      #     sleep 60
-      #     curl -f https://TU_ENV_BEANSTALK_URL/actuator/health || exit 1
