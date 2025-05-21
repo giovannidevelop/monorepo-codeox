@@ -23,16 +23,47 @@ jobs:
           cd packages/backend/cliente-service
           mvn clean install
 
+      - name: List target directory (debug)
+        run: ls -l packages/backend/cliente-service/target
+
+      # Crea la aplicación SOLO si no existe (idempotente)
+      - name: Ensure Elastic Beanstalk Application exists
+        run: |
+          set -e
+          if ! aws elasticbeanstalk describe-applications --application-names cliente-service | grep cliente-service; then
+            aws elasticbeanstalk create-application --application-name cliente-service
+            echo "Application created."
+          else
+            echo "Application already exists."
+          fi
+
+      # Crea el environment SOLO si no existe (idempotente, puedes comentar después de la primera vez)
+      - name: Ensure Elastic Beanstalk Environment exists
+        run: |
+          set -e
+          if ! aws elasticbeanstalk describe-environments --application-name cliente-service --environment-names cliente-service-env | grep cliente-service-env; then
+            aws elasticbeanstalk create-environment \
+              --application-name cliente-service \
+              --environment-name cliente-service-env \
+              --solution-stack-name "Corretto 17 running on 64bit Amazon Linux 2"
+            echo "Environment created."
+          else
+            echo "Environment already exists."
+          fi
+
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: ClienteService
-          environment_name: ClienteService-env
+          application_name: cliente-service
+          environment_name: cliente-service-env
           version_label: ${{ github.sha }}
           region: us-east-2
           deployment_package: packages/backend/cliente-service/target/cliente-service-0.0.1-SNAPSHOT.jar
 
-
-      
+      # (Opcional) Health check de backend
+      # - name: Health check (opcional)
+      #   run: |
+      #     sleep 60
+      #     curl -f https://TU_ENV_BEANSTALK_URL/actuator/health || exit 1
