@@ -3,6 +3,7 @@ import Proveedores from "../proveedores/Proveedores";
 import EstadisticasDashboard from "../estadisticas/EstadisticasDashboard";
 import ClienteList from "../../clientes/ClienteList";
 import FardoDirectoList from "../fardos/fardosDirectos/FardoDirectoList";
+import ProviderTable from "../../provider/ProviderTable";
 
 const TabSwitcher = ({ searchTerm }) => {
   const [activeTab, setActiveTab] = useState("MainMenu");
@@ -20,7 +21,7 @@ const TabSwitcher = ({ searchTerm }) => {
         {activeTab === "MainMenu" && <FardoDirectoList searchTerm={searchTerm} />}
         {activeTab === "EstadisticasDashboard" && <EstadisticasDashboard searchTerm={searchTerm} />}
         {activeTab === "ClienteList" && <ClienteList searchTerm={searchTerm} />}
-        {activeTab === "Proveedores" && <Proveedores searchTerm={searchTerm} />}
+        {activeTab === "Proveedores" && <ProviderTable searchTerm={searchTerm} />}
       </div>
     </div>
   );
