@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import ProveedorForm from "./ProveedorForm";
 
 const ProveedorList = () => {
+ const BASE_URL = (process.env.REACT_APP_CLIENTES_API_URL || '').replace(/\/+$/, '');
+
+  const API_URL = BASE_URL+"proveedores";
+
   const [proveedores, setProveedores] = useState([]);
   const [search, setSearch] = useState("");
   const [editing, setEditing] = useState(null);
   const [adding, setAdding] = useState(false);
 
   useEffect(() => {
-    fetch("/data/proveedores.json")
+    fetch(API_URL+"/proveedores")
       .then((res) => res.json())
       .then((data) => setProveedores(data));
   }, []);

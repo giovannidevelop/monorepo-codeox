@@ -4,8 +4,7 @@ import { isTokenExpired } from "../../../utils/tokenUtils";
 import PATH from "../../../router/path";
 
 // URLs para autenticación
-const BASE_URL =   process.env.REACT_APP_API_URL;
-console.log(BASE_URL);
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 
 const URL_AUTH_LOGIN = BASE_URL + "login";
 const URL_AUTH_REGISTER = BASE_URL +  "register";

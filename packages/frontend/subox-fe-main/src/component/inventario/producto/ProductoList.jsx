@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import HistorialClienteModal from "./HistorialClienteModal";
-import EtiquetaCliente from "./EtiquetaCliente";
-import ClienteModalForm from "./ClienteModalForm";
-import ClienteMenu from "./ClienteMenu";
-import ConfirmModal from "../modal/ConfirmModal";
-import AlertModal from "../modal/AlertModal";
+import HistorialClienteModal from "./modal/HistorialClienteModal";
+import EtiquetaClienteModal from "./modal/EtiquetaClienteModal";
+import ClienteFormModal from "./modal/ClienteFormModal";
+import ClienteMenuModal from "./modal/ClienteMenuModal";
+import ConfirmModal from "../../common/modal/ConfirmModal";
+import AlertModal from "../../common/modal/AlertModal";
 import {
   getClientes,
   createCliente,
@@ -12,7 +12,7 @@ import {
   deleteCliente,
 } from "./api/clientes";
 
-const ClienteList = () => {
+const ProductoList = () => {
   const [clientes, setClientes] = useState([]);
   const [editing, setEditing] = useState(null);
   const [adding, setAdding] = useState(null);
@@ -214,7 +214,7 @@ const confirmDeleteAction = async () => {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <ClienteModalForm
+      <ClienteFormModal
         isOpen={modals.clienteFormModal}
         onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}
         initialData={editing || {}}
@@ -268,7 +268,7 @@ const confirmDeleteAction = async () => {
                   >
                     ⋯
                   </button>
-                  <ClienteMenu
+                  <ClienteMenuModal
                     isOpen={modals.idClienteMenu === c.id && modals.modalMenuAcciones}
                     onClose={closeAllModals}
                     onEdit={() => {
@@ -339,7 +339,7 @@ const confirmDeleteAction = async () => {
           }}
         />
       )}
-        <EtiquetaCliente
+        <EtiquetaClienteModal
           cliente={modals.idClienteEtiqueta}
           isOpen={modals.clienteEtiquetaModal}
           onClose={() => {
@@ -436,4 +436,4 @@ const styles = {
   },
 };
 
-export default ClienteList;
+export default ProductoList;

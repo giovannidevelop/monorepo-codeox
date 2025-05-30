@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Proveedores from "../proveedores/Proveedores";
+import  { useState } from "react";
 import EstadisticasDashboard from "../estadisticas/EstadisticasDashboard";
-import ClienteList from "../../clientes/ClienteList";
+import ClienteList from "../clientes/ClienteList";
 import FardoDirectoList from "../fardos/fardosDirectos/FardoDirectoList";
-import ProviderTable from "../../provider/ProviderTable";
+import ProviderTable from "../../inventario/provider/ProviderTable";
+import ProductoList from "../../inventario/producto/ProductoList";
 
 const TabSwitcher = ({ searchTerm }) => {
   const [activeTab, setActiveTab] = useState("MainMenu");
@@ -15,6 +15,7 @@ const TabSwitcher = ({ searchTerm }) => {
         <button className={activeTab === "EstadisticasDashboard" ? "active" : ""} onClick={() => setActiveTab("EstadisticasDashboard")}>Estadisticas</button>
         <button className={activeTab === "Proveedores" ? "active" : ""} onClick={() => setActiveTab("Proveedores")}>Proveedores</button>
         <button className={activeTab === "ClienteList" ? "active" : ""} onClick={() => setActiveTab("ClienteList")}>Clientes</button>
+        <button className={activeTab === "ProductoList" ? "active" : ""} onClick={() => setActiveTab("ProductoList")}>Productos</button>
       </div>
 
       <div className="tab-content">
@@ -22,6 +23,7 @@ const TabSwitcher = ({ searchTerm }) => {
         {activeTab === "EstadisticasDashboard" && <EstadisticasDashboard searchTerm={searchTerm} />}
         {activeTab === "ClienteList" && <ClienteList searchTerm={searchTerm} />}
         {activeTab === "Proveedores" && <ProviderTable searchTerm={searchTerm} />}
+        {activeTab === "ProductoList" && <ProductoList searchTerm={searchTerm} />}
       </div>
     </div>
   );

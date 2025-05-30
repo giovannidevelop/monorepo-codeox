@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../component/navBar/NavBar";
-import Header from "../component/header/Header";
+import Header from "../component/dashboard/header/Header";
 const NavBarWrapper = () => {
 
   return (

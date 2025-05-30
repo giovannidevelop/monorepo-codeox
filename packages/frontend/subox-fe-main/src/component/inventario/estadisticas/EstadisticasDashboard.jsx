@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+
+
 const EstadisticasDashboard = () => {
   const [ventas, setVentas] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/ventas")
+    fetch(BASE_URL+"/ventas")
       .then((res) => res.json())
       .then((data) => setVentas(data));
   }, []);

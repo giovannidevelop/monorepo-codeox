@@ -3,7 +3,7 @@
 import React from "react";
 import "./header.scss";
 import { useSelector } from "react-redux";
-import { PATH } from "../../router/path";
+import { PATH } from "../../../router/path";
 import { Link } from "react-router-dom"
 const Header = () => {
     const carrito = useSelector((state) => state.carrito.productos);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CiUser } from 'react-icons/ci';
 import { FaAngleDown } from 'react-icons/fa';
 import './AccountMenu.scss';
-import { PATH } from "../../../router/path"
+import { PATH } from "../../../../router/path"
 
 const AccountMenu = () => {
 

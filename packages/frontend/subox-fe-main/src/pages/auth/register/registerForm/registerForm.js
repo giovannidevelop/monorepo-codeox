@@ -5,6 +5,8 @@ import { ImEye } from "react-icons/im";
 import Input from '../../../../component/common/input/Input';
 import SubmitButton from '../../../../component/common/button/SubmitButton';
 
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+
 
 const RegisterForm = () => {
     const [formData, setFormData] = useState({
@@ -98,7 +100,7 @@ const RegisterForm = () => {
         console.log('Call Api Registro');
         try {
             const { confirmPassword, ...formDataWithoutConfirmPassword } = formData;
-            const response = await fetch('http://localhost:7000/api/auth/registrar', {
+            const response = await fetch(BASE_URL+'/api/auth/registrar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

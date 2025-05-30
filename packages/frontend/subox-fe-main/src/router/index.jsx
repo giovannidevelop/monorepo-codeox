@@ -13,7 +13,7 @@
 
   import { PATH } from "./path";
   import ProtectedRoute from "./ProtectedRoute";
-  import Carrito from "../component/carrito/Carrito";
+  import Carrito from "../component/dashboard/carrito/Carrito";
 
   const Routes = () => {
     const { isAuthenticated } = useAuth();

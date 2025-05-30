@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./home.scss";
-import CategoryItem from "../../component/categoria/CategoryItem";
-import Jumbotrom from "../../component/jumbotrom/Jumbotrom";
-import ProductoDestacado from "../../component/productoDestacado/ProductoDestacado";
+import CategoryItem from "../../component/dashboard/categoria/CategoryItem";
+import Jumbotrom from "../../component/dashboard/jumbotrom/Jumbotrom";
+import ProductoDestacado from "../../component/dashboard/productoDestacado/ProductoDestacado";
 import { useDispatch } from "react-redux";
 import { agregarProducto } from "./../../app/redux/reducers/carritoReducer";
-import Testimonio from "../../component/testimonio/Testimonio";
-import GaleriaInstagram from "../../component/galeriaInstagram/GaleriaInstagram";
-import CarruselTestimonios from "../../component/testimonio/CarruselTestimonios";
-import Servicios from "../../component/servicios/Servicios";
-import TrabajaConNosotros from "../../component/trabajaConNosotros/TrabajaConNosotros";
-import Footer from "../../component/footer/Footer";
-import CategoriasDestacadas from "../../component/categoria/categoriasDestacadas/CategoriasDestacadas";
+import Testimonio from "../../component/dashboard/testimonio/Testimonio";
+import GaleriaInstagram from "../../component/dashboard/galeriaInstagram/GaleriaInstagram";
+import CarruselTestimonios from "../../component/dashboard/testimonio/CarruselTestimonios";
+import Servicios from "../../component/dashboard/servicios/Servicios";
+import TrabajaConNosotros from "../../component/dashboard/trabajaConNosotros/TrabajaConNosotros";
+import Footer from "../../component/dashboard/footer/Footer";
+import CategoriasDestacadas from "../../component/dashboard/categoria/categoriasDestacadas/CategoriasDestacadas";
 
 const Home = () => {
   const [productos, setProductos] = useState([]);
@@ -87,6 +87,8 @@ const Home = () => {
       <CarruselTestimonios />
       <GaleriaInstagram />
       <Servicios />
+      <Testimonio/>
+      <CategoryItem/>
       <TrabajaConNosotros />
       <Footer />
     </div>

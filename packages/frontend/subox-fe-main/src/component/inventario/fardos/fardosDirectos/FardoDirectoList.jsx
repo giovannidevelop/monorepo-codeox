@@ -3,6 +3,7 @@ import styles from "./FardoDirectoList.module.css";
 import FardoMenu from "../FardoMenu";
 import EditarFardoModal from "../modal/EditarFardoModal";
 import CrearFardoArmadoModal from "../modal/CrearFardoArmadoModal";
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 
 const FardoDirectoList = () => {
   const [fardos, setFardos] = useState([]);
@@ -23,7 +24,7 @@ const FardoDirectoList = () => {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch("http://localhost:3001/fardosDirectos")
+    fetch(BASE_URL+"/fardosDirectos")
 
       .then((res) => res.json())
       .then((data) => setFardos(data))

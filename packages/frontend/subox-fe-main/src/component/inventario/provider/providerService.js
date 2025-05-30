@@ -1,6 +1,7 @@
 // src/provider/providerService.js
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 
-const API_URL = "http://localhost:3001/proveedores";
+const API_URL = BASE_URL+"/proveedores";
 
 export async function getProveedores() {
   const res = await fetch(API_URL);

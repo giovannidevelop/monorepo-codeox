@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { eliminarProducto, limpiarCarrito } from "./../../app/redux/reducers/carritoReducer";
+import { eliminarProducto, limpiarCarrito } from "../../../app/redux/reducers/carritoReducer";
 import "./carrito.scss";
 
 const Carrito = () => {

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Profile = () => {
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({
     name:  "",
@@ -44,7 +46,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        "http://localhost:7000/api/users/update-profile",
+        BASE_URL+"api/users/update-profile",
         { ...formData },
         {
           headers: {
