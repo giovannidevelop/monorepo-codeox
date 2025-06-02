@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./FardoDirectoList.module.css";
-import FardoMenu from "../FardoMenu";
-import EditarFardoModal from "../modal/EditarFardoModal";
+import FardoMenu from "../../fardos/FardoMenu";
 import CrearFardoArmadoModal from "../modal/CrearFardoArmadoModal";
 const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 

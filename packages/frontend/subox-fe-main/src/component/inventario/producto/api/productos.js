@@ -1,8 +1,5 @@
-// src/api/clientes.js
 
-// 1) CRA carga esta variable desde .env.development / .env.production
-//    Si está vacía, BASE_URL = '' y usamos rutas relativas.
-const BASE_URL = (process.env.REACT_APP_CLIENTES_API_URL || '').replace(/\/+$/, '');
+const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 
 async function request(path, options = {}) {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -30,25 +27,25 @@ async function request(path, options = {}) {
 
 
 export function getClientes() {
-  return request('/api/clientes');
+  return request('/productos');
 }
-export function createCliente(cliente) {
-  return request('/api/clientes', {
+export function createCliente(producto) {
+  return request('/productos', {
     method: 'POST',
-    body: JSON.stringify(cliente),
+    body: JSON.stringify(producto),
   });
 }
-export function updateCliente(id, cliente) {
-  return request(`/api/clientes/${id}`, {
+export function updateCliente(id, producto) {
+  return request(`/productos/${id}`, {
     method: 'PUT',
-    body: JSON.stringify(cliente),
+    body: JSON.stringify(producto),
   });
 }
 export function deleteCliente(id) {
-  return request(`/api/clientes/${id}`, {
+  return request(`/productos/${id}`, {
     method: 'DELETE',
   }).catch((err) => {
-    console.error('Error al eliminar cliente:', err); // Aquí vemos el error completo
+    console.error('Error al eliminar producto:', err); // Aquí vemos el error completo
     throw err; // Vuelve a lanzar el error para que sea manejado en el frontend
   });
 }
