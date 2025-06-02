@@ -1,0 +1,1689 @@
+
+> subox-fe-main@0.1.0 start
+> react-scripts start
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:18231) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18231) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view subox-fe-main in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.1.93:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve './api/productos' in '/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto'
+ERROR in ./src/component/inventario/producto/ProductoList.jsx 12:0-91
+Module not found: Error: Can't resolve './api/productos' in '/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto'
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+Can't import the named export 'getClientes' (imported as 'getClientes') from default-exporting module (only default export is available)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx 59:25-36
+Can't import the named export 'getClientes' (imported as 'getClientes') from default-exporting module (only default export is available)
+
+ERROR in ./src/component/inventario/producto/ProductoList.jsx 112:29-42
+Can't import the named export 'updateCliente' (imported as 'updateCliente') from default-exporting module (only default export is available)
+
+ERROR in ./src/component/inventario/producto/ProductoList.jsx 125:28-41
+Can't import the named export 'createCliente' (imported as 'createCliente') from default-exporting module (only default export is available)
+
+ERROR in ./src/component/inventario/producto/ProductoList.jsx 158:29-42
+Can't import the named export 'deleteCliente' (imported as 'deleteCliente') from default-exporting module (only default export is available)
+
+webpack compiled with 4 errors
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:5:  Duplicate key 'nombre'  no-dupe-keys
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:5:  Duplicate key 'nombre'  no-dupe-keys
+
+webpack compiled with 1 warning
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'  no-dupe-keys
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'  no-dupe-keys
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'     no-dupe-keys
+  Line 27:1:  Duplicate key 'categoria'  no-dupe-keys
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'     no-dupe-keys
+  Line 27:1:  Duplicate key 'categoria'  no-dupe-keys
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'     no-dupe-keys
+  Line 27:1:  Duplicate key 'categoria'  no-dupe-keys
+  Line 28:1:  Duplicate key 'imagen'     no-dupe-keys
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 26:1:  Duplicate key 'precio'     no-dupe-keys
+  Line 27:1:  Duplicate key 'categoria'  no-dupe-keys
+  Line 28:1:  Duplicate key 'imagen'     no-dupe-keys
+
+webpack compiled with 1 warning
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: The type cast expression is expected to be wrapped with parenthesis. (77:14) (77:14)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+  75 |   // Filtrado
+  76 |   const filtered = productos.filter((c) =>
+> 77 |         nombre: "",
+     |               ^
+  78 |     precio: "",
+  79 |     categoria: "",
+  80 |     imagen: "",
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.toReferencedList (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5356:14)
+    at FlowParserMixin.toReferencedListDeep (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:7128:10)
+    at FlowParserMixin.toReferencedArguments (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10714:10)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10708:12)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10631:19)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5779:18)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10604:19)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5745:18)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10595:17)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseVar (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12864:91)
+    at FlowParserMixin.parseVarStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12710:10)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12326:23)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 77:14:  Parsing error: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: The type cast expression is expected to be wrapped with parenthesis. (77:14) (77:14)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+  75 |   // Filtrado
+  76 |   const filtered = productos.filter((c) =>
+> 77 |         nombre: "",
+     |               ^
+  78 |     precio: "",
+  79 |     categoria: "",
+  80 |     imagen: "",
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.toReferencedList (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5356:14)
+    at FlowParserMixin.toReferencedListDeep (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:7128:10)
+    at FlowParserMixin.toReferencedArguments (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10714:10)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10708:12)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10631:19)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5779:18)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10604:19)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5745:18)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10595:17)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseVar (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12864:91)
+    at FlowParserMixin.parseVarStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12710:10)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12326:23)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 77:14:  Parsing error: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: The type cast expression is expected to be wrapped with parenthesis. (77:14) (77:14)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+  75 |   // Filtrado
+  76 |   const filtered = productos.filter((c) =>
+> 77 |         nombre: "",
+     |               ^
+  78 |     precio: "",
+  79 |     categoria: "",
+  80 |     imagen: "",
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.toReferencedList (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5356:14)
+    at FlowParserMixin.toReferencedListDeep (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:7128:10)
+    at FlowParserMixin.toReferencedArguments (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10714:10)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10708:12)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10631:19)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5779:18)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10604:19)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5745:18)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10595:17)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseVar (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12864:91)
+    at FlowParserMixin.parseVarStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12710:10)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12326:23)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 77:14:  Parsing error: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: The type cast expression is expected to be wrapped with parenthesis. (77:14) (77:14)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+  75 |   // Filtrado
+  76 |   const filtered = productos.filter((c) =>
+> 77 |         nombre: "",
+     |               ^
+  78 |     precio: "",
+  79 |     categoria: "",
+  80 |     imagen: "",
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.toReferencedList (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5356:14)
+    at FlowParserMixin.toReferencedListDeep (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:7128:10)
+    at FlowParserMixin.toReferencedArguments (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10714:10)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10708:12)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10631:19)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5779:18)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10604:19)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5745:18)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10595:17)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseVar (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12864:91)
+    at FlowParserMixin.parseVarStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12710:10)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12326:23)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 77:14:  Parsing error: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: The type cast expression is expected to be wrapped with parenthesis. (77:14) (77:14)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+  75 |   // Filtrado
+  76 |   const filtered = productos.filter((c) =>
+> 77 |         nombre: "",
+     |               ^
+  78 |     precio: "",
+  79 |     categoria: "",
+  80 |     imagen: "",
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.toReferencedList (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5356:14)
+    at FlowParserMixin.toReferencedListDeep (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:7128:10)
+    at FlowParserMixin.toReferencedArguments (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10714:10)
+    at FlowParserMixin.parseCoverCallAndAsyncArrowHead (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10708:12)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10631:19)
+    at FlowParserMixin.parseSubscript (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5779:18)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10604:19)
+    at FlowParserMixin.parseSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5745:18)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10595:17)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseVar (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12864:91)
+    at FlowParserMixin.parseVarStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12710:10)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12326:23)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 77:14:  Parsing error: The type cast expression is expected to be wrapped with parenthesis. (77:14)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Unexpected token (259:45) (259:45)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Unexpected token (259:45)
+
+  257 |                 <td style={styles.td}>{c.precio}</td>
+  258 |                 <td style={styles.td}>{c.categoria}</td>
+> 259 |                 <td style={styles.td}><image </td>
+      |                                              ^
+  260 |                 <td style={{ ...styles.td, position: 'relative' }}>
+  261 |                   <button
+  262 |                     ref={(el) => (menuRefs.current[c.id] = el)}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.unexpected (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3279:16)
+    at FlowParserMixin.jsxParseIdentifier (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6616:12)
+    at FlowParserMixin.jsxParseNamespacedName (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6623:23)
+    at FlowParserMixin.jsxParseAttribute (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6699:22)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6714:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6709:17)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6733:33)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:45:  Parsing error: Unexpected token (259:45)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Expected corresponding JSX closing tag for <>. (259:41) (259:41)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Expected corresponding JSX closing tag for <>. (259:41)
+
+  257 |                 <td style={styles.td}>{c.precio}</td>
+  258 |                 <td style={styles.td}>{c.categoria}</td>
+> 259 |                 <td style={styles.td}><> </td>
+      |                                          ^
+  260 |                 <td style={{ ...styles.td, position: 'relative' }}>
+  261 |                   <button
+  262 |                     ref={(el) => (menuRefs.current[c.id] = el)}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6767:14)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:41:  Parsing error: Expected corresponding JSX closing tag for <>. (259:41)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Expected corresponding JSX closing tag for <Im>. (259:43) (259:43)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Expected corresponding JSX closing tag for <Im>. (259:43)
+
+  257 |                 <td style={styles.td}>{c.precio}</td>
+  258 |                 <td style={styles.td}>{c.categoria}</td>
+> 259 |                 <td style={styles.td}><Im> </td>
+      |                                            ^
+  260 |                 <td style={{ ...styles.td, position: 'relative' }}>
+  261 |                   <button
+  262 |                     ref={(el) => (menuRefs.current[c.id] = el)}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6774:16)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:43:  Parsing error: Expected corresponding JSX closing tag for <Im>. (259:43)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Expected corresponding JSX closing tag for <Image>. (259:46) (259:46)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Expected corresponding JSX closing tag for <Image>. (259:46)
+
+  257 |                 <td style={styles.td}>{c.precio}</td>
+  258 |                 <td style={styles.td}>{c.categoria}</td>
+> 259 |                 <td style={styles.td}><Image> </td>
+      |                                               ^
+  260 |                 <td style={{ ...styles.td, position: 'relative' }}>
+  261 |                   <button
+  262 |                     ref={(el) => (menuRefs.current[c.id] = el)}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6774:16)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:46:  Parsing error: Expected corresponding JSX closing tag for <Image>. (259:46)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Expected corresponding JSX closing tag for <Image>. (259:47) (259:47)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Expected corresponding JSX closing tag for <Image>. (259:47)
+
+  257 |                 <td style={styles.td}>{c.precio}</td>
+  258 |                 <td style={styles.td}>{c.categoria}</td>
+> 259 |                 <td style={styles.td}><Image > </td>
+      |                                                ^
+  260 |                 <td style={{ ...styles.td, position: 'relative' }}>
+  261 |                   <button
+  262 |                     ref={(el) => (menuRefs.current[c.id] = el)}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6774:16)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:47:  Parsing error: Expected corresponding JSX closing tag for <Image>. (259:47)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 259:40:  'Image' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Unexpected token (261:38) (261:38)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Unexpected token (261:38)
+
+  259 |                 <td style={styles.td}>
+  260 |                   {console.log(c.imagen)}
+> 261 |                   <img src=" alt="Test" style={{ width: '100px' }} />
+      |                                       ^
+  262 |                   <img src="https://picsum.photos/300/200?random=1" alt="Test" style={{ width: '100px' }} />
+  263 |                 </td>
+  264 |                 <td style={{ ...styles.td, position: 'relative' }}>
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.unexpected (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3279:16)
+    at FlowParserMixin.jsxParseIdentifier (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6616:12)
+    at FlowParserMixin.jsxParseNamespacedName (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6623:23)
+    at FlowParserMixin.jsxParseAttribute (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6699:22)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6714:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6709:17)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6733:33)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 261:38:  Parsing error: Unexpected token (261:38)
+
+webpack compiled with 2 errors
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/producto/ProductoList.jsx
+Syntax error: Unexpected token, expected "}" (261:31) (261:31)
+ERROR in ./src/component/inventario/producto/ProductoList.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/producto/ProductoList.jsx: Unexpected token, expected "}" (261:31)
+
+  259 |                 <td style={styles.td}>
+  260 |                   {console.log(c.imagen)}
+> 261 |                   <img src={{} alt="Test" style={{ width: '100px' }} />
+      |                                ^
+  262 |                   <img src="https://picsum.photos/300/200?random=1" alt="Test" style={{ width: '100px' }} />
+  263 |                 </td>
+  264 |                 <td style={{ ...styles.td, position: 'relative' }}>
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.unexpected (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3279:16)
+    at FlowParserMixin.expect (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3589:12)
+    at FlowParserMixin.jsxParseExpressionContainer (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6684:10)
+    at FlowParserMixin.jsxParseAttributeValue (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6651:21)
+    at FlowParserMixin.jsxParseAttribute (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6700:38)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6714:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6709:17)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6733:33)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11613:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+
+ERROR in [eslint] 
+src/component/inventario/producto/ProductoList.jsx
+  Line 261:31:  Parsing error: Unexpected token, expected "}" (261:31)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 15:45:  'handleSelectChange' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+ERROR in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 15:45:  'handleSelectChange' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+Attempted import error: '../../component/inventario/tabs/TabSwitcher' does not contain a default export (imported as 'TabSwitcher').
+ERROR in ./src/pages/inventario/Inventory.js 14:35-46
+export 'default' (imported as 'TabSwitcher') was not found in '../../component/inventario/tabs/TabSwitcher' (module has no exports)
+
+ERROR in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 4:14:   'activeTab' is not defined              no-undef
+  Line 5:24:   'setActiveTab' is not defined           no-undef
+  Line 6:42:   'activeTab' is not defined              no-undef
+  Line 14:24:  'activeTab' is not defined              no-undef
+  Line 14:94:  'setActiveTab' is not defined           no-undef
+  Line 15:24:  'activeTab' is not defined              no-undef
+  Line 15:84:  'setActiveTab' is not defined           no-undef
+  Line 16:24:  'activeTab' is not defined              no-undef
+  Line 16:84:  'setActiveTab' is not defined           no-undef
+  Line 17:24:  'activeTab' is not defined              no-undef
+  Line 17:85:  'setActiveTab' is not defined           no-undef
+  Line 21:6:   'activeTab' is not defined              no-undef
+  Line 21:35:  'FardoDirectoList' is not defined       react/jsx-no-undef
+  Line 21:64:  'searchTerm' is not defined             no-undef
+  Line 22:6:   'activeTab' is not defined              no-undef
+  Line 23:6:   'activeTab' is not defined              no-undef
+  Line 24:6:   'activeTab' is not defined              no-undef
+  Line 25:6:   'activeTab' is not defined              no-undef
+  Line 25:48:  'EstadisticasDashboard' is not defined  react/jsx-no-undef
+  Line 25:82:  'searchTerm' is not defined             no-undef
+  Line 26:6:   'activeTab' is not defined              no-undef
+  Line 26:38:  'ClienteList' is not defined            react/jsx-no-undef
+  Line 26:62:  'searchTerm' is not defined             no-undef
+  Line 27:6:   'activeTab' is not defined              no-undef
+  Line 27:38:  'ProviderTable' is not defined          react/jsx-no-undef
+  Line 27:64:  'searchTerm' is not defined             no-undef
+  Line 28:6:   'activeTab' is not defined              no-undef
+  Line 28:39:  'ProductoList' is not defined           react/jsx-no-undef
+  Line 28:64:  'searchTerm' is not defined             no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 2:8:   'EstadisticasDashboard' is defined but never used        no-unused-vars
+  Line 3:8:   'ClienteList' is defined but never used                  no-unused-vars
+  Line 4:8:   'FardoDirectoList' is defined but never used             no-unused-vars
+  Line 5:8:   'ProviderTable' is defined but never used                no-unused-vars
+  Line 6:8:   'ProductoList' is defined but never used                 no-unused-vars
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 2:8:   'EstadisticasDashboard' is defined but never used        no-unused-vars
+  Line 3:8:   'ClienteList' is defined but never used                  no-unused-vars
+  Line 4:8:   'FardoDirectoList' is defined but never used             no-unused-vars
+  Line 5:8:   'ProviderTable' is defined but never used                no-unused-vars
+  Line 6:8:   'ProductoList' is defined but never used                 no-unused-vars
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 2:8:   'EstadisticasDashboard' is defined but never used        no-unused-vars
+  Line 3:8:   'ClienteList' is defined but never used                  no-unused-vars
+  Line 4:8:   'FardoDirectoList' is defined but never used             no-unused-vars
+  Line 5:8:   'ProviderTable' is defined but never used                no-unused-vars
+  Line 6:8:   'ProductoList' is defined but never used                 no-unused-vars
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 2:8:   'EstadisticasDashboard' is defined but never used        no-unused-vars
+  Line 3:8:   'ClienteList' is defined but never used                  no-unused-vars
+  Line 4:8:   'FardoDirectoList' is defined but never used             no-unused-vars
+  Line 5:8:   'ProviderTable' is defined but never used                no-unused-vars
+  Line 6:8:   'ProductoList' is defined but never used                 no-unused-vars
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+Syntax error: Unterminated JSX contents. (50:10) (50:10)
+ERROR in ./src/component/inventario/tabs/TabSwitcher.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/tabs/TabSwitcher.jsx: Unterminated JSX contents. (50:10)
+
+  48 |         {activeTab === "ReservaMesas" && <div>Sección Reserva de Mesas (pendiente)</div>}
+  49 |       </div>
+> 50 |     </div>
+     |           ^
+  51 |   );
+  52 | };
+  53 |
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxReadToken (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6495:20)
+    at FlowParserMixin.getTokenFromCode (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6821:12)
+    at FlowParserMixin.getTokenFromCode (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5326:13)
+    at FlowParserMixin.nextToken (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:2443:10)
+    at FlowParserMixin.next (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:2356:10)
+    at FlowParserMixin.eat (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:2360:12)
+    at FlowParserMixin.expect (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3588:15)
+    at FlowParserMixin.jsxParseClosingElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6727:10)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6742:37)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6745:32)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseExpressionBase (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10309:23)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10305:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10305:17)
+    at FlowParserMixin.parseReturnStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12622:28)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12274:21)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+
+ERROR in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 50:10:  Parsing error: Unterminated JSX contents. (50:10)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+Syntax error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (37:6) (37:6)
+ERROR in ./src/component/inventario/tabs/TabSwitcher.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/src/component/inventario/tabs/TabSwitcher.jsx: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (37:6)
+
+  35 |       </div>
+  36 |
+> 37 |       <div className="tab-content">
+     |       ^
+  38 |         {activeTab === "MainMenu" && <FardoDirectoList searchTerm={searchTerm} />}
+  39 |         {activeTab === "EstadisticasDashboard" && <EstadisticasDashboard searchTerm={searchTerm} />}
+  40 |         {activeTab === "ClienteList" && <ClienteList searchTerm={searchTerm} />}
+    at constructor (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:362:19)
+    at FlowParserMixin.raise (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3259:19)
+    at FlowParserMixin.jsxParseElementAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6789:18)
+    at FlowParserMixin.jsxParseElement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6796:17)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6806:19)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:39
+    at FlowParserMixin.tryParse (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:3597:20)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5627:18)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11937:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10325:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11196:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:6811:20)
+    at FlowParserMixin.parseExprSubscripts (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10591:23)
+    at FlowParserMixin.parseUpdate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10576:21)
+    at FlowParserMixin.parseMaybeUnary (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10556:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10410:61)
+    at FlowParserMixin.parseExprOps (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10415:23)
+    at FlowParserMixin.parseMaybeConditional (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10392:23)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10355:21)
+    at FlowParserMixin.parseMaybeAssign (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5678:18)
+    at FlowParserMixin.parseExpressionBase (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10309:23)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10305:39
+    at FlowParserMixin.allowInAnd (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11932:16)
+    at FlowParserMixin.parseExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10305:17)
+    at FlowParserMixin.parseReturnStatement (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12622:28)
+    at FlowParserMixin.parseStatementContent (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12274:21)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12243:17)
+    at FlowParserMixin.parseStatementLike (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5047:24)
+    at FlowParserMixin.parseStatementListItem (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12223:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12796:61)
+    at FlowParserMixin.parseBlockBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12789:10)
+    at FlowParserMixin.parseBlock (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:12777:10)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11620:24)
+    at /home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:63
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5197:16)
+    at FlowParserMixin.parseFunctionBody (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5021:12)
+    at FlowParserMixin.parseArrowExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11595:10)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:11208:12)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:5720:18)
+    at FlowParserMixin.parseExprAtom (/home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@babel/parser/lib/index.js:10849:23)
+
+ERROR in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 37:6:  Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (37:6)
+
+webpack compiled with 2 errors
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/component/inventario/tabs/TabSwitcher.jsx
+  Line 11:9:  'handleSelectChange' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning

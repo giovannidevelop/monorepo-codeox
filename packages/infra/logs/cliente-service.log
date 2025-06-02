@@ -1,0 +1,134 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mcom.subox.inventario:cliente-service[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding cliente-service 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.4.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mcliente-service[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mcliente-service[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36mcliente-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mcliente-service[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36mcliente-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.4.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mcliente-service[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.4.5:run[m [1m(default-cli)[m @ [36mcliente-service[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-06-02T11:54:52.034-04:00  INFO 18405 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : Starting ClienteServiceApplication using Java 17.0.15 with PID 18405 (/home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service/target/classes started by giovanni in /home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service)
+2025-06-02T11:54:52.037-04:00  INFO 18405 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-06-02T11:54:52.083-04:00  INFO 18405 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-02T11:54:52.083-04:00  INFO 18405 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-02T11:54:52.870-04:00  INFO 18405 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-02T11:54:52.922-04:00  INFO 18405 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2025-06-02T11:54:53.433-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5000 (http)
+2025-06-02T11:54:53.453-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-02T11:54:53.454-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-02T11:54:53.486-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-02T11:54:53.488-04:00  INFO 18405 --- [cliente-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1404 ms
+2025-06-02T11:54:53.615-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-02T11:54:53.660-04:00  INFO 18405 --- [cliente-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-02T11:54:53.686-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-02T11:54:53.943-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-02T11:54:53.970-04:00  INFO 18405 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-02T11:54:54.181-04:00  INFO 18405 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dd5f74e
+2025-06-02T11:54:54.182-04:00  INFO 18405 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-02T11:54:54.314-04:00  INFO 18405 --- [cliente-service] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-02T11:54:54.913-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-02T11:54:55.032-04:00  INFO 18405 --- [cliente-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02T11:54:55.362-04:00  WARN 18405 --- [cliente-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-02T11:54:55.429-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-02T11:54:55.815-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-02T11:54:55.836-04:00  INFO 18405 --- [cliente-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5000 (http) with context path '/'
+2025-06-02T11:54:55.844-04:00  INFO 18405 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : Started ClienteServiceApplication in 4.262 seconds (process running for 4.705)
+2025-06-02T11:55:05.317-04:00  INFO 18405 --- [cliente-service] [nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02T11:55:05.317-04:00  INFO 18405 --- [cliente-service] [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-02T11:55:05.319-04:00  INFO 18405 --- [cliente-service] [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+Hibernate: select ce1_0.id,ce1_0.direccion,ce1_0.email,ce1_0.nombre,ce1_0.rut,ce1_0.telefono from clientes ce1_0
+2025-06-02T12:38:31.054-04:00  INFO 18405 --- [cliente-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-02T12:38:31.058-04:00  INFO 18405 --- [cliente-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-02T12:38:31.061-04:00  INFO 18405 --- [cliente-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02T12:38:31.065-04:00  INFO 18405 --- [cliente-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-02T12:38:31.067-04:00  INFO 18405 --- [cliente-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  43:42 min
+[[1;34mINFO[m] Finished at: 2025-06-02T12:38:31-04:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
