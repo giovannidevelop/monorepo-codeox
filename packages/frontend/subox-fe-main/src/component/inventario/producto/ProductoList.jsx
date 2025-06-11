@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import HistorialClienteModal from "./modal/HistorialClienteModal";
 import EtiquetaClienteModal from "./modal/EtiquetaClienteModal";
-import ClienteFormModal from "./modal/ClienteFormModal";
+import ProductoFormModal from "./modal/ProductoFormModal";
 import ClienteMenuModal from "./modal/ClienteMenuModal";
 import ConfirmModal from "../../common/modal/ConfirmModal";
 import AlertModal from "../../common/modal/AlertModal";
@@ -11,12 +11,14 @@ import {
   updateCliente,
   deleteCliente,
 } from "./api/productos";
-
+import BarcodeScanner from './BarcodeScanner';
 const ProductoList = () => {
   const [productos, setProductos] = useState([]);
   const [editing, setEditing] = useState(null);
   const [productoRegistrado, setProductoRegistrado] = useState(null);
+  const columns = ['id', 'codigoBarras', 'nombre', 'descripcion', 'precioCompra', 'precioVenta', 'stock', 'fechaIngreso'];
 
+  const [scanned, setScanned] = useState('');
   const [filters, setFilters] = useState({
     nombre: "",
     precio: "",
@@ -30,7 +32,7 @@ const ProductoList = () => {
 
   // Estados para los modales y otras variables
   const [modals, setModals] = useState({
-    clienteFormModal: false,     // Modal para agregar/editar producto
+    productoFormModal: false,     // Modal para agregar/editar producto
     clienteHistorialModal: false, // Modal para ver historial de producto
     clienteEtiquetaModal: false, // Modal para agregar etiqueta a producto
     modalMenuAcciones: false, // Modal para acciones de producto
@@ -116,7 +118,7 @@ const ProductoList = () => {
         setEditing(null);
         setModals((prevState) => ({
           ...prevState,
-          clienteFormModal: false,  // Cerrar el modal de producto
+          productoFormModal: false,  // Cerrar el modal de producto
           alertMessage: "producto Editado correctamente.", // Mostrar mensaje de éxito
         }));
       } else {
@@ -129,7 +131,7 @@ const ProductoList = () => {
         // Actualizamos todos los modales a la vez
         setModals((prevState) => ({
           ...prevState,
-          clienteFormModal: false,  // Cerrar el modal de producto
+          productoFormModal: false,  // Cerrar el modal de producto
           alertMessage: "producto registrado correctamente.", // Mostrar mensaje de éxito
         }));
 
@@ -178,7 +180,7 @@ const ProductoList = () => {
   // Cerrar todos los modales
   const closeAllModals = () => {
     setModals({
-      clienteFormModal: false,
+      productoFormModal: false,
       modalMenuAcciones: false,
       clienteHistorialModal: false,
       clienteEtiquetaModal: false,
@@ -212,24 +214,27 @@ const ProductoList = () => {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <ClienteFormModal
-        isOpen={modals.clienteFormModal}
-        onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}
+      <ProductoFormModal
+        isOpen={modals.productoFormModal}
+        onClose={() => setModals((prevState) => ({ ...prevState, productoFormModal: false }))}
         initialData={editing || {}}
         onSave={handleSave}
       />
 
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
-        <button onClick={() => setModals((prevState) => ({ ...prevState, clienteFormModal: true }))} style={styles.btnAdd}>
+        <button onClick={() => setModals((prevState) => ({ ...prevState, productoFormModal: true }))} style={styles.btnAdd}>
           ➕ Agregar producto
         </button>
       </div>
-
+      <div>
+        <BarcodeScanner/>
+       
+      </div>
       <div style={styles.tableContainer}>
         <table style={styles.table}>
           <thead>
             <tr>
-              {['id', 'nombre', 'precio', 'categoria', 'imagen',].map((col) => (
+              {columns.map((col) => (
                 <th key={col} style={styles.th}>
                   <label style={styles.label} onClick={() => handleSort(col)}>
                     {col.toUpperCase()} {sortKey === col ? (sortOrder === "asc" ? '🔼' : '🔽') : null}
@@ -254,11 +259,12 @@ const ProductoList = () => {
               <tr key={c.id} style={{ backgroundColor: i % 2 === 0 ? '#fdfdfd' : '#f7f7f7' }}>
                 <td style={styles.td}>{c.id}</td>
                 <td style={styles.td}>{c.nombre}</td>
-                <td style={styles.td}>{c.precio}</td>
-                <td style={styles.td}>{c.categoria}</td>
-                <td style={styles.td}>
-                  <img src={c.imagen} alt="Test" style={{ width: '100px' }} />
-                </td>
+                <td style={styles.td}>{c.codigoBarras}</td>
+                <td style={styles.td}>{c.descripcion}</td>
+                <td style={styles.td}>{c.precioCompra}</td>
+                <td style={styles.td}>{c.precioVenta}</td>
+                <td style={styles.td}>{c.stock}</td>
+                <td style={styles.td}>{c.fechaIngreso}</td>
                 <td style={{ ...styles.td, position: 'relative' }}>
                   <button
                     ref={(el) => (menuRefs.current[c.id] = el)}
@@ -275,7 +281,7 @@ const ProductoList = () => {
                       setModals((prevState) => ({
                         ...prevState,
                         modalMenuAcciones: false,
-                        clienteFormModal: true,
+                        productoFormModal: true,
                       }));
                     }}
                     onDelete={() => {

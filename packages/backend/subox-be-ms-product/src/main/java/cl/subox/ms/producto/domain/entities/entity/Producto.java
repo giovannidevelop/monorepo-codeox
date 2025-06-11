@@ -1,39 +1,38 @@
 package cl.subox.ms.producto.domain.entities.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import java.util.Collection;
-import java.util.List;
+
+import lombok.Data;
 
 @Entity
-@Table(name = "producto")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Builder
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String titulo;
-    private double precio;
-    private String description;
-    private boolean habilitado;
+    private String id;
 
+    private String nombre;
+    private String descripcion;
+    private double precioCompra;
+    private double precioVenta;
+    private int stock;
+    private LocalDate fechaIngreso;
 
     @ManyToOne
-    @JoinColumn(name = "sub_categoria_id")
-    private SubCategoria subCategoria;
+    private Categoria categoria;
+
+    @ManyToOne
+    private Proveedor proveedor;
+
+    @ManyToOne
+    private Marca marca;
+
+    @ManyToOne
+    private EstadoProducto estado;
+
+    @ManyToOne
+    private Ubicacion ubicacion;
 }

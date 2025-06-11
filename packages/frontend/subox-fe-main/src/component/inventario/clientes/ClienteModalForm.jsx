@@ -66,10 +66,10 @@ const ClienteModalForm = ({ isOpen, onClose, initialData = {}, onSave }) => {
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]{2,80}$/.test(valueToCheck)) error = "Nombre inválido.";
         break;
       case "telefono":
-        if (!/^[2-9]\d{7,8}$/.test(valueToCheck.replace(/\D/g, ""))) error = "Teléfono inválido.";
+        //if (!/^[2-9]\d{7,8}$/.test(valueToCheck.replace(/\D/g, ""))) error = "Teléfono inválido.";
         break;
       case "email":
-        if (!/^\S+@\S+\.\S+$/.test(valueToCheck)) error = "Correo electrónico inválido.";
+        //if (!/^\S+@\S+\.\S+$/.test(valueToCheck)) error = "Correo electrónico inválido.";
         break;
       case "direccion":
         if (!/^[\w\s#ºª.,áéíóúÁÉÍÓÚñÑ\-]{5,100}$/.test(valueToCheck)) error = "Dirección inválida.";

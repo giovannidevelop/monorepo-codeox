@@ -23,5 +23,4 @@ modules by path ./src/ 18.2 KiB
   modules by path ./src/*.css 14.8 KiB
     ./src/index.css 2.37 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/index.css 12.4 KiB [built] [code generated]
-webpack 5.99.5 compiled successfully in 2624 ms
-<i> [webpack-dev-server] Gracefully shutting down. To force exit, press ^C again. Please wait...
+webpack 5.99.5 compiled successfully in 14631 ms

@@ -1,5 +1,5 @@
 
-const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+const BASE_URL = (process.env.REACT_APP_API_URL_PRODUCTOS || '').replace(/\/+$/, '');
 
 async function request(path, options = {}) {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -21,7 +21,8 @@ async function request(path, options = {}) {
   if (res.status === 204) {
     return null; // Retornar null cuando la respuesta no tiene contenido
   }
-
+  console.log(res);
+  
   return res.json(); // Si la respuesta tiene contenido, procesarla como JSON
 }
 

@@ -3,6 +3,10 @@
 # Carpeta de logs
 mkdir -p logs
 
+# Iniciar MySQL
+echo "Iniciando servicio MySQL..."
+echo "Azl512la." | sudo -S systemctl start mysql
+
 # Lanzar subox-fe-main (npm start)
 (
   cd ../frontend/subox-fe-main || exit 1
@@ -24,6 +28,13 @@ mkdir -p logs
   mvn spring-boot:run > ../../infra/logs/cliente-service.log 2>&1
 ) &
 
+# Lanzar producto-service (mvn spring-boot:run)
+(
+  cd ../backend/producto-service || exit 1
+  echo "Iniciando producto-service (mvn spring-boot:run)..."
+  mvn spring-boot:run > ../../infra/logs/producto-service.log 2>&1
+) &
+
 # Lanzar json-server (instalar si no está)
 (
   cd ../frontend/subox-fe-main || exit 1
@@ -40,9 +51,3 @@ echo "Revisa los archivos en packages/infra/logs/*.log para ver la salida de cad
 echo "Presiona Ctrl+C para detener todo."
 
 wait
-
-#tail -f logs/subox-fe-main.log
-#tail -f logs/subox-fe-portafolio.log
-#tail -f logs/cliente-service.log
-
-
