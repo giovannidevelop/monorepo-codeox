@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 import com.subox.inventario.cliente_service.adapter.out.persistence.entity.ClienteEntity;
 import com.subox.inventario.cliente_service.adapter.out.persistence.jpa.ClienteJpaRepository;
-import com.subox.inventario.cliente_service.domain.model.Cliente;
-import com.subox.inventario.cliente_service.port.out.ClienteRepositoryPort;
+import com.subox.inventario.cliente_service.domain.model.actores.Cliente;
+import com.subox.inventario.cliente_service.port.out.cliente.ClienteRepositoryPort;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,23 +22,12 @@ public class ClienteRepositoryAdapter implements ClienteRepositoryPort {
 
     private Cliente mapToModel(ClienteEntity entity) {
         return new Cliente(
-            entity.getId(),
-            entity.getNombre(),
-            entity.getRut(),
-            entity.getTelefono(),
-            entity.getEmail(),
-            entity.getDireccion()
         );
     }
 
     private ClienteEntity mapToEntity(Cliente cliente) {
         return new ClienteEntity(
-            cliente.getId(),
-            cliente.getNombre(),
-            cliente.getRut(),
-            cliente.getTelefono(),
-            cliente.getEmail(),
-            cliente.getDireccion()
+      
         );
     }
 

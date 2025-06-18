@@ -18,7 +18,7 @@ echo "Azl512la." | sudo -S systemctl start mysql
 (
   cd ../frontend/subox-fe-portafolio || exit 1
   echo "Iniciando subox-fe-portafolio (npm start)..."
-  npm start > ../../infra/logs/subox-fe-portafolio.log 2>&1
+  #npm start > ../../infra/logs/subox-fe-portafolio.log 2>&1
 ) &
 
 # Lanzar cliente-service (mvn spring-boot:run)
