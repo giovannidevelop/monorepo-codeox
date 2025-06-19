@@ -1,0 +1,40 @@
+/* src/components/UbicacionForm.css */
+
+.ubicacion-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.ubicacion-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.ubicacion-form select,
+.ubicacion-form input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: white;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.ubicacion-form select:focus,
+.ubicacion-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.ubicacion-form div {
+  display: flex;
+  flex-direction: column;
+}

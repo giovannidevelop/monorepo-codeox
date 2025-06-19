@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class UbicacionUseCaseImpl implements UbicacionUseCase {
 
     private final UbicacionRepositoryPort repository;
-    private final UbicacionValidador validador; // servicio externo
+    private final UbicacionValidador validador; 
 
     @Override
     public Ubicacion crear(Ubicacion ubicacion) {
@@ -42,7 +42,7 @@ public class UbicacionUseCaseImpl implements UbicacionUseCase {
     }
 
     @Override
-    public List<Ubicacion> listarTodas() {
+    public List<Ubicacion> findAll() {
         return repository.buscarTodas();
     }
 

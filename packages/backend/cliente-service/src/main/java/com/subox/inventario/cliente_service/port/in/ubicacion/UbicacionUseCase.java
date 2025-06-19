@@ -13,7 +13,7 @@ public interface UbicacionUseCase {
 
     void eliminar(Long id);
 
-    List<Ubicacion> listarTodas();
+    List<Ubicacion> findAll();
 
     Optional<Ubicacion> buscarPorId(Long id);
 

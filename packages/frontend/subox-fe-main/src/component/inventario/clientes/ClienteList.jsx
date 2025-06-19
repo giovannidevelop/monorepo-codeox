@@ -11,11 +11,18 @@ import {
   updateCliente,
   deleteCliente,
 } from "./api/clientes";
-
+import UbicacionForm from "../../common/ubicacion/UbicacionForm";
+import { emptyUbicacion } from "../../common/ubicacion/models/ubicacionTypes";
 const ClienteList = () => {
   const [clientes, setClientes] = useState([]);
   const [editing, setEditing] = useState(null);
   const [clienteRegistrado, setClienteRegistrado] = useState(null); // Estado para almacenar el cliente registrado
+  const [ubicacion, setUbicacion] = useState(emptyUbicacion);
+
+  const handleSubmit = () => {
+    console.log("Ubicación a guardar:", ubicacion);
+    // Enviar al backend
+  };
 
   const [filters, setFilters] = useState({
     nombre: "",
@@ -212,6 +219,10 @@ const confirmDeleteAction = async () => {
 
   return (
     <div style={{ padding: "1rem" }}>
+          <form onSubmit={handleSubmit}>
+      <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
+      <button type="submit">Guardar</button>
+    </form>
       <ClienteModalForm
         isOpen={modals.clienteFormModal}
         onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}
@@ -363,6 +374,7 @@ const confirmDeleteAction = async () => {
           message={`Cliente registrado: ${clienteRegistrado.nombre} - ${clienteRegistrado.rut}`}
         />
       )}
+
     </div>
   );
 };

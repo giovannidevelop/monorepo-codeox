@@ -17,7 +17,7 @@ const TabSwitcher = ({ searchTerm }) => {
       <div className="tab-buttons">
         <div>      <select
           value={activeTab}
-          onChange={(e) => setActiveTab(e.target.value)}
+          onChange={(e) => handleSelectChange(e)}
           className={`inventory-tab-select ${activeTab === "MainMenu" ? "active" : ""}`}
         >
           <option value="MainMenu">Fardos</option>
