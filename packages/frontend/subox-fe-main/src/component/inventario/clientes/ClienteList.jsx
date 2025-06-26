@@ -19,7 +19,7 @@ const ClienteList = () => {
   const [clienteRegistrado, setClienteRegistrado] = useState(null); // Estado para almacenar el cliente registrado
   const [ubicacion, setUbicacion] = useState(emptyUbicacion);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     console.log("Ubicación a guardar:", ubicacion);
     // Enviar al backend
   };
@@ -219,10 +219,11 @@ const confirmDeleteAction = async () => {
 
   return (
     <div style={{ padding: "1rem" }}>
-          <form onSubmit={handleSubmit}>
-      <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
-      <button type="submit">Guardar</button>
-    </form>
+      <div style={{ padding: "1rem" }}>
+  <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
+      <button onClick={handleSubmit}>Guardar</button>
+      </div>
+    
       <ClienteModalForm
         isOpen={modals.clienteFormModal}
         onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}

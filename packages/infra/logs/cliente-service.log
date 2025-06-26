@@ -8,7 +8,7 @@
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mcliente-service[0;1m ---[m
 [[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
-[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 5 resources from src/main/resources to target/classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36mcliente-service[0;1m ---[m
 [[1;34mINFO[m] Nothing to compile - all classes are up to date.
@@ -34,25 +34,25 @@
 
  :: Spring Boot ::                (v3.4.5)
 
-2025-06-19T01:47:57.379-04:00  INFO 593669 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : Starting ClienteServiceApplication using Java 17.0.15 with PID 593669 (/home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service/target/classes started by giovanni in /home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service)
-2025-06-19T01:47:57.392-04:00  INFO 593669 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-06-19T01:47:57.512-04:00  INFO 593669 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-19T01:47:57.513-04:00  INFO 593669 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-19T01:47:59.158-04:00  INFO 593669 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-19T01:47:59.343-04:00  INFO 593669 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 5 JPA repository interfaces.
-2025-06-19T01:48:00.461-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5000 (http)
-2025-06-19T01:48:00.525-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-19T01:48:00.526-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-19T01:48:00.606-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-19T01:48:00.608-04:00  INFO 593669 --- [cliente-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3089 ms
-2025-06-19T01:48:00.911-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-19T01:48:00.995-04:00  INFO 593669 --- [cliente-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-19T01:48:01.053-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-19T01:48:01.513-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-19T01:48:01.564-04:00  INFO 593669 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-19T01:48:01.885-04:00  INFO 593669 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65a0bdc5
-2025-06-19T01:48:01.889-04:00  INFO 593669 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-19T01:48:02.033-04:00  INFO 593669 --- [cliente-service] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-06-19T13:32:15.695-04:00  INFO 883238 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : Starting ClienteServiceApplication using Java 17.0.15 with PID 883238 (/home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service/target/classes started by giovanni in /home/giovanni/Documentos/monorepo-subox/packages/backend/cliente-service)
+2025-06-19T13:32:15.715-04:00  INFO 883238 --- [cliente-service] [  restartedMain] c.s.i.c.ClienteServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T13:32:15.923-04:00  INFO 883238 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-19T13:32:15.924-04:00  INFO 883238 --- [cliente-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-19T13:32:18.007-04:00  INFO 883238 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T13:32:18.188-04:00  INFO 883238 --- [cliente-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 5 JPA repository interfaces.
+2025-06-19T13:32:19.354-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5000 (http)
+2025-06-19T13:32:19.383-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T13:32:19.384-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-19T13:32:19.457-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T13:32:19.459-04:00  INFO 883238 --- [cliente-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3531 ms
+2025-06-19T13:32:19.782-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T13:32:19.879-04:00  INFO 883238 --- [cliente-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-19T13:32:19.938-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T13:32:20.446-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T13:32:20.501-04:00  INFO 883238 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T13:32:20.823-04:00  INFO 883238 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@591c023c
+2025-06-19T13:32:20.826-04:00  INFO 883238 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T13:32:21.003-04:00  INFO 883238 --- [cliente-service] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.42
@@ -60,19 +60,19 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-19T01:48:03.521-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-19T01:48:03.709-04:00  INFO 593669 --- [cliente-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-19T01:48:04.711-04:00  WARN 593669 --- [cliente-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-19T01:48:04.803-04:00  INFO 593669 --- [cliente-service] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-19T01:48:05.488-04:00  WARN 593669 --- [cliente-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2025-06-19T01:48:05.529-04:00  WARN 593669 --- [cliente-service] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2025-06-19T01:48:05.534-04:00  INFO 593669 --- [cliente-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-19T01:48:05.542-04:00  INFO 593669 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-19T01:48:05.553-04:00  INFO 593669 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-19T01:48:05.588-04:00  INFO 593669 --- [cliente-service] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+2025-06-19T13:32:22.608-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T13:32:22.780-04:00  INFO 883238 --- [cliente-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T13:32:23.751-04:00  WARN 883238 --- [cliente-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-19T13:32:23.844-04:00  INFO 883238 --- [cliente-service] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-19T13:32:24.492-04:00  WARN 883238 --- [cliente-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-06-19T13:32:24.531-04:00  WARN 883238 --- [cliente-service] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-06-19T13:32:24.535-04:00  INFO 883238 --- [cliente-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T13:32:24.541-04:00  INFO 883238 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T13:32:24.551-04:00  INFO 883238 --- [cliente-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T13:32:24.588-04:00  INFO 883238 --- [cliente-service] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-19T01:48:05.628-04:00 ERROR 593669 --- [cliente-service] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+2025-06-19T13:32:24.631-04:00 ERROR 883238 --- [cliente-service] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:408) ~[spring-context-6.2.6.jar:6.2.6]
@@ -126,6 +126,6 @@ Caused by: java.net.BindException: La dirección ya se está usando
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  15.890 s
-[[1;34mINFO[m] Finished at: 2025-06-19T01:48:05-04:00
+[[1;34mINFO[m] Total time:  16.851 s
+[[1;34mINFO[m] Finished at: 2025-06-19T13:32:24-04:00
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m

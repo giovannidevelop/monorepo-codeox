@@ -35,25 +35,25 @@
 
  :: Spring Boot ::                (v3.4.5)
 
-2025-06-19T01:47:59.489-04:00  INFO 593732 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : Starting ProductoServiceApplication using Java 17.0.15 with PID 593732 (/home/giovanni/Documentos/monorepo-subox/packages/backend/producto-service/target/classes started by giovanni in /home/giovanni/Documentos/monorepo-subox/packages/backend/producto-service)
-2025-06-19T01:47:59.495-04:00  INFO 593732 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-06-19T01:47:59.590-04:00  INFO 593732 --- [producto-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-19T01:47:59.590-04:00  INFO 593732 --- [producto-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-19T01:48:00.990-04:00  INFO 593732 --- [producto-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-19T01:48:01.101-04:00  INFO 593732 --- [producto-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 1 JPA repository interface.
-2025-06-19T01:48:02.152-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
-2025-06-19T01:48:02.178-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-19T01:48:02.179-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-19T01:48:02.264-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-19T01:48:02.266-04:00  INFO 593732 --- [producto-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2674 ms
-2025-06-19T01:48:02.525-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-19T01:48:02.590-04:00  INFO 593732 --- [producto-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-19T01:48:02.635-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-19T01:48:03.058-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-19T01:48:03.103-04:00  INFO 593732 --- [producto-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-19T01:48:03.452-04:00  INFO 593732 --- [producto-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13592a60
-2025-06-19T01:48:03.455-04:00  INFO 593732 --- [producto-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-19T01:48:03.644-04:00  INFO 593732 --- [producto-service] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-06-19T13:32:18.607-04:00  INFO 883307 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : Starting ProductoServiceApplication using Java 17.0.15 with PID 883307 (/home/giovanni/Documentos/monorepo-subox/packages/backend/producto-service/target/classes started by giovanni in /home/giovanni/Documentos/monorepo-subox/packages/backend/producto-service)
+2025-06-19T13:32:18.614-04:00  INFO 883307 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T13:32:18.703-04:00  INFO 883307 --- [producto-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-19T13:32:18.703-04:00  INFO 883307 --- [producto-service] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-19T13:32:20.201-04:00  INFO 883307 --- [producto-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T13:32:20.327-04:00  INFO 883307 --- [producto-service] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+2025-06-19T13:32:21.489-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-06-19T13:32:21.528-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T13:32:21.529-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-19T13:32:21.608-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T13:32:21.611-04:00  INFO 883307 --- [producto-service] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2905 ms
+2025-06-19T13:32:21.899-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T13:32:21.967-04:00  INFO 883307 --- [producto-service] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-19T13:32:22.017-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T13:32:22.467-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T13:32:22.527-04:00  INFO 883307 --- [producto-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T13:32:22.852-04:00  INFO 883307 --- [producto-service] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43d66913
+2025-06-19T13:32:22.855-04:00  INFO 883307 --- [producto-service] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T13:32:23.004-04:00  INFO 883307 --- [producto-service] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.42
@@ -61,13 +61,18 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-19T01:48:05.044-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T13:32:24.295-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: drop table if exists productos
 Hibernate: create table productos (fecha_ingreso date, precio_compra float(53) not null, precio_venta float(53) not null, stock integer not null, id bigint not null auto_increment, codigo_barras varchar(255), descripcion varchar(255), nombre varchar(255), primary key (id)) engine=InnoDB
 Hibernate: alter table productos add constraint UKb2vi4382tjm9b8q2sgfiox2ec unique (codigo_barras)
-2025-06-19T01:48:05.255-04:00  INFO 593732 --- [producto-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-19T01:48:05.882-04:00  WARN 593732 --- [producto-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-19T01:48:05.971-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-19T01:48:06.585-04:00  WARN 593732 --- [producto-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2025-06-19T01:48:06.631-04:00  INFO 593732 --- [producto-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
-2025-06-19T01:48:06.654-04:00  INFO 593732 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : Started ProductoServiceApplication in 8.025 seconds (process running for 8.743)
+2025-06-19T13:32:24.553-04:00  INFO 883307 --- [producto-service] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T13:32:25.161-04:00  WARN 883307 --- [producto-service] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-19T13:32:25.258-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-19T13:32:25.891-04:00  WARN 883307 --- [producto-service] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-06-19T13:32:25.935-04:00  INFO 883307 --- [producto-service] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-06-19T13:32:25.957-04:00  INFO 883307 --- [producto-service] [  restartedMain] c.s.i.p.ProductoServiceApplication       : Started ProductoServiceApplication in 8.234 seconds (process running for 9.011)
+2025-06-19T15:43:05.067-04:00  INFO 883307 --- [producto-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T15:43:05.098-04:00  INFO 883307 --- [producto-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T15:43:05.118-04:00  INFO 883307 --- [producto-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T15:43:05.131-04:00  INFO 883307 --- [producto-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T15:43:05.142-04:00  INFO 883307 --- [producto-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

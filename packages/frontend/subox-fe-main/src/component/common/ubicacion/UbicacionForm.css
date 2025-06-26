@@ -1,40 +1,225 @@
-/* src/components/UbicacionForm.css */
-
-.ubicacion-form {
-  display: grid;
-  gap: 1rem;
+.contenedor-ubicacion {
+  background-color: #abe6e1;
   padding: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  background-color: #f9f9f9;
   border-radius: 10px;
 }
 
-.ubicacion-form label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+.ubicacion-form {
+  display: flex;
+}
+
+.ubicacion-container-one {
+  text-align: justify;
+  text-transform: uppercase;
+  width: 60%;
+
+}
+
+.ubicacion-container-one-text {
+  text-align: justify;
+  text-transform: uppercase;
+  width: 40%;
+
+}
+
+/* Ya deberías tener lo siguiente, pero lo repito por claridad */
+.tabs-ubicacion {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.tab:not(.active):hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+/*Manual*/
+
+.ubicacion-form {
+  margin: 0 auto;
+  font-family: sans-serif;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input,
+.input-group select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.input-group.error input,
+.input-group.error select {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
   font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+  border-radius: 5px;
+}
+
+input:disabled,
+select:disabled {
+  background-color: #f1f1f1;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.guardar-btn {
+  background-color: #1976d2;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.guardar-btn:hover {
+  background-color: #1565c0;
+}
+
+.volver-btn,
+.guardar-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.volver-btn {
+  background-color: #ccc;
   color: #333;
 }
 
-.ubicacion-form select,
-.ubicacion-form input {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
+.guardar-btn {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.guardar-btn:hover {
+  background-color: #1565c0;
+}
+
+.resumen-ubicacion {
+  background: #eef5ff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #2196f3;
   border-radius: 6px;
-  font-size: 0.95rem;
-  background-color: white;
-  transition: border-color 0.2s ease-in-out;
+  text-align: start;
+  font-size: small;
 }
 
-.ubicacion-form select:focus,
-.ubicacion-form input:focus {
-  border-color: #007bff;
-  outline: none;
+.resumen-ubicacion h4 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #0d47a1;
 }
 
-.ubicacion-form div {
+.resumen-ubicacion p {
+  margin: 0.3rem 0;
+}
+
+.container-two {
+  text-align: justify;
+  font-size: small;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.container-two legend {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
   display: flex;
   flex-direction: column;
+}
+
+.volver-btn {
+    background-color: #ccc;
+    color: #333;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.volver-btn:hover {
+    background-color: #bbb;
 }
