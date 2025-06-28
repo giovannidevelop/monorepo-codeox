@@ -6,6 +6,7 @@ import {store, persistor} from './app/redux/store';
 import { PersistGate } from "redux-persist/integration/react";
 import AuthProvider, { useAuth } from "./provider/AuthProvider";
 import { ToastContainer } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalMessage = () => {

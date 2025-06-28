@@ -4,7 +4,7 @@ import "./UbicacionForm.css";
 import Mapa from "./components/Mapa";
 import Manual from "./components/Manual";
 import { emptyUbicacion } from "./models/ubicacionTypes";
-
+import "leaflet/dist/leaflet.css";
 const UbicacionForm = ({ ubicacion = emptyUbicacion, onChange }) => {
 
   const [modo, setModo] = useState("manual");
@@ -32,8 +32,15 @@ const UbicacionForm = ({ ubicacion = emptyUbicacion, onChange }) => {
       </div>
 
       <div >
-        {modo === "mapa" ? <Mapa /> : null}
-        {modo === "manual" ? <Manual
+        {modo === "mapa" && (
+          <Mapa onChange={(ubicacion) => {
+            console.log("Ubicación desde el mapa:", ubicacion);
+            onChange?.(ubicacion);
+          }} />
+        )}
+
+
+        {modo === "manual" && <Manual
           ubicacion={ubicacion}
           onChange={(direccion) => console.log("Cambio:", direccion)}
           onGuardar={(direccionFinal) => {
@@ -46,7 +53,7 @@ const UbicacionForm = ({ ubicacion = emptyUbicacion, onChange }) => {
               if (res.ok) alert("Dirección guardada correctamente");
             });
           }}
-        /> : null}
+        />}
       </div>
     </div>
   );

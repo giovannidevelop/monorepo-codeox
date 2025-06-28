@@ -19,10 +19,6 @@ const ClienteList = () => {
   const [clienteRegistrado, setClienteRegistrado] = useState(null); // Estado para almacenar el cliente registrado
   const [ubicacion, setUbicacion] = useState(emptyUbicacion);
 
-  const handleSubmit = (e) => {
-    console.log("Ubicación a guardar:", ubicacion);
-    // Enviar al backend
-  };
 
   const [filters, setFilters] = useState({
     nombre: "",
@@ -152,35 +148,35 @@ const ClienteList = () => {
   const handleDelete = (id) => {
     setModals((prevState) => ({ ...prevState, idClienteELiminar: id }));
   };
-const confirmDeleteAction = async () => {
-  try {
-    const response = await deleteCliente(modals.idClienteELiminar);
-    
-    // Si la respuesta es null (204 No Content), no necesitamos hacer nada con ella
-    if (response === null) {
-      console.log("Cliente eliminado correctamente.");
-    } else {
-      console.log("Cliente eliminado:", response);
+  const confirmDeleteAction = async () => {
+    try {
+      const response = await deleteCliente(modals.idClienteELiminar);
+
+      // Si la respuesta es null (204 No Content), no necesitamos hacer nada con ella
+      if (response === null) {
+        console.log("Cliente eliminado correctamente.");
+      } else {
+        console.log("Cliente eliminado:", response);
+      }
+
+      // Actualizamos la lista de clientes, eliminando el cliente con el ID correspondiente
+      setClientes((prev) => prev.filter((c) => c.id !== modals.idClienteELiminar));
+
+      // Si el cliente eliminado es el seleccionado, actualizamos el estado de selectedCliente
+      if (modals.selectedCliente?.id === modals.idClienteELiminar) {
+        setModals((prevState) => ({ ...prevState, selectedCliente: null }));
+      }
+
+      // Mostrar mensaje de éxito
+      setModals((prevState) => ({ ...prevState, alertMessage: "Cliente eliminado correctamente." }));
+    } catch (err) {
+      console.error('Error al eliminar cliente:', err);
+      setModals((prevState) => ({ ...prevState, alertMessage: "Error al eliminar cliente." }));
+    } finally {
+      // Restablecer la variable idClienteELiminar en el estado de los modales
+      setModals((prevState) => ({ ...prevState, idClienteELiminar: null }));
     }
-
-    // Actualizamos la lista de clientes, eliminando el cliente con el ID correspondiente
-    setClientes((prev) => prev.filter((c) => c.id !== modals.idClienteELiminar));
-
-    // Si el cliente eliminado es el seleccionado, actualizamos el estado de selectedCliente
-    if (modals.selectedCliente?.id === modals.idClienteELiminar) {
-      setModals((prevState) => ({ ...prevState, selectedCliente: null }));
-    }
-
-    // Mostrar mensaje de éxito
-    setModals((prevState) => ({ ...prevState, alertMessage: "Cliente eliminado correctamente." }));
-  } catch (err) {
-    console.error('Error al eliminar cliente:', err);
-    setModals((prevState) => ({ ...prevState, alertMessage: "Error al eliminar cliente." }));
-  } finally {
-    // Restablecer la variable idClienteELiminar en el estado de los modales
-    setModals((prevState) => ({ ...prevState, idClienteELiminar: null }));
-  }
-};
+  };
 
   // Cerrar todos los modales
   const closeAllModals = () => {
@@ -218,12 +214,11 @@ const confirmDeleteAction = async () => {
   }
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <div style={{ padding: "1rem" }}>
-  <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
-      <button onClick={handleSubmit}>Guardar</button>
+    <div >
+      <div >
+        <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
       </div>
-    
+
       <ClienteModalForm
         isOpen={modals.clienteFormModal}
         onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}
@@ -349,13 +344,13 @@ const confirmDeleteAction = async () => {
           }}
         />
       )}
-        <EtiquetaCliente
-          cliente={modals.idClienteEtiqueta}
-          isOpen={modals.clienteEtiquetaModal}
-          onClose={() => {
-            closeAllModals();
-          }}
-        />
+      <EtiquetaCliente
+        cliente={modals.idClienteEtiqueta}
+        isOpen={modals.clienteEtiquetaModal}
+        onClose={() => {
+          closeAllModals();
+        }}
+      />
       <ConfirmModal
         isOpen={!!modals.idClienteELiminar}
         onClose={closeAllModals}

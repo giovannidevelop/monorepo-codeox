@@ -6,7 +6,7 @@ import {
     obtenerComunasPorProvincia,
 } from "../services/ubicacionService";
 
-const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
+const Manual = ({ ubicacion, onChange }) => {
     const [local, setLocal] = useState(ubicacion);
     const [regiones, setRegiones] = useState([]);
     const [provincias, setProvincias] = useState([]);
@@ -36,7 +36,9 @@ const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
         }
         limpiar(["comunaId"]);
     }, [local.provinciaId]);
-
+    useEffect(() => {
+        setLocal(ubicacion);    
+    }, [ubicacion]);
     const limpiar = (campos) => {
         setLocal((prev) => {
             const nuevo = { ...prev };
@@ -81,11 +83,11 @@ const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
         } else if (paso === 2) {
             if (validarPaso2()) setPaso(3);
         } else if (paso === 3) {
-            setGuardado(true);    
+            setGuardado(true);
             console.log(local);
             alert("✅ Dirección final guardada correctamente.");
             setPaso(1);
-                  
+
             setLocal(emptyUbicacion);
         }
     };
@@ -133,9 +135,9 @@ const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
 
     return (
         <div className="ubicacion-form">
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form className="container-one" onSubmit={(e) => e.preventDefault()}>
                 {paso === 1 && (
-                    <fieldset className="container-one">
+                    <fieldset >
                         <legend>Paso 1: Ubicación geográfica</legend>
                         <SelectGroup label="Región" name="regionId" value={local.regionId} options={regiones} />
                         <SelectGroup label="Provincia" name="provinciaId" value={local.provinciaId} options={provincias} disabled={!local.regionId} />
@@ -143,28 +145,28 @@ const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
                     </fieldset>
                 )}
 
+
                 {paso === 2 && (
-                    <>
-                        <div className="resumen-ubicacion">
-                            <h4>Resumen ubicación</h4>
-                            <p><strong>Región:</strong> {getNombrePorId(regiones, local.regionId)}</p>
-                            <p><strong>Provincia:</strong> {getNombrePorId(provincias, local.provinciaId)}</p>
-                            <p><strong>Comuna:</strong> {getNombrePorId(comunas, local.comunaId)}</p>
-                        </div>
-                        <fieldset className="container-two">
-                            <legend>Paso 2: Dirección detallada</legend>
+                    <fieldset >
+                        <legend>Paso 2: Dirección detallada</legend>
+                        <div className="paso2-box-1">
                             <InputGroup label="Calle" name="calle" value={local.calle} />
                             <InputGroup label="Número" name="numero" value={local.numero} />
-                            <InputGroup label="Referencia" name="referencia" value={local.referencia} />
-                            <InputGroup label="Departamento" name="departamento" value={local.departamento} />
-                            <InputGroup label="Oficina" name="oficina" value={local.oficina} />
+                        </div>
+                        <div className="paso2-box-2">
+                            <div >
+                                <InputGroup label="Departamento" name="departamento" value={local.departamento} />
+                                <InputGroup label="Oficina" name="oficina" value={local.oficina} />
+                            </div>
                             <InputGroup label="Código Postal" name="codigoPostal" value={local.codigoPostal} />
-                        </fieldset>
-                    </>
+                        </div>
+
+                        <InputGroup label="Referencia" name="referencia" value={local.referencia} />
+                    </fieldset>
                 )}
 
                 {paso === 3 && (
-                    <fieldset className="container-three">
+                    <fieldset>
                         <legend>Paso 3: Resumen final</legend>
                         <div className="resumen-ubicacion">
                             <p><strong>Región:</strong> {getNombrePorId(regiones, local.regionId)}</p>
@@ -180,7 +182,6 @@ const Manual = ({ ubicacion = emptyUbicacion, onChange }) => {
                     </fieldset>
                 )}
             </form>
-
             <div className="buttons-row">
                 {paso > 1 && (
                     <button type="button" onClick={() => setPaso(paso - 1)} className="volver-btn">

@@ -1,13 +1,17 @@
 .contenedor-ubicacion {
-  background-color: #abe6e1;
-  padding: 1rem;
-  border-radius: 10px;
+background-color: #e7e497;
+padding: 1%;
 }
 
 .ubicacion-form {
   display: flex;
 }
-
+.container-one{
+margin: 0rem 20%;
+    justify-content: center;
+    text-align: justify;
+    text-transform: uppercase;
+}
 .ubicacion-container-one {
   text-align: justify;
   text-transform: uppercase;
@@ -59,7 +63,7 @@
 
 .ubicacion-form {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: system-ui;
   position: relative;
 
   display: flex;
@@ -69,7 +73,6 @@
 
 fieldset {
   border: none;
-  margin-bottom: 2rem;
   padding: 0;
 }
 
@@ -107,6 +110,7 @@ legend {
   color: #e74c3c;
   font-size: 0.9rem;
   margin-top: 0.3rem;
+  text-align: start;
 }
 
 .success-message {
@@ -187,14 +191,11 @@ select:disabled {
   text-align: justify;
   font-size: small;
   text-transform: uppercase;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+
   padding: 1rem;
-  background-color: #fdfdfd;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 1rem;
+     display: flex
+;
+    flex-direction: column;
 }
 
 .container-two legend {
@@ -222,4 +223,44 @@ select:disabled {
 
 .volver-btn:hover {
     background-color: #bbb;
+}
+.paso2-box-1{
+  display: flex;
+  gap: 1rem;
+}
+.paso2-box-1 > :nth-child(1) {
+  flex: 3;
+}
+
+.paso2-box-1 > :nth-child(2) {
+  flex: 2;
+}
+@media (max-width: 550px) {
+  .paso2-box-1 {
+      gap: 0rem;
+       flex-direction: column;
+  }
+}
+
+.paso2-box-2{
+  display: flex;
+  gap: 1rem;
+}
+.paso2-box-2 > :nth-child(1) {
+    display: flex;
+    gap: 0rem 1rem;
+  flex: 3;
+}
+
+.paso2-box-2 > :nth-child(2) {
+  flex: 2;
+}
+@media (max-width: 550px) {
+  .paso2-box-2 {
+      gap: 0rem;
+       flex-direction: column;
+  }
+  .paso2-box-2 > :nth-child(1) {
+    display: block;
+}
 }
