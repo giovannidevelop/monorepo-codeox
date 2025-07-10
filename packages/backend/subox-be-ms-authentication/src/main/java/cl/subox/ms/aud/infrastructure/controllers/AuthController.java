@@ -85,7 +85,7 @@ public class AuthController {
        
        
         Optional<UserModel> userOptional = userService.obtenerUsuarioPorUsernameOrEmail(loginRequest.getUsername());
-
+        logger.info("Intentando autenticar al usuario: {}", userOptional.get().getUsername());
         // Verificar si el usuario existe y si está habilitado
         if (userOptional.isEmpty() || !userOptional.get().isVerifiedEmail()) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("El usuario no está habilitado o no existe.");
@@ -95,8 +95,9 @@ public class AuthController {
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+            logger.info("Usuario autenticado exitosamente: {}", authentication.getDetails());
 
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
             String jwt = jwtUtils.generateJwtToken(authentication);
 
             return ResponseEntity.ok(new JwtDTO(jwt));

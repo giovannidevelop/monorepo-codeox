@@ -49,8 +49,8 @@ public class UserUseCaseImpl implements UserUseCase {
         logger.info("Usuario registrado exitosamente: {}", savedUser);
     
         // Llamar a TokenService para crear un token
-        TokenModel tokenModel = tokenService.createVerificationToken(savedUser.getEmail());
-        logger.info("Token de verificación generado: {}", tokenModel.getToken());
+        //TokenModel tokenModel = tokenService.createVerificationToken(savedUser.getEmail());
+        //logger.info("Token de verificación generado: {}", tokenModel.getToken());
     
         return savedUser;
     }

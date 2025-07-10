@@ -8,5 +8,4 @@ public class Empleado  extends Persona {
     private String cargo;
     private LocalDate fechaIngreso;
     private int sueldo;
-    // Otros campos propios de empleado
 }

@@ -1,13 +1,14 @@
 .contenedor-ubicacion {
-background-color: #e7e497;
-padding: 1%;
+background-color: #c5c5c5;
+  width: 300px;
+ container-type: inline-size;
+  container-name: ubicacion;
 }
 
 .ubicacion-form {
   display: flex;
 }
 .container-one{
-margin: 0rem 20%;
     justify-content: center;
     text-align: justify;
     text-transform: uppercase;
@@ -38,7 +39,7 @@ margin: 0rem 20%;
   text-align: center;
   padding: 0.75rem;
   border: none;
-  background-color: #f0f0f0;
+  background-color: #b3b3b3;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -47,8 +48,8 @@ margin: 0rem 20%;
 }
 
 .tab.active {
-  background-color: #007bff;
-  color: white;
+  background-color: #fffcfc;
+  color: rgb(37, 37, 37);
   border-bottom: 2px solid white;
 }
 
@@ -235,7 +236,7 @@ select:disabled {
 .paso2-box-1 > :nth-child(2) {
   flex: 2;
 }
-@media (max-width: 550px) {
+@container ubicacion (max-width: 550px) {
   .paso2-box-1 {
       gap: 0rem;
        flex-direction: column;
@@ -255,7 +256,11 @@ select:disabled {
 .paso2-box-2 > :nth-child(2) {
   flex: 2;
 }
-@media (max-width: 550px) {
+@container ubicacion (max-width: 550px) {
+  .contenedor-ubicacion{
+    margin: 1rem 8px;
+
+  }
   .paso2-box-2 {
       gap: 0rem;
        flex-direction: column;

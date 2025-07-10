@@ -215,10 +215,6 @@ const ClienteList = () => {
 
   return (
     <div >
-      <div >
-        <UbicacionForm ubicacion={ubicacion} onChange={setUbicacion} />
-      </div>
-
       <ClienteModalForm
         isOpen={modals.clienteFormModal}
         onClose={() => setModals((prevState) => ({ ...prevState, clienteFormModal: false }))}

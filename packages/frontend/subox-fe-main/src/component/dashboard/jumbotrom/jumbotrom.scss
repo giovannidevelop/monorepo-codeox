@@ -1,74 +1,84 @@
+.jumbotrom__cta {
+  display: inline-block;
+  background-color: #d1ac5a;
+  color: #2e1e74;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+  white-space: nowrap;
+  font-size: clamp(0.85rem, 4vw, 1rem); // 👈 mejora clave
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jumbotrom__cta:hover {
+  background-color: #2e1e74;
+  color: #fff;
+}
+
 .jumbotrom {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300px;
-    overflow: hidden;
-  
-    &__slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    &__slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
-  
-    &__overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      color: white;
-      max-width: 90%;
-    }
-  
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    max-width: 90%;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+    height: 220px;
+
     &__title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
     }
-  
+
     &__subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-  
-    &__cta {
-      background-color: #d1ac5a;
-      color: #2e1e74;
-      padding: 0.5rem 1.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-  
-      &:hover {
-        background-color: #2e1e74;
-        color: #fff;
-      }
-    }
-  
-    @media screen and (max-width: 768px) {
-      height: 220px;
-  
-      &__title {
-        font-size: 1.5rem;
-      }
-  
-      &__subtitle {
-        font-size: 1rem;
-      }
+      font-size: 1rem;
     }
   }
-  
+}

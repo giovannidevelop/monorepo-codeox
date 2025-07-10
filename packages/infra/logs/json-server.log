@@ -1,23 +1,22 @@
 --watch/-w can be omitted, JSON Server 1+ watches for file changes by default
-JSON Server started on PORT :7000
-Press CTRL-C to stop
-Watching public/data/db.json...
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
 
-♡( ◡‿◡ )
+Error: listen EADDRINUSE: address already in use :::7000
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at App.listen (file:///home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/@tinyhttp/app/dist/app.js:310:58)
+    at file:///home/giovanni/Documentos/monorepo-subox/packages/frontend/subox-fe-main/node_modules/json-server/lib/bin.js:132:5
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1944:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 7000
+}
 
-Index:
-http://localhost:7000/
-
-Static files:
-Serving ./public directory if it exists
-
-Endpoints:
-http://localhost:7000/proveedores
-http://localhost:7000/categorias
-http://localhost:7000/clientes
-http://localhost:7000/fardosDirectos
-http://localhost:7000/historialClientes
-http://localhost:7000/instagramGaleria
-http://localhost:7000/jumbotron
-http://localhost:7000/productos
-http://localhost:7000/ventas
+Node.js v20.19.2

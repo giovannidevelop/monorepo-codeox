@@ -26,14 +26,18 @@ const Jumbotrom = ({ images }) => {
                     <div className="jumbotrom__overlay">
                         <h1 className="jumbotrom__title">Fardos de ropa americana</h1>
                         <p className="jumbotrom__subtitle">Desde $29.990 – Stock disponible</p>
-                        <a
-                            href="https://wa.me/56928839376?text=Hola%20quiero%20comprar%20fardos"
-                            className="jumbotrom__cta"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Escríbenos por WhatsApp
-                        </a>
+
+                     <a
+  href="https://wa.me/123456789"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="jumbotrom__cta"
+>
+  Escríbenos por WhatsApp
+</a>
+
+
+
 
                     </div>
                 </div>

@@ -2,6 +2,9 @@ package com.subox.inventario.cliente_service.domain.model.persona;
 
 import java.time.LocalDate;
 
+import com.subox.inventario.cliente_service.domain.model.contacto.Contacto;
+import com.subox.inventario.cliente_service.domain.model.ubicacion.Ubicacion;
+
 import lombok.*;
 
 @Getter
@@ -18,4 +21,5 @@ public class Persona {
     private String nacionalidad;
     private String estadoCivil;
     private boolean activo;
+    private Contacto contacto;
 }

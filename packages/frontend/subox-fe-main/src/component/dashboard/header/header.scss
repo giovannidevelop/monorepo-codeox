@@ -1,99 +1,146 @@
-// src/component/header/header.scss
-
-@import "../../../styles/variables.scss"; // Asegúrate de importar tus variables si están separadas
+@import "../../../styles/variables.scss";
 
 .header {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 999;
-  &__carrito {
-    position: relative;
-  
-    &-count {
-      position: absolute;
-      top: -5px;
-      right: -10px;
-      background: red;
-      color: white;
-      border-radius: 50%;
-      padding: 0.2rem 0.5rem;
-      font-size: 0.8rem;
-    }
+  z-index: 1000;
+  background-color: white;
+  transition: background 0.3s ease;
+
+  &.menu-open {
+
   }
+
   &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
+        max-width: 1000px;
+    margin: auto;
+    padding: 0.5rem;
+    position: relative;
+  }
+
+  &__top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $primary-color;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    cursor: pointer;
 
     img {
-      height: 40px;
-    }
-
-    span {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: $primary-color;
+      width: 110px;
     }
   }
 
-  &__nav {
+  &__nav-desktop {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 
     a {
-      color: $tertiary-color;
-      font-weight: 500;
       text-decoration: none;
+      color: $tertiary-color;
 
       &:hover {
         color: $primary-color;
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__nav-mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      background: white;
       width: 100%;
-      justify-content: center;
-      margin-top: 0.5rem;
+      padding: 1rem 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1001;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      &.slide-down {
+        opacity: 1;
+        display: flex;
+        transform: translateY(0);
+      }
+
+      a {
+        text-align: center;
+        padding: 1rem;
+        text-decoration: none;
+        color: $tertiary-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    @media (max-width: 768px) {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
     }
   }
 
   &__icons {
     display: flex;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
 
     a {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: $tertiary-color;
-      text-decoration: none;
-
+    text-decoration: none;
       &:hover {
         color: $primary-color;
       }
     }
   }
 
-  &__search {
-    border: 1px solid $secondary-color;
-    border-radius: 1rem;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.9rem;
+  &__carrito {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
 
-    &:focus {
-      outline: none;
-      border-color: $primary-color;
-    }
+  &__carrito-count {
+    background: red;
+    position: absolute;
+        top: -5px;
+    right: 9px;
+    color: white;
+    border-radius: 50%;
+    padding: 0px 5px;
+    font-size: 0.75rem;
+    scale: 0.8;
   }
 }
