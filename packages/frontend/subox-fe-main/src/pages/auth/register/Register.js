@@ -9,32 +9,33 @@ const Register = () => {
 
     return (
         <div className="register">
-            <div className="register-title">
-                <span>Registra una nueva cuenta</span>
+            <div className="register-header">
+                <h1 className="register-tittle">Registra una nueva cuenta</ h1>
             </div>
-            <span className="register-instructions">
+            <p className="register-instructions">
                 Completa el formulario para comenzar
-            </span>
-            <div className="register-main">
+
+            </p>
+            <div className="register-content">
                 <RegisterForm />
-                <div className="login-instruction">
-                <div>
-                    <hr />
-                </div>
-                <span>
-                    o te puedes inscribir con redes sociales
-                </span>
-                <div>
-                    <hr />
-                </div>
-            </div>
-            <AuthButton text={'Registrar'} />
+                {
+                    /* 
+                     <div className="register-instruction">
+                         <div className="login-divider">
+                             <hr className="divider-line" />
+                             <span className="divider-text">o accede con redes sociales</span>
+                             <hr className="divider-line" />
+                         </div>
+                     </div>
+                     <AuthButton text={'Registrar'} />*/
+                }
+
             </div>
             <div className="register-fotter">
                 <p>
-                    ¿Ya tines una cuenta? puedes acceder
-                    <Link style={{ marginLeft: "0.3rem" }} to={PATH.LOGIN}>
-                        Aqui
+                    ¿Ya tines una cuenta? puedes Inicia sesión  {" "}
+                    <Link className="register-signin-link" to={PATH.LOGIN}>
+                        Aquí
                     </Link>
                 </p>
             </div>

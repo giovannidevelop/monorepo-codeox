@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./registerForm.scss"
+import "./registerForm.scss";
 import { TbEyeClosed } from "react-icons/tb";
 import { ImEye } from "react-icons/im";
 import Input from '../../../../component/common/input/Input';
@@ -7,180 +7,159 @@ import SubmitButton from '../../../../component/common/button/SubmitButton';
 
 const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 
+const VALIDATION_RULES = {
+  username: {
+    required: "Por favor, ingresa un nombre de usuario.",
+    pattern: /^[a-zA-Z0-9._-]+$/,
+    patternMessage: "El nombre de usuario solo puede contener letras, números, guiones bajos, guiones y puntos.",
+    minLength: 3,
+    minLengthMessage: "Debe tener al menos 3 caracteres.",
+    maxLength: 20,
+    maxLengthMessage: "No puede tener más de 20 caracteres.",
+  },
+  email: {
+    required: "Por favor, ingresa un email electrónico.",
+    pattern: /\S+@\S+\.\S+/,
+    patternMessage: "Por favor, ingresa un email válido.",
+  },
+  password: {
+    required: "Por favor, ingresa una contraseña.",
+    minLength: 8,
+    minLengthMessage: "Debe tener al menos 8 caracteres.",
+  },
+  confirmPassword: {
+    required: "Por favor, confirma tu contraseña.",
+  },
+};
 
 const RegisterForm = () => {
-    const [formData, setFormData] = useState({
-        username: "",
-        password: "",
-        email: "",
-        confirmPassword: '',
-    });
+  const [formData, setFormData] = useState({
+    register_user_temp: "",
+    register_email_temp: "",
+    register_pass_temp: "",
+    register_confirm_temp: "",
+  });
 
-    const [formErrors, setFormErrors] = useState({
-        username: '',
-        password: '',
-        email: '',
-        confirmPassword: '',
-    });
+  const [formErrors, setFormErrors] = useState({});
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
-    const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
+  const toggleConfirmPasswordVisibility = () => setConfirmPasswordVisible(prev => !prev);
 
-    const togglePasswordVisibility = () => {
-        setPasswordVisible(!passwordVisible);
+  const validateField = (fieldName, value) => {
+    const fieldMap = {
+      register_user_temp: 'username',
+      register_email_temp: 'email',
+      register_pass_temp: 'password',
+      register_confirm_temp: 'confirmPassword',
     };
 
-    const toggleConfirmPasswordVisibility = () => {
-        setConfirmPasswordVisible(!confirmPasswordVisible);
+    const rules = VALIDATION_RULES[fieldMap[fieldName]];
+    if (!rules) return "";
+
+    if (!value.trim()) return rules.required;
+    if (rules.pattern && !rules.pattern.test(value)) return rules.patternMessage;
+    if (rules.minLength && value.length < rules.minLength) return rules.minLengthMessage;
+    if (rules.maxLength && value.length > rules.maxLength) return rules.maxLengthMessage;
+
+    if (fieldName === 'register_confirm_temp' && value !== formData.register_pass_temp) {
+      return "Las contraseñas no coinciden.";
+    }
+
+    return "";
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    for (const field in formData) {
+      const error = validateField(field, formData[field]);
+      if (error) errors[field] = error;
+    }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleChange = ({ target: { name, value } }) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    // Mapeamos los nombres para enviar al backend
+    const registerData = {
+      username: formData.register_user_temp,
+      email: formData.register_email_temp,
+      password: formData.register_pass_temp,
     };
 
-    const validateField = (fieldName, value) => {
-        switch (fieldName) {
-            case 'username':
-                if (value.trim() === '') {
-                    return 'Por favor, ingresa un nombre de usuario.';
-                } else if (!/^[a-zA-Z0-9._-]+$/.test(value)) {
-                    return 'El nombre de usuario solo puede contener letras, números, guiones bajos, guiones y puntos.';
-                } else if (value.length < 3) {
-                    return 'El nombre de usuario debe tener al menos 3 caracteres.';
-                } else if (value.length > 20) {
-                    return 'El nombre de usuario no puede tener más de 20 caracteres.';
-                }
-                break;
-            case 'email':
-                if (value.trim() === '') {
-                    return 'Por favor, ingresa un email electrónico.';
-                } else if (!/\S+@\S+\.\S+/.test(value)) {
-                    return 'Por favor, ingresa un email electrónico válido.';
-                }
-                break;
-            case 'password':
-                if (value.trim() === '') {
-                    return 'Por favor, ingresa una contraseña.';
-                } else if (value.length < 6) {
-                    return 'La contraseña debe tener al menos 6 caracteres.';
-                }
-                break;
-            case 'confirmPassword':
-                if (value.trim() === '') {
-                    return 'Por favor, confirma tu contraseña.';
-                } else if (value !== formData.password) {
-                    return 'Las contraseñas no coinciden.';
-                }
-                break;
-            default:
-                return '';
-        }
-        return '';
-    };
+    try {
+      const res = await fetch(BASE_URL + '/api/auth/registrar', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(registerData)
+      });
 
-    const validateForm = () => {
-        let errors = {};
+      if (res.ok) {
+        alert("Registro exitoso");
+      } else {
+        alert("Error en el registro");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
+  };
 
-        for (const fieldName in formData) {
-            const errorMessage = validateField(fieldName, formData[fieldName]);
-            if (errorMessage) {
-                errors[fieldName] = errorMessage;
-            }
-        }
-
-        setFormErrors(errors);
-        return Object.keys(errors).length === 0;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (validateForm()) {
-            callApi();
-        }
-    };
-
-    const callApi = async () => {
-        console.log('Call Api Registro');
-        try {
-            const { confirmPassword, ...formDataWithoutConfirmPassword } = formData;
-            const response = await fetch(BASE_URL+'/api/auth/registrar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formDataWithoutConfirmPassword)
-            });
-            if (response.ok) {
-                alert('Registro exitoso');
-            } else {
-                alert('Error en el registro');
-            }
-        } catch (error) {
-            console.log('Error en la solicitud:', error);
-        }
-    };
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-        let error = validateField(name, formData[name])
-        let errorValue = validateField(name, value)
-
-        setFormErrors({
-            ...formErrors,
-            [name]: error
-        });
-        setFormErrors({
-            ...formErrors,
-            [name]: errorValue
-        });
-    };
-    return (
-        <form noValidate className='wrapper-input' onSubmit={handleSubmit}>
-
-            <Input
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                label="Ingresar usuario"
-                error={formErrors.username}
-            />
-
-            <Input
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                label="Ingresar email"
-                error={formErrors.email}
-            />
-            <Input
-                id="password"
-                name="password"
-                type={passwordVisible ? 'text' : 'password'}
-                value={formData.password}
-                onChange={handleChange}
-                label="Ingresar contraseña"
-                error={formErrors.password}
-                icon={passwordVisible ? <ImEye /> : <TbEyeClosed />}
-                onIconClick={togglePasswordVisibility}
-            />
-            <Input
-                id="confirmPassword"
-                name="confirmPassword"
-                type={confirmPasswordVisible ? 'text' : 'password'}
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                label="Ingresar contraseña"
-                error={formErrors.confirmPassword}
-                icon={confirmPasswordVisible ? <ImEye /> : <TbEyeClosed />}
-                onIconClick={toggleConfirmPasswordVisibility}
-            />
-
-
-            <SubmitButton text={"Registrar"} />
-        </form>
-    );
+  return (
+    <form noValidate className="register-form" onSubmit={handleSubmit} autoComplete="off">
+      <Input
+        id="register_user_temp"
+        name="register_user_temp"
+        label="Ingresar usuario"
+        value={formData.register_user_temp}
+        onChange={handleChange}
+        error={formErrors.register_user_temp}
+        autoComplete="new-username"
+      />
+      <Input
+        id="register_email_temp"
+        name="register_email_temp"
+        label="Ingresar email"
+        value={formData.register_email_temp}
+        onChange={handleChange}
+        error={formErrors.register_email_temp}
+        autoComplete="new-email"
+      />
+      <Input
+        id="register_pass_temp"
+        name="register_pass_temp"
+        type={passwordVisible ? 'text' : 'password'}
+        label="Ingresar contraseña"
+        value={formData.register_pass_temp}
+        onChange={handleChange}
+        error={formErrors.register_pass_temp}
+        icon={passwordVisible ? <ImEye /> : <TbEyeClosed />}
+        onIconClick={togglePasswordVisibility}
+        autoComplete="new-password"
+      />
+      <Input
+        id="register_confirm_temp"
+        name="register_confirm_temp"
+        type={confirmPasswordVisible ? 'text' : 'password'}
+        label="Confirmar contraseña"
+        value={formData.register_confirm_temp}
+        onChange={handleChange}
+        error={formErrors.register_confirm_temp}
+        icon={confirmPasswordVisible ? <ImEye /> : <TbEyeClosed />}
+        onIconClick={toggleConfirmPasswordVisibility}
+        autoComplete="new-password"
+      />
+      <SubmitButton text="Registrar" />
+    </form>
+  );
 };
+
 export default RegisterForm;

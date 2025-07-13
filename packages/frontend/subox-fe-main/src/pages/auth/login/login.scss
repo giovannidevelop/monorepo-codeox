@@ -1,21 +1,19 @@
 .login-container {
-    padding: 0.5rem 0rem 0rem 0rem;
+    padding: 1rem;
     width: 94%;
-        margin: 2vh auto;
-
+    margin: 2vh auto;
     font-family: Arial, sans-serif;
     text-align: center;
     color: #333;
     background-color: #f9f9f9;
-    border-radius: 10px ;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: calc(96vh - 54px);
+
     @media (min-width: 600px) {
-    max-width: 600px;
+        max-width: 600px;
         height: auto;
         padding: 1rem;
         margin: 2rem auto;
-
     }
 }
 

@@ -3,35 +3,37 @@ import "./loginForm.scss";
 import { TbEyeClosed } from "react-icons/tb";
 import { ImEye } from "react-icons/im";
 import { useNavigate } from 'react-router-dom';
-import { AUTH_ACTIONS } from "../../../../app/redux/actions/authActions";
 import { useDispatch } from "react-redux";
+import { AUTH_ACTIONS } from "../../../../app/redux/actions/authActions";
 import Input from '../../../../component/common/input/Input';
 import SubmitButton from '../../../../component/common/button/SubmitButton';
+
+const VALIDATION_RULES = {
+    login_user_temp: {
+        required: "Por favor, ingresa un nombre de usuario.",
+        pattern: /^[a-zA-Z0-9._-]+$/,
+        patternMessage: "El nombre de usuario solo puede contener letras, números, guiones bajos, guiones y puntos.",
+        minLength: 3,
+        minLengthMessage: "Debe tener al menos 3 caracteres.",
+        maxLength: 20,
+        maxLengthMessage: "No puede tener más de 20 caracteres.",
+    },
+    login_pass_temp: {
+        required: "Por favor, ingresa una contraseña.",
+        minLength: 0,
+        minLengthMessage: "",
+    },
+};
 
 const LoginForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({ login_user_temp: "", login_pass_temp: "" });
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
-    const [formData, setFormData] = useState({ username: "", password: "" });
     const [formErrors, setFormErrors] = useState({});
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
-    const VALIDATION_RULES = {
-        username: {
-            required: "Por favor, ingresa un nombre de usuario.",
-            pattern: /^[a-zA-Z0-9._-]+$/,
-            patternMessage: "El nombre de usuario solo puede contener letras, números, guiones bajos, guiones y puntos.",
-            minLength: 3,
-            minLengthMessage: "El nombre de usuario debe tener al menos 3 caracteres.",
-            maxLength: 20,
-            maxLengthMessage: "El nombre de usuario no puede tener más de 20 caracteres.",
-        },
-        password: {
-            required: "Por favor, ingresa una contraseña.",
-            minLength: 6,
-            minLengthMessage: "La contraseña debe tener al menos 6 caracteres.",
-        },
-    };
+    const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
 
     const validateField = (fieldName, value) => {
         const rules = VALIDATION_RULES[fieldName];
@@ -46,29 +48,21 @@ const LoginForm = () => {
     };
 
     const validateForm = () => {
-        const errors = Object.keys(formData).reduce((acc, fieldName) => {
-            const errorMessage = validateField(fieldName, formData[fieldName]);
-            if (errorMessage) acc[fieldName] = errorMessage;
-            return acc;
-        }, {});
+        const errors = {};
+        for (const field in formData) {
+            const error = validateField(field, formData[field]);
+            if (error) errors[field] = error;
+        }
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
 
-    const togglePasswordVisibility = () => {
-        setPasswordVisible(!passwordVisible);
+    const handleChange = ({ target: { name, value } }) => {
+        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
     };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-        setFormErrors((prev) => ({
-            ...prev,
-            [name]: validateField(name, value),
-        }));
-    };
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
             dispatch(AUTH_ACTIONS.login(formData, navigate));
@@ -76,28 +70,31 @@ const LoginForm = () => {
     };
 
     return (
-        <form noValidate className="loginForm" onSubmit={handleSubmit}>
+        <form noValidate className="login-form" onSubmit={handleSubmit} autoComplete="off">
             <Input
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
+                id="login_user_temp"
+                name="login_user_temp" // nombre poco común
                 label="Nombre de Usuario"
-                error={formErrors.username}
+                value={formData.login_user_temp}
+                onChange={handleChange}
+                error={formErrors.login_user_temp}
+                autoComplete="new-username" // evita autocompletar
             />
             <Input
-                id="password"
-                name="password"
+                id="login_pass_temp"
+                name="login_pass_temp" // nombre poco común
                 type={passwordVisible ? "text" : "password"}
-                value={formData.password}
-                onChange={handleChange}
                 label="Contraseña"
-                error={formErrors.password}
+                value={formData.login_pass_temp}
+                onChange={handleChange}
+                error={formErrors.login_pass_temp}
                 icon={passwordVisible ? <ImEye /> : <TbEyeClosed />}
                 onIconClick={togglePasswordVisibility}
+                autoComplete="new-password"
             />
             <SubmitButton text="Entrar" />
         </form>
+
     );
 };
 

@@ -3,7 +3,7 @@ import './input.scss'
 
 
 
-const Input = ({ id, name, type = 'text', value, onChange, label, error, icon, onIconClick }) => {
+const Input = ({ id, name, type = 'text', value, onChange, label, error, icon, onIconClick ,autoComplete}) => {
     return (
         <div className="input">
             <input
@@ -14,6 +14,7 @@ const Input = ({ id, name, type = 'text', value, onChange, label, error, icon, o
                 name={name}
                 value={value}
                 onChange={onChange}
+                autoComplete={autoComplete}
             />
             <label htmlFor={id} className="input-label">{label}</label>
             {error && <div id={`error-${id}`} className="error-message">{error}</div>}

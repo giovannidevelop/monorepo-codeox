@@ -6,7 +6,7 @@ import { PATH } from "../../../router/path";
 import "./login.scss";
 
 const Login = () => {
-   
+
     return (
         <div className="login-container">
             <div className="login-header">
@@ -17,12 +17,16 @@ const Login = () => {
             </div>
             <div className="login-content">
                 <LoginForm />
+                {
+                    /* 
                 <div className="login-divider">
                     <hr className="divider-line" />
                     <span className="divider-text">o accede con redes sociales</span>
                     <hr className="divider-line" />
                 </div>
                 <AuthButton text="Acceder" />
+           */
+                }
             </div>
             <div className="login-footer">
                 <p>
