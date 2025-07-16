@@ -23,7 +23,8 @@ import cl.subox.ms.aud.domain.ports.out.UserRepositoryPort;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    //private static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
+    // private static final Logger logger =
+    // LoggerFactory.getLogger(CustomUserDetailsService.class);
 
     @Autowired
     private UserRepositoryPort userRepositoryPort;
@@ -35,10 +36,13 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .findByUsername(username)
                 .orElseThrow(
                         () -> new UsernameNotFoundException("Username not found"));
-        User userDetails = new User(
+        UserDetailsImpl userDetails = new UserDetailsImpl(
+                user.getId(),
                 user.getUsername(),
+                user.getEmail(),
                 user.getPassword(),
                 mapRolesToAuthorities(user.getRoles()));
+
         return userDetails;
     }
 

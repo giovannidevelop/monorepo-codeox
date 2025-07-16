@@ -1,5 +1,135 @@
 @import "../../../styles/variables.scss";
 
+.header__avatar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header__avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #333;
+  }
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &-name {
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+  }
+
+  .header__logout-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+}
+/* --- Dropdown --- */
+.header__dropdown {
+  position: relative;
+}
+
+.header__dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.header__dropdown-menu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.header__dropdown-menu li {
+  list-style: none;
+
+  a, button {
+    padding: 8px 16px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+
+.header__avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header__avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header__logout-mobile {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+}
+
+
 .header {
   position: sticky;
   top: 0;

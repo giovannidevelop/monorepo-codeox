@@ -1,37 +1,38 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./header.scss";
-import { useSelector } from "react-redux";
-import { PATH } from "../../../router/path";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { PATH } from "./../../../router/path";
+import { useAuth } from "./../../../provider/AuthProvider";
+import "./header.scss";
 
 const Header = () => {
   const carrito = useSelector((state) => state.carrito.productos);
+  const { isAuthenticated, user, handleLogout } = useAuth();
   const navigate = useNavigate();
+  
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const navRef = useRef();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  
+  const navRef = useRef(null);
+  const dropdownRef = useRef(null);
 
-  // Cerrar menú al hacer scroll
   useEffect(() => {
-    const handleScroll = () => {
+    const onScroll = () => {
       if (isNavOpen) setIsNavOpen(false);
+      if (isDropdownOpen) setDropdownOpen(false);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isNavOpen]);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isNavOpen, isDropdownOpen]);
 
-  // Cerrar si haces click fuera del menú
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setIsNavOpen(false);
-      }
+    const onClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) setIsNavOpen(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setDropdownOpen(false);
     };
-    if (isNavOpen) document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isNavOpen]);
-
-  const handleClickLogo = () => navigate(PATH.HOME);
-  const toggleNav = () => setIsNavOpen(prev => !prev);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, []);
 
   return (
     <header className={`header ${isNavOpen ? "menu-open" : ""}`}>
@@ -39,42 +40,80 @@ const Header = () => {
         <div className="header__top">
           <button
             className="header__toggle"
-            onClick={toggleNav}
+            onClick={() => setIsNavOpen((prev) => !prev)}
             aria-label="Menú"
             aria-expanded={isNavOpen}
           >
             {isNavOpen ? "✕" : "☰"}
           </button>
 
-          <div className="header__logo" onClick={handleClickLogo}>
+          <div className="header__logo" onClick={() => navigate(PATH.HOME)}>
             <img src="/logo_fashion_fardos.jpg" alt="Fashion Fardos" />
           </div>
 
           <nav className="header__nav-desktop">
             <Link to={PATH.HOME}>Inicio</Link>
             <Link to={PATH.STORE}>Tienda</Link>
-            <Link to={PATH.INVENTORY}>Inventario</Link>
             <Link to={PATH.EVENTS}>Eventos</Link>
+            {isAuthenticated && <Link to={PATH.INVENTORY}>Inventario</Link>}
           </nav>
 
           <div className="header__icons">
             <Link to={PATH.CARRITO} className="header__carrito">
               🛒
-              {carrito.length > 0 && (
+              {!!carrito.length && (
                 <span className="header__carrito-count">{carrito.length}</span>
               )}
             </Link>
-            <Link to={PATH.PROFILE}>👨‍💼</Link>
+
+            {isAuthenticated ? (
+              <div className="header__dropdown" ref={dropdownRef}>
+                <button
+                  className="header__dropdown-toggle header__avatar-btn"
+                  onClick={() => setDropdownOpen((prev) => !prev)}
+                  aria-expanded={isDropdownOpen}
+                >
+                  {user}
+                  <img
+                    src={`https://avatars.dicebear.com/api/initials/${user?.username}.svg`}
+                    alt="Avatar"
+                    className="header__avatar-img"
+                  />
+                </button>
+
+                <ul
+                  className={`header__dropdown-menu ${isDropdownOpen ? "visible" : ""}`}
+                  role="menu"
+                >
+                  <li>
+                    <Link to={PATH.PROFILE}>👤 Perfil</Link>
+                  </li>
+                  <li>
+                    <Link to={PATH.DASHBOARD}>🛍️ Dashboard</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogout}>🚪 Salir</button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <Link to={PATH.LOGIN} title="Iniciar sesión">
+                👤
+              </Link>
+            )}
           </div>
         </div>
 
-        {/* Overlay + Menú móvil */}
         {isNavOpen && <div className="header__overlay" />}
-        <nav ref={navRef} className={`header__nav-mobile ${isNavOpen ? "slide-down" : ""}`}>
-          <Link to={PATH.HOME} onClick={toggleNav}>Inicio</Link>
-          <Link to={PATH.STORE} onClick={toggleNav}>Tienda</Link>
-          <Link to={PATH.INVENTORY} onClick={toggleNav}>Inventario</Link>
-          <Link to={PATH.EVENTS} onClick={toggleNav}>Eventos</Link>
+        <nav
+          ref={navRef}
+          className={`header__nav-mobile ${isNavOpen ? "slide-down" : ""}`}
+          onClick={() => setIsNavOpen(false)}
+        >
+          <Link to={PATH.HOME}>Inicio</Link>
+          <Link to={PATH.STORE}>Tienda</Link>
+          <Link to={PATH.EVENTS}>Eventos</Link>
+          {isAuthenticated && <Link to={PATH.INVENTORY}>Inventario</Link>}
         </nav>
       </div>
     </header>
