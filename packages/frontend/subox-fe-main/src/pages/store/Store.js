@@ -1,72 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import ProductCard from "../store/components/ProductCard";
 import Cart from "../store/components/Cart";
+import "./store.scss";
 
 const products = [
     { id: 1, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
     { id: 2, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
     { id: 3, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
     { id: 4, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
+    { id: 5, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
+    { id: 6, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
+    { id: 7, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
+    { id: 8, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
+    { id: 9, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
+    { id: 10, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
+    { id: 11, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
+    { id: 12, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
+    { id: 13, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
+    { id: 14, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
+    { id: 15, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
+    { id: 16, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
+    { id: 17, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
+    { id: 18, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
+    { id: 19, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
+    { id: 20, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
 ];
 
 const Store = () => {
     const [cart, setCart] = useState([]);
 
-    const addToCart = (product) => {
-        setCart((prevCart) => [...prevCart, product]);
-    };
+    const addToCart = (product) => setCart((prev) => [...prev, product]);
+    const removeFromCart = (id) => setCart((prev) => prev.filter((p) => p.id !== id));
 
-    const removeFromCart = (productId) => {
-        setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-    };
-
-    const calculateTotal = () => {
-        return cart.reduce((total, item) => total + item.price, 0);
-    };
+    const total = useMemo(
+        () => cart.reduce((sum, item) => sum + item.price, 0),
+        [cart]
+    );
 
     return (
-        <div style={styles.container}>
-            <h1 style={styles.title}>Nuestra Tienda</h1>
-            <div style={styles.shop}>
-                <div style={styles.products}>
-                    <h2 style={styles.subtitle}>Productos</h2>
-                    {products.map((product) => (
-                        <ProductCard key={product.id} product={product} addToCart={addToCart} />
-                    ))}
-                </div>
-                <Cart cart={cart} removeFromCart={removeFromCart} calculateTotal={calculateTotal} />
+        <div className="store">
+            <div className="store__header">
+                <h1 className="store__title">Nuestra Tienda</h1>
+                <p className="store__subtitle">Explora nuestros productos</p>
             </div>
+            <section className="store__grid">
+                <div className="store__cart">
+                    <Cart cart={cart} removeFromCart={removeFromCart} total={total} />
+                </div>
+                {products.map((p) => (
+                    <ProductCard key={p.id} product={p} addToCart={addToCart} />
+                ))}
+            </section>
+
         </div>
     );
-};
-
-const styles = {
-    container: {
-        fontFamily: "Arial, sans-serif",
-        padding: "20px",
-    },
-    title: {
-        textAlign: "center",
-        fontSize: "2rem",
-        marginBottom: "20px",
-        color: "#2c3e50",
-    },
-    shop: {
-        display: "flex",
-        justifyContent: "space-between",
-        gap: "20px",
-    },
-    products: {
-        flex: 1,
-        padding: "10px",
-        backgroundColor: "#f9f9f9",
-        borderRadius: "10px",
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    },
-    subtitle: {
-        marginBottom: "15px",
-        color: "#2c3e50",
-    },
 };
 
 export default Store;
