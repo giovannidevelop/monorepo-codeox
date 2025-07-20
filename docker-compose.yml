@@ -1,0 +1,116 @@
+services:
+  # ========================
+  # 📦 Backend Microservices
+  # ========================
+
+  auth-service:
+    build:
+      context: ./packages/backend/subox-be-ms-authentication
+      args:
+        JAR_NAME: ${AUTH_JAR}
+        PORT: ${AUTH_PORT}
+    ports:
+      - "${AUTH_PORT}:${AUTH_PORT}"
+
+  mail-service:
+    build:
+      context: ./packages/backend/subox-be-ms-mail
+      args:
+        JAR_NAME: ${MAIL_JAR}
+        PORT: ${MAIL_PORT}
+    ports:
+      - "${MAIL_PORT}:${MAIL_PORT}"
+
+  cliente-service:
+    build:
+      context: ./packages/backend/cliente-service
+      args:
+        JAR_NAME: ${CLIENTE_JAR}
+        PORT: ${CLIENTE_PORT}
+    ports:
+      - "${CLIENTE_PORT}:${CLIENTE_PORT}"
+
+  product-service:
+    build:
+      context: ./packages/backend/subox-be-ms-product
+      args:
+        JAR_NAME: ${PRODUCT_JAR}
+        PORT: ${PRODUCT_PORT}
+    ports:
+      - "${PRODUCT_PORT}:${PRODUCT_PORT}"
+
+  # ========================
+  # 💻 Frontend Apps 💻 
+  # ========================
+
+  fe-main:
+    build: ./packages/frontend/subox-fe-main
+    ports:
+      - "${FE_MAIN_PORT}:3000"
+    depends_on:
+      - auth-service
+
+  fe-portafolio:
+    build: ./packages/frontend/subox-fe-portafolio
+    ports:
+      - "${FE_PORTAFOLIO_PORT}:3000"
+
+
+  # ========================
+  # 🗃️ Base de Datos
+  # ========================
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Perita100.
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  # ========================
+  # 📊 Monitoreo
+  # ========================
+
+  node-exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    restart: always
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: always
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3001:3000" # ⚠️ Asegurado que no colisione con fe-main ni portafolio
+    restart: always
+
+# ========================
+# 💾 Volúmenes
+# ========================
+volumes:
+  mysql-data:

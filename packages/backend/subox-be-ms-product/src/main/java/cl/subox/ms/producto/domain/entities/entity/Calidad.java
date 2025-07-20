@@ -13,9 +13,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Categoria {
-    @Id @GeneratedValue
+public class Calidad {
+
+    @Id
+    @GeneratedValue
     private Long id;
+
     private String nombre;
     private String descripcion;
 }

@@ -1,0 +1,72 @@
+.detalle-producto {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.detalle-producto a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.detalle-producto a:hover {
+  text-decoration: underline;
+}
+
+.detalle-producto h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.detalle-producto img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border-radius: 10px;
+}
+
+.detalle-producto p {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+.detalle-producto strong {
+  color: #555;
+}
+
+@media (max-width: 640px) {
+  .detalle-producto {
+    margin: 1rem;
+    padding: 1.2rem;
+  }
+
+  .detalle-producto h2 {
+    font-size: 1.4rem;
+  }
+
+  .detalle-producto img {
+    max-width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

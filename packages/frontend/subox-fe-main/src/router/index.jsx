@@ -14,6 +14,7 @@
   import { PATH } from "./path";
   import ProtectedRoute from "./ProtectedRoute";
   import Carrito from "../component/dashboard/carrito/Carrito";
+import DetalleProducto from "../pages/store/components/DetalleProducto";
 
   const Routes = () => {
     const { isAuthenticated } = useAuth();
@@ -24,6 +25,7 @@
       { path: PATH.CARRITO, element: <Carrito /> },
       { path: PATH.INVENTORY, element: <Inventory /> },
       { path: PATH.EVENTS, element: <Events /> },
+      { path: "/producto/:id", element: <DetalleProducto/> },
     ];
 
     const routesForNotAuthenticatedOnly = [

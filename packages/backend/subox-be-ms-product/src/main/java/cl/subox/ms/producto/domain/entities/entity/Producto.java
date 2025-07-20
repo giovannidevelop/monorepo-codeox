@@ -1,38 +1,47 @@
 package cl.subox.ms.producto.domain.entities.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
 @Entity
 @Data
 public class Producto {
+
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
 
     private String nombre;
     private String descripcion;
-    private double precioCompra;
-    private double precioVenta;
+
+    private BigDecimal precioCompra;
+    private BigDecimal precioVenta;
+
     private int stock;
     private LocalDate fechaIngreso;
 
     @ManyToOne
+    @JsonIgnoreProperties("productos") // Evita bucles si Categoria tiene List<Producto>
     private Categoria categoria;
 
     @ManyToOne
-    private Proveedor proveedor;
-
-    @ManyToOne
+    @JsonIgnoreProperties("productos") // Aplica si Marca tiene List<Producto>
     private Marca marca;
 
     @ManyToOne
-    private EstadoProducto estado;
+    @JoinColumn(name = "calidad_id")
+    @JsonIgnoreProperties("productos") // Aplica si Calidad tiene List<Producto>
+    private Calidad calidad;
 
     @ManyToOne
-    private Ubicacion ubicacion;
+    @JoinColumn(name = "estado_producto_id")
+    @JsonIgnoreProperties("productos") // Aplica si EstadoProducto tiene List<Producto>
+    private EstadoProducto estadoProducto;
 }

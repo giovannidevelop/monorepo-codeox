@@ -1,33 +1,35 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import axios from "axios";
 import ProductCard from "../store/components/ProductCard";
 import Cart from "../store/components/Cart";
 import "./store.scss";
-
-const products = [
-    { id: 1, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
-    { id: 2, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
-    { id: 3, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
-    { id: 4, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
-    { id: 5, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
-    { id: 6, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
-    { id: 7, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
-    { id: 8, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
-    { id: 9, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
-    { id: 10, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
-    { id: 11, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
-    { id: 12, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
-    { id: 13, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
-    { id: 14, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
-    { id: 15, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
-    { id: 16, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
-    { id: 17, name: "Polera Básica", price: 5000, description: "Polera de algodón, disponible en varios colores.", image: "https://picsum.photos/300/300" },
-    { id: 18, name: "Jeans Clásicos", price: 15000, description: "Jeans rectos, cómodos y duraderos.", image: "https://picsum.photos/300/300" },
-    { id: 19, name: "Chaqueta Casual", price: 25000, description: "Perfecta para días frescos y ocasiones informales.", image: "https://picsum.photos/300/300" },
-    { id: 20, name: "Zapatos Deportivos", price: 20000, description: "Ideales para entrenar o caminar cómodamente.", image: "https://picsum.photos/300/300" },
-];
+import ProductModal from "./components/ProductModal";
 
 const Store = () => {
+    const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [selectedProduct, setSelectedProduct] = useState(null); // para ver detalles
+
+    useEffect(() => {
+        axios.get("http://localhost:7003/productos")
+            .then(res => {
+                const productos = res.data.map(p => ({
+                    id: p.id,
+                    name: p.nombre,
+                    description: p.descripcion,
+                    price: p.precioVenta,
+                    image: "https://picsum.photos/300/300",
+                    categoria: p.categoria?.nombre,
+                    marca: p.marca?.nombre,
+                    calidad: p.calidad?.nombre,
+                    estado: p.estadoProducto?.estado
+                }));
+                setProducts(productos);
+            })
+            .catch(error => {
+                console.error("Error al obtener productos:", error);
+            });
+    }, []);
 
     const addToCart = (product) => setCart((prev) => [...prev, product]);
     const removeFromCart = (id) => setCart((prev) => prev.filter((p) => p.id !== id));
@@ -36,6 +38,12 @@ const Store = () => {
         () => cart.reduce((sum, item) => sum + item.price, 0),
         [cart]
     );
+
+    const handleViewDetails = (product) => {
+        setSelectedProduct(product);
+    };
+
+    const closeModal = () => setSelectedProduct(null);
 
     return (
         <div className="store">
@@ -47,10 +55,27 @@ const Store = () => {
                 <div className="store__cart">
                     <Cart cart={cart} removeFromCart={removeFromCart} total={total} />
                 </div>
-                {products.map((p) => (
-                    <ProductCard key={p.id} product={p} addToCart={addToCart} />
-                ))}
+                {products.length > 0 ? (
+                    products.map((p) => (
+                        <ProductCard
+                            key={p.id}
+                            product={p}
+                            addToCart={addToCart}
+                            viewDetails={() => handleViewDetails(p)}
+                        />
+                    ))
+                ) : (
+                    <p className="store__loading">Cargando productos...</p>
+                )}
             </section>
+
+            {/* Modal de detalle */}
+            {selectedProduct && (
+                <ProductModal
+                    producto={selectedProduct}
+                    onClose={() => setSelectedProduct(null)}
+                />
+            )}
 
         </div>
     );
