@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
-import ProductCard from "../store/components/ProductCard";
-import Cart from "../store/components/Cart";
+import ItemCard from "./components/cart/ItemCard";
+import Cart from "./components/cart/Cart";
 import "./store.scss";
 import ProductModal from "./components/ProductModal";
+import AgregarProducto from "./components/AgregarProducto";
 
 const Store = () => {
     const [products, setProducts] = useState([]);
@@ -42,11 +43,32 @@ const Store = () => {
     const handleViewDetails = (product) => {
         setSelectedProduct(product);
     };
+ const cargarProductos = () => {
+        axios.get("http://localhost:7003/productos")
+            .then(res => {
+                const productos = res.data.map(p => ({
+                    id: p.id,
+                    name: p.nombre,
+                    description: p.descripcion,
+                    price: p.precioVenta,
+                    image: "https://picsum.photos/300/300",
+                    categoria: p.categoria?.nombre,
+                    marca: p.marca?.nombre,
+                    calidad: p.calidad?.nombre,
+                    estado: p.estadoProducto?.estado
+                }));
+                setProducts(productos);
+            });
+    };
 
-    const closeModal = () => setSelectedProduct(null);
+    useEffect(() => {
+        cargarProductos();
+    }, []);
 
     return (
         <div className="store">
+            <AgregarProducto onSuccess={cargarProductos} />
+
             <div className="store__header">
                 <h1 className="store__title">Nuestra Tienda</h1>
                 <p className="store__subtitle">Explora nuestros productos</p>
@@ -57,7 +79,7 @@ const Store = () => {
                 </div>
                 {products.length > 0 ? (
                     products.map((p) => (
-                        <ProductCard
+                        <ItemCard
                             key={p.id}
                             product={p}
                             addToCart={addToCart}

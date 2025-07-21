@@ -1,4 +1,5 @@
 import React from "react";
+import "./cart.scss"
 
 const Cart = ({ cart, removeFromCart, total }) => (
   <aside className="cart">

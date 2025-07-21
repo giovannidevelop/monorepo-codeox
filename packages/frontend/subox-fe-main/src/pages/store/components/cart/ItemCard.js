@@ -1,6 +1,7 @@
 import React from "react";
+import "./itemCard.scss";
 
-const ProductCard = ({ product, addToCart, viewDetails }) => (
+const ItemCard = ({ product, addToCart, viewDetails }) => (
   <article className="card">
     <img src={product.image} alt={product.name} className="card__img" />
     <div className="card__body">
@@ -12,4 +13,4 @@ const ProductCard = ({ product, addToCart, viewDetails }) => (
   </article>
 );
 
-export default ProductCard;
+export default ItemCard;
