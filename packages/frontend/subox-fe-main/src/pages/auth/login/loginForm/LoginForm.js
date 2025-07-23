@@ -64,7 +64,6 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Formulario enviado: " + JSON.stringify(formData, null, 2));
         if (validateForm()) {
             dispatch(AUTH_ACTIONS.login(formData, navigate));
         }

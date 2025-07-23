@@ -1,229 +1,150 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  validarCliente,
-  formatearCliente,
-  formatearRutParaMostrar,
-  validarRutChileno,
-} from "../utils/clienteUtils";
+import axios from "axios";
+import "./productoFormModal.scss";
 
 const ProductoFormModal = ({ isOpen, onClose, initialData = {}, onSave }) => {
   const initInputRef = useRef(null);
-const columns = ['id', 'codigoBarras', 'nombre', 'descripcion', 'precioCompra', 'precioVenta', 'stock', 'fechaIngreso'];
 
-  const [form, setForm] = useState({ nombre: "", codigoBarras: "", fechaIngreso: "", descripcion: "",stock: "",  precioCompra: "", precioVenta: "" });
+  const [form, setForm] = useState({
+    nombre: "",
+    codigoBarras: "",
+    descripcion: "",
+    precioCompra: "",
+    precioVenta: "",
+    stock: "",
+    fechaIngreso: new Date().toISOString().slice(0, 10),
+    categoriaId: "",
+    marcaId: "",
+    calidadId: "",
+    estadoProductoId: "",
+    imagen: "https://picsum.photos/300?random=1"
+  });
+
   const [errores, setErrores] = useState({});
-  const resetForm = () => {
-    setForm({ nombre: "", codigoBarras: "", fechaIngreso: "", descripcion: "",
-      stock: "",  precioCompra: "", precioVenta: ""  });
-    setErrores({});
-  };
+  const [categorias, setCategorias] = useState([]);
+  const [marcas, setMarcas] = useState([]);
+  const [calidades, setCalidades] = useState([]);
+  const [estados, setEstados] = useState([]);
 
   useEffect(() => {
     if (isOpen) {
-      setForm(initialData && Object.keys(initialData).length > 0 ? {
-        id: initialData.id,
-        nombre: initialData.nombre || "",
-        codigoBarras: initialData.codigoBarras|| "",
-        descripcion: initialData.descripcion || "",
-        stock: initialData.stock || "",
-        precioCompra: initialData.precioCompra || "",
-        precioVenta: initialData.precioVenta || "",
-      } : {  nombre: "", codigoBarras: "", fechaIngreso: "", descripcion: "",
-      stock: "",  precioCompra: "", precioVenta: ""  });
+      axios.get("http://localhost:7003/categorias").then(res => setCategorias(res.data));
+      axios.get("http://localhost:7003/marcas").then(res => setMarcas(res.data));
+      axios.get("http://localhost:7003/calidades").then(res => setCalidades(res.data));
+      axios.get("http://localhost:7003/estadoProductos").then(res => setEstados(res.data));
 
-      setErrores({});
+      setForm({
+        nombre: "",
+        codigoBarras: "",
+        descripcion: "",
+        precioCompra: "",
+        precioVenta: "",
+        stock: "",
+        fechaIngreso: new Date().toISOString().slice(0, 10),
+        categoriaId: "",
+        marcaId: "",
+        calidadId: "",
+        estadoProductoId: "",
+        imagen: "https://picsum.photos/300?random=1",
+        ...initialData
+      });
 
       setTimeout(() => {
-        initInputRef.current?.select();
         initInputRef.current?.focus();
       }, 0);
     }
   }, [isOpen, initialData]);
 
-  useEffect(() => {
-    const handleEsc = (e) => e.key === "Escape" && onClose();
-    if (isOpen) window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [isOpen, onClose]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: name === "rut" ? formatearRutParaMostrar(value.replace(/\D/g, "").slice(0, 9)) : value,
-    }));
+    setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const validateField = (name, value) => {
-  // Asegurarnos de que el valor sea una cadena de texto
-  const valueToCheck = String(value).trim(); // Convertimos el valor a string antes de llamar a trim
-  let error = !valueToCheck ? `El ${name} es obligatorio.` : undefined;
+  const cambiarImagen = () => {
+    const num = Math.floor(Math.random() * 100);
+    setForm(prev => ({ ...prev, imagen: `https://picsum.photos/300?random=${num}` }));
+  };
 
-  if (!error) {
-    switch (name) {
-     // case "nombre":
-     // if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]{2,80}$/.test(valueToCheck)) error = "Nombre inválido.";
-     //   break;
-      default:
-        break;
-    }
-  }
-
-  setErrores((prev) => ({ ...prev, [name]: error }));
-};
-
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-    validateField(name, value);
+  const validate = () => {
+    const newErrors = {};
+    if (!form.nombre.trim()) newErrors.nombre = "Nombre es obligatorio";
+    if (!form.precioVenta) newErrors.precioVenta = "Precio de venta es obligatorio";
+    if (!form.categoriaId) newErrors.categoriaId = "Seleccione categoría";
+    if (!form.marcaId) newErrors.marcaId = "Seleccione marca";
+    if (!form.calidadId) newErrors.calidadId = "Seleccione calidad";
+    if (!form.estadoProductoId) newErrors.estadoProductoId = "Seleccione estado";
+    setErrores(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const campos = Object.keys(form);
-    campos.forEach((campo) => {
-      validateField(campo, form[campo]);
-    });
+    if (!validate()) return;
 
-    const erroresValidados = validarCliente(form);
-    if (Object.keys(erroresValidados).length > 0) {
-      setErrores((prev) => ({ ...prev, ...erroresValidados }));
-      return;
-    }
+    const payload = {
+      ...form,
+      precioCompra: parseInt(form.precioCompra),
+      precioVenta: parseInt(form.precioVenta),
+      stock: parseInt(form.stock),
+    };
 
-    const clienteFormateado = formatearCliente(form);
-    const { id, ...sinId } = clienteFormateado;
-    onSave(id ? clienteFormateado : sinId);
-    resetForm();
+    onSave(payload);
     onClose();
   };
 
   if (!isOpen) return null;
 
-  const styles = {
-    overlay: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0,0,0,0.5)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      zIndex: 9999,
-    },
-    modal: {
-      backgroundColor: "#fff",
-      padding: "2.5rem",
-      borderRadius: "12px",
-      width: "90%",
-      maxWidth: "500px",
-      position: "relative",
-      boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
-    },
-    closeBtn: {
-      position: "absolute",
-      top: "10px",
-      right: "10px",
-      background: "transparent",
-      border: "none",
-      fontSize: "1.2rem",
-      cursor: "pointer",
-      color: "#888",
-    },
-    header: {
-      fontSize: "1.6rem",
-      textAlign: "center",
-      marginBottom: "1rem",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "12px",
-    },
-    input: {
-      padding: "10px",
-      borderRadius: "6px",
-      border: `1px solid #ccc`,
-      fontSize: "1rem",
-      width: "100%",
-    },
-    errorText: {
-      color: "#e74c3c",
-      fontSize: "0.85rem",
-      marginTop: "4px",
-      display: "flex",
-      alignItems: "center",
-      gap: "6px",
-    },
-    buttonContainer: {
-      display: "flex",
-      justifyContent: "flex-end",
-      gap: "1rem",
-      marginTop: "1.5rem",
-    },
-    button: {
-      padding: "10px 18px",
-      border: "none",
-      borderRadius: "6px",
-      cursor: "pointer",
-    },
-    saveButton: {
-      backgroundColor: "#28a745",
-      color: "#fff",
-    },
-    cancelButton: {
-      backgroundColor: "#dc3545",
-      color: "#fff",
-    },
-  };
-
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
   return (
-    <div  style={styles.overlay} onClick={(e) => {
-          e.stopPropagation();
-          handleOverlayClick(e);
-        }}>
-      <div   style={styles.modal} >
-        <button onClick={() => onClose()} style={styles.closeBtn}>✖</button>
-        <h2 style={styles.header}>{form.id ? "Editar Producto" : "Nuevo Producto"}</h2>
-        <form onSubmit={handleSubmit} style={styles.form}>
-          {Object.keys(form)
-            .filter((campo) => campo !== "id")
-            .map((campo) => (
-              <div key={campo}>
-                <input
-                  ref={campo === "nombre" ? initInputRef : null}
-                  name={campo}
-                  placeholder={campo.charAt(0).toUpperCase() + campo.slice(1)}
-                  value={form[campo]}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  style={{
-                    ...styles.input,
-                    border: `1px solid ${errores[campo] ? "#dc3545" : "#ccc"}`,
-                  }}
-                />
-                {errores[campo] && (
-                  <div style={styles.errorText}>
-                    ⚠️ {errores[campo]}
-                  </div>
-                )}
-              </div>
-            ))}
-          <div style={styles.buttonContainer}>
-            <button type="submit" style={{ ...styles.button, ...styles.saveButton }}>Guardar</button>
-            <button type="button" onClick={() => onClose()} style={{ ...styles.button, ...styles.cancelButton }}>Cancelar</button>
-          </div>
-        </form>
+<div className="producto-modal" onClick={onClose}>
+  <div className="producto-modal__content" onClick={(e) => e.stopPropagation()}>
+    <h2 className="producto-modal__header">{form.id ? "Editar Producto" : "Nuevo Producto"}</h2>
+    <form onSubmit={handleSubmit} className="producto-modal__form">
+      <div className="producto-modal__grid">
+        <input className="producto-modal__input" name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} ref={initInputRef} />
+        <input className="producto-modal__input" name="codigoBarras" placeholder="Código de Barras" value={form.codigoBarras} onChange={handleChange} />
+        <textarea className="producto-modal__input producto-modal__textarea" name="descripcion" placeholder="Descripción" value={form.descripcion} onChange={handleChange} />
+        <input className="producto-modal__input" name="precioCompra" type="number" placeholder="Precio Compra" value={form.precioCompra} onChange={handleChange} />
+        <input className="producto-modal__input" name="precioVenta" type="number" placeholder="Precio Venta" value={form.precioVenta} onChange={handleChange} />
+        <input className="producto-modal__input" name="stock" type="number" placeholder="Stock" value={form.stock} onChange={handleChange} />
+        <input className="producto-modal__input" name="fechaIngreso" type="date" value={form.fechaIngreso} onChange={handleChange} />
+
+        <select className="producto-modal__input" name="categoriaId" value={form.categoriaId} onChange={handleChange}>
+          <option value="">Selecciona Categoría</option>
+          {categorias.map(c => <option key={c.id} value={c.id}>{c.nombre}</option>)}
+        </select>
+
+        <select className="producto-modal__input" name="marcaId" value={form.marcaId} onChange={handleChange}>
+          <option value="">Selecciona Marca</option>
+          {marcas.map(m => <option key={m.id} value={m.id}>{m.nombre}</option>)}
+        </select>
+
+        <select className="producto-modal__input" name="calidadId" value={form.calidadId} onChange={handleChange}>
+          <option value="">Selecciona Calidad</option>
+          {calidades.map(c => <option key={c.id} value={c.id}>{c.nombre}</option>)}
+        </select>
+
+        <select className="producto-modal__input" name="estadoProductoId" value={form.estadoProductoId} onChange={handleChange}>
+          <option value="">Selecciona Estado</option>
+          {estados.map(e => <option key={e.id} value={e.id}>{e.estado}</option>)}
+        </select>
+
+        <div className="producto-modal__imagen">
+          <img src={form.imagen} alt="preview" width={120} />
+          <button type="button" onClick={cambiarImagen} className="producto-modal__btn-imagen">Cambiar Imagen Dummy</button>
+        </div>
       </div>
-    </div>
+
+      <div className="producto-modal__botones">
+        <button type="submit" className="producto-modal__btn producto-modal__btn--guardar">Guardar</button>
+        <button type="button" onClick={onClose} className="producto-modal__btn producto-modal__btn--cancelar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
   );
 };
+
 
 export default ProductoFormModal;

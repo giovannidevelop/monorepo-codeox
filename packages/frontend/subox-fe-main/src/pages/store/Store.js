@@ -4,7 +4,6 @@ import ItemCard from "./components/cart/ItemCard";
 import Cart from "./components/cart/Cart";
 import "./store.scss";
 import ProductModal from "./components/ProductModal";
-import AgregarProducto from "./components/AgregarProducto";
 
 const Store = () => {
     const [products, setProducts] = useState([]);
@@ -67,7 +66,6 @@ const Store = () => {
 
     return (
         <div className="store">
-            <AgregarProducto onSuccess={cargarProductos} />
 
             <div className="store__header">
                 <h1 className="store__title">Nuestra Tienda</h1>
