@@ -14,7 +14,7 @@ const CategoriasDestacadas = ({
 
   return (
     <section className="categorias">
-      <h2>Categorías destacadas</h2>
+      <h2>Categorías destacadas </h2>
       <div className="categorias__scroll">
         {categorias.map((cat, index) => (
           <CategoryItem
