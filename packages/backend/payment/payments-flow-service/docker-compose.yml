@@ -1,0 +1,31 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: payments
+      MYSQL_USER: payments
+      MYSQL_PASSWORD: supersecret
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  payments:
+    build: .
+    depends_on:
+      - mysql
+    environment:
+      FLOW_BASE_URL: ${FLOW_BASE_URL:-https://sandbox.flow.cl/api}
+      FLOW_API_KEY: ${FLOW_API_KEY:-changeme}
+      FLOW_SECRET_KEY: ${FLOW_SECRET_KEY:-changeme}
+      FLOW_RETURN_URL: ${FLOW_RETURN_URL:-http://localhost:8080/api/payments/flow/return}
+      FLOW_CONFIRMATION_URL: ${FLOW_CONFIRMATION_URL:-http://localhost:8080/api/payments/flow/webhook}
+      DB_URL: jdbc:mysql://mysql:3306/payments?useSSL=false&serverTimezone=UTC
+      DB_USER: payments
+      DB_PASSWORD: supersecret
+      DB_DRIVER: com.mysql.cj.jdbc.Driver
+      PORT: 8080
+    ports:
+      - "8080:8080"
+volumes:
+  mysql_data:

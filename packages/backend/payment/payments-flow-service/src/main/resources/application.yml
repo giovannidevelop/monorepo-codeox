@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8080}
+
+flow:
+  base-url: ${FLOW_BASE_URL:https://sandbox.flow.cl/api}
+  api-key: ${FLOW_API_KEY:changeme}
+  secret-key: ${FLOW_SECRET_KEY:changeme}
+  return-url: ${FLOW_RETURN_URL:http://localhost:8080/api/payments/flow/return}
+  confirmation-url: ${FLOW_CONFIRMATION_URL:http://localhost:8080/api/payments/flow/webhook}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:h2:file:./data/payments-db}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  jackson:
+    time-zone: UTC
+logging:
+  level:
+    org.springframework.web: INFO
+    cl.codeox.payments: DEBUG
