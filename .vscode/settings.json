@@ -6,5 +6,6 @@
         "statusBar.background": "#2F12CC",
         "statusBar.foreground": "#FAFAFF"
     },
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

@@ -20,4 +20,12 @@
 .env.production.local
 
 npm-debug.log*
-yarn-debug.
+yarn-debug.# envs
+.env*
+!.env.example
+
+# runtime config
+public/config.js
+
+# secrets (solo referencias/ejemplos)
+secrets/

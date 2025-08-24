@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:vendedor_supremo}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:}   # vacía por defecto
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+vendedor:
+  whatsapp:
+    verifyToken: ${WHATSAPP_VERIFY_TOKEN:dev-verify-token}
+    token: ${WHATSAPP_TOKEN:replace-with-meta-bearer-token}
+    phoneNumberId: ${WHATSAPP_PHONE_NUMBER_ID:1234567890}
+    apiVersion: ${META_API_VERSION:v20.0}
+  llm:
+    provider: ${LLM_PROVIDER:openai}
+    apiKey: ${OPENAI_API_KEY:replace-with-openai-key}

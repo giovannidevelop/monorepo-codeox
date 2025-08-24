@@ -1,0 +1,128 @@
+version: "3.9"
+name: codeox-stack
+
+networks:
+  appnet:
+
+volumes:
+  mysql_data:
+  images_data:
+
+services:
+  # ---------- Infra (DB) ----------
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: subox
+      MYSQL_USER: subox
+      MYSQL_PASSWORD: subox
+      MYSQL_ROOT_PASSWORD: subox
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks: [appnet]
+    restart: unless-stopped
+
+  # ---------- Microservicios ----------
+  subox-be-ms-authentication:
+    build:
+      context: ../backend/subox-be-ms-authentication
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: subox
+      SPRING_DATASOURCE_PASSWORD: suboxpass
+    depends_on: [mysql]
+    networks: [appnet]
+    restart: unless-stopped
+
+  subox-be-ms-product:
+    build:
+      context: ../backend/subox-be-ms-product
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: subox
+      SPRING_DATASOURCE_PASSWORD: subox
+    depends_on: [mysql]
+    networks: [appnet]
+    restart: unless-stopped
+
+  subox-be-ms-mail:
+    build:
+      context: ../backend/subox-be-ms-mail
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 8080
+      # SMTP_* reales ponlos con env_file en prod
+    networks: [appnet]
+    restart: unless-stopped
+
+  cliente-service:
+    build:
+      context: ../backend/cliente-service
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: subox
+      SPRING_DATASOURCE_PASSWORD: subox
+    depends_on: [mysql]
+    networks: [appnet]
+    restart: unless-stopped
+
+  payment-core:
+    build:
+      context: ../backend/payment-core
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 5007
+      # FLOW_* / keys -> usar env_file en prod
+    networks: [appnet]
+    restart: unless-stopped
+
+  vendedor-supremo-webhook:
+    build:
+      context: ../backend/vendedor-supremo-webhook
+    environment:
+      SERVER_PORT: 8080
+    networks: [appnet]
+    restart: unless-stopped
+
+  # ---------- API Gateway ----------
+  api-gateway:
+    image: nginx:alpine
+    container_name: api-gateway
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    expose:
+      - "8080"
+    depends_on:
+      - subox-be-ms-authentication
+      - subox-be-ms-product
+      - cliente-service
+      - payment-core
+      - vendedor-supremo-webhook
+    networks: [appnet]
+    restart: unless-stopped
+
+  # ---------- Frontend ----------
+  subox-fe-main:
+    build:
+      context: ../frontend/subox-fe-main
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE: /api
+        REACT_APP_PAYMENTS_PREFIX: /api/payments
+    image: subox-fe-main:prod
+    container_name: subox-fe-main
+    environment:
+      API_BASE: /api
+      PAYMENTS_PREFIX: /api/payments
+    ports:
+      - "80:80"        # FE público: http://localhost
+    depends_on: [api-gateway]
+    networks: [appnet]
+    restart: unless-stopped
