@@ -20,8 +20,15 @@ services:
       MYSQL_ROOT_PASSWORD: subox
     volumes:
       - mysql_data:/var/lib/mysql
-    networks: [appnet]
+    ports:          # En DEV suele ser útil exponerlo
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -psubox || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
     restart: unless-stopped
+    networks: [appnet]
 
   # ---------- Microservicios ----------
   subox-be-ms-authentication:
@@ -29,57 +36,57 @@ services:
       context: ../backend/subox-be-ms-authentication
       dockerfile: Dockerfile
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 7000
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: subox
-      SPRING_DATASOURCE_PASSWORD: suboxpass
-    depends_on: [mysql]
+      SPRING_DATASOURCE_PASSWORD: subox
+    depends_on:
+      mysql:
+        condition: service_healthy
     networks: [appnet]
     restart: unless-stopped
 
   subox-be-ms-product:
     build:
       context: ../backend/subox-be-ms-product
-      dockerfile: Dockerfile
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 7003
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: subox
       SPRING_DATASOURCE_PASSWORD: subox
-    depends_on: [mysql]
+    depends_on:
+      mysql:
+        condition: service_healthy
     networks: [appnet]
     restart: unless-stopped
 
   subox-be-ms-mail:
     build:
       context: ../backend/subox-be-ms-mail
-      dockerfile: Dockerfile
     environment:
-      SERVER_PORT: 8080
-      # SMTP_* reales ponlos con env_file en prod
+      SERVER_PORT: 9099
     networks: [appnet]
     restart: unless-stopped
 
   cliente-service:
     build:
       context: ../backend/cliente-service
-      dockerfile: Dockerfile
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 5000
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/subox?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: subox
       SPRING_DATASOURCE_PASSWORD: subox
-    depends_on: [mysql]
+    depends_on:
+      mysql:
+        condition: service_healthy
     networks: [appnet]
     restart: unless-stopped
 
   payment-core:
     build:
       context: ../backend/payment-core
-      dockerfile: Dockerfile
     environment:
       SERVER_PORT: 5007
-      # FLOW_* / keys -> usar env_file en prod
     networks: [appnet]
     restart: unless-stopped
 
@@ -87,7 +94,7 @@ services:
     build:
       context: ../backend/vendedor-supremo-webhook
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 5008
     networks: [appnet]
     restart: unless-stopped
 
@@ -96,9 +103,9 @@ services:
     image: nginx:alpine
     container_name: api-gateway
     volumes:
-      - ./gateway/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    expose:
-      - "8080"
+      - ./gateway/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"        # http://localhost:8080
     depends_on:
       - subox-be-ms-authentication
       - subox-be-ms-product
@@ -108,7 +115,7 @@ services:
     networks: [appnet]
     restart: unless-stopped
 
-  # ---------- Frontend ----------
+  # ---------- Frontends ----------
   subox-fe-main:
     build:
       context: ../frontend/subox-fe-main
@@ -118,11 +125,57 @@ services:
         REACT_APP_PAYMENTS_PREFIX: /api/payments
     image: subox-fe-main:prod
     container_name: subox-fe-main
+    ports: ["3001:80"]   # http://localhost:3001
+    depends_on: [api-gateway]
+    networks: [appnet]
+    volumes:
+      - ./fe-nginx/spa-proxy.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+
+  subox-fe-portafolio:
+    build:
+      context: ../frontend/subox-fe-portafolio
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE: /api
+        REACT_APP_PAYMENTS_PREFIX: /api/payments
+    image: subox-fe-portafolio:prod
+    container_name: subox-fe-portafolio
+    ports: ["3002:80"]   # http://localhost:3002
+    depends_on: [api-gateway]
+    networks: [appnet]
+    volumes:
+      - ./fe-nginx/spa-proxy.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+
+  vendedor-supremo-main:
+    build:
+      context: ../frontend/vendedor-supremo-main
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE: /api
+        REACT_APP_PAYMENTS_PREFIX: /api/payments
+    image: vendedor-supremo-main:prod
+    container_name: vendedor-supremo-main
+    ports: ["3003:80"]   # http://localhost:3003
+    depends_on: [api-gateway]
+    networks: [appnet]
+    volumes:
+      - ./fe-nginx/spa-proxy.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-ui
     environment:
-      API_BASE: /api
-      PAYMENTS_PREFIX: /api/payments
-    ports:
-      - "80:80"        # FE público: http://localhost
+      URLS: |
+        [
+          { "url": "/api/auth/v3/api-docs",      "name": "Auth" },
+          { "url": "/api/products/v3/api-docs",  "name": "Products" },
+          { "url": "/api/clientes/v3/api-docs",  "name": "Clientes" },
+          { "url": "/api/payments/api-docs",     "name": "Payments" }
+        ]
+      URLS_PRIMARY_NAME: "Payments"
     depends_on: [api-gateway]
     networks: [appnet]
     restart: unless-stopped

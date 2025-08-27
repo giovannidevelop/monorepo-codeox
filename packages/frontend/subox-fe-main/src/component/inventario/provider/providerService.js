@@ -1,34 +1,48 @@
 // src/provider/providerService.js
-const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+import { endpoints } from "../../../config/api"; // ajusta la ruta si tu config vive en otro lado
 
-const API_URL = BASE_URL+"/proveedores";
+const DEFAULT_HEADERS = { "Content-Type": "application/json" };
+
+async function apiRequest(url, options = {}) {
+  const res = await fetch(url, {
+    ...options,
+    headers: { ...DEFAULT_HEADERS, ...(options.headers || {}) },
+  });
+
+  const ct = res.headers.get("content-type") || "";
+  if (!res.ok) {
+    let msg = "Error en la API";
+    try {
+      msg = ct.includes("application/json") ? (await res.json()).message : await res.text();
+    } catch {
+      /* no-op */
+    }
+    throw new Error(msg || "Error en la API");
+  }
+
+  if (res.status === 204) return null;
+  return ct.includes("application/json") ? res.json() : res.text();
+}
 
 export async function getProveedores() {
-  const res = await fetch(API_URL);
-  return res.json();
+  return apiRequest(endpoints.productos.proveedores.list());
 }
 
 export async function addProveedor(proveedor) {
-  const res = await fetch(API_URL, {
+  return apiRequest(endpoints.productos.proveedores.create(), {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(proveedor),
   });
-  return res.json();
 }
 
 export async function updateProveedor(id, proveedor) {
-  const res = await fetch(`${API_URL}/${id}`, {
+  return apiRequest(endpoints.productos.proveedores.update(id), {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(proveedor),
   });
-  return res.json();
 }
 
 export async function deleteProveedor(id) {
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: "DELETE"
-  });
-  return res.ok;
+  await apiRequest(endpoints.productos.proveedores.remove(id), { method: "DELETE" });
+  return true; // si no lanza error, se eliminó correctamente
 }

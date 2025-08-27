@@ -1,16 +1,24 @@
-# --- Build ---
-FROM maven:3.9.9-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn -q -B -DskipTests dependency:go-offline
-COPY src ./src
-RUN mvn -q -B -DskipTests package
+# -------- Build --------
+FROM maven:3.9.7-eclipse-temurin-17 AS build
+WORKDIR /workspace
 
-# --- Run ---
-FROM eclipse-temurin:17-jre
+COPY pom.xml .
+# cache de dependencias
+RUN --mount=type=cache,target=/root/.m2 mvn -q -DskipTests dependency:go-offline
+
+COPY src ./src
+RUN --mount=type=cache,target=/root/.m2 mvn -q -DskipTests package
+
+# deja el artefacto con nombre fijo
+RUN cp target/*-SNAPSHOT.jar /workspace/app.jar || cp target/*.jar /workspace/app.jar
+
+# -------- Runtime --------
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-# Cambia el puerto si tu servicio NO usa 8080
-EXPOSE 8080
+COPY --from=build /workspace/app.jar /app/app.jar
+
+# si el micro usa otro puerto interno, cámbialo aquí o por ENV SERVER_PORT en compose
+EXPOSE 5008
+
 ENV JAVA_OPTS=""
-ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar app.jar"]
+ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]

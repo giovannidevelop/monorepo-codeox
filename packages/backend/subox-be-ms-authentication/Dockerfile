@@ -1,16 +1,24 @@
-# Etapa build
-FROM maven:3.8-openjdk-17-slim AS build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn dependency:go-offline
-COPY src ./src
-RUN mvn package -DskipTests
+# -------- Build --------
+FROM maven:3.9.7-eclipse-temurin-17 AS build
+WORKDIR /workspace
 
-# Etapa run
-FROM openjdk:17-slim-buster
+COPY pom.xml .
+# cache de dependencias
+RUN --mount=type=cache,target=/root/.m2 mvn -q -DskipTests dependency:go-offline
+
+COPY src ./src
+RUN --mount=type=cache,target=/root/.m2 mvn -q -DskipTests package
+
+# deja el artefacto con nombre fijo
+RUN cp target/*-SNAPSHOT.jar /workspace/app.jar || cp target/*.jar /workspace/app.jar
+
+# -------- Runtime --------
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-ARG JAR_NAME
-ARG PORT
-COPY --from=build /app/target/${JAR_NAME} .
-EXPOSE ${PORT}
-CMD ["sh", "-c", "java -jar ${JAR_NAME}"]
+COPY --from=build /workspace/app.jar /app/app.jar
+
+# si el micro usa otro puerto interno, cámbialo aquí o por ENV SERVER_PORT en compose
+EXPOSE 7000
+
+ENV JAVA_OPTS=""
+ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]

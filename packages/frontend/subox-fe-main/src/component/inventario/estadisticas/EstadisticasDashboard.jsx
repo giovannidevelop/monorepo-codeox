@@ -1,27 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {endpoints } from "../../../config/api"; // <- usamos la base de products
 
-const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+// helper fetch con manejo de JSON/204
+const apiRequest = async (u, options = {}) => {
+  const res = await fetch(u, {
+    headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+    ...options,
+  });
+  const ct = res.headers.get("content-type") || "";
+  if (!res.ok) {
+    const msg = ct.includes("application/json") ? (await res.json()).message : await res.text();
+    throw new Error(msg || "Error en la API");
+  }
+  if (res.status === 204) return null;
+  return ct.includes("application/json") ? res.json() : res.text();
+};
 
+// fallback local (DEV): /public/data/ventas.json
+const getVentasFallback = async () => {
+  try {
+    const r = await fetch("/data/ventas.json");
+    if (!r.ok) throw new Error("No se pudo leer /data/ventas.json");
+    return await r.json();
+  } catch {
+    return [];
+  }
+};
 
 const EstadisticasDashboard = () => {
   const [ventas, setVentas] = useState([]);
 
   useEffect(() => {
-    fetch(BASE_URL+"/ventas")
-      .then((res) => res.json())
-      .then((data) => setVentas(data));
+    const load = async () => {
+      try {
+        const ventasUrl = endpoints.productos.ventas.list();
+        const data = await apiRequest(ventasUrl);
+        setVentas(Array.isArray(data) ? data : []);
+      } catch {
+        // si el endpoint aún no existe, usa el archivo local
+        const local = await getVentasFallback();
+        setVentas(Array.isArray(local) ? local : []);
+      }
+    };
+    load();
   }, []);
 
-  const totalIngresos = ventas.reduce((sum, v) => sum + v.precioVenta, 0);
+  const totalIngresos = ventas.reduce((sum, v) => sum + (Number(v.precioVenta) || 0), 0);
   const totalVendidos = ventas.length;
 
   const formasPagoData = Object.entries(
     ventas.reduce((acc, v) => {
-      acc[v.formaPago] = (acc[v.formaPago] || 0) + 1;
+      const key = v.formaPago || "N/D";
+      acc[key] = (acc[key] || 0) + 1;
       return acc;
     }, {})
-  ).map(([key, value]) => ({ name: key, value }));
+  ).map(([name, value]) => ({ name, value }));
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 

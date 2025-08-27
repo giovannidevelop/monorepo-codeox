@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth/")
-@CrossOrigin(origins = "http://localhost:3000") // Puedes agregar "*" o tu dominio real en producción
+@CrossOrigin(origins = "*") // Puedes agregar "*" o tu dominio real en producción
 public class AuthController {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);

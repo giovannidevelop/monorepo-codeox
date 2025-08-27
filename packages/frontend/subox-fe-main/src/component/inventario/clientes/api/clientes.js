@@ -1,55 +1,66 @@
-// src/api/clientes.js
+// src/app/redux/actions/clientesApi.js  (o donde lo tengas)
+import { endpoints } from "../../../../config/api";
 
-// 1) CRA carga esta variable desde .env.development / .env.production
-//    Si está vacía, BASE_URL = '' y usamos rutas relativas.
-const BASE_URL = (process.env.REACT_APP_CLIENTES_API_URL || '').replace(/\/+$/, '');
+const DEFAULT_HEADERS = { "Content-Type": "application/json" };
 
-async function request(path, options = {}) {
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  const url = `${BASE_URL}${cleanPath}`;
-
-  console.log('Fetching:', url);
-
+async function request(url, options = {}) {
+  // Merge de headers sin perder los que te pasen
   const res = await fetch(url, {
-    headers: { 'Content-Type': 'application/json' },
     ...options,
+    headers: { ...DEFAULT_HEADERS, ...(options.headers || {}) },
   });
+
+  const ct = res.headers.get("content-type") || "";
 
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || 'Error en la API');
+    let payload;
+    try {
+      payload = ct.includes("application/json") ? await res.json() : await res.text();
+    } catch {
+      payload = null;
+    }
+    const message =
+      (payload && (payload.message || payload.error)) ||
+      (typeof payload === "string" ? payload : "Error en la API");
+    throw new Error(message);
   }
 
-  // Si la respuesta es 204 No Content, no intentamos convertirla a JSON
-  if (res.status === 204) {
-    return null; // Retornar null cuando la respuesta no tiene contenido
-  }
-
-  return res.json(); // Si la respuesta tiene contenido, procesarla como JSON
+  if (res.status === 204) return null;     // No Content
+  if (ct.includes("application/json")) return res.json();
+  return res.text();                        // fallback por si devuelven texto
 }
 
-
+/* =========================
+   Clientes (usa config/api)
+   ========================= */
 export function getClientes() {
-  return request('/api/clientes');
+  return request(endpoints.clientes.list());
 }
+
 export function createCliente(cliente) {
-  return request('/api/clientes', {
-    method: 'POST',
+  return request(endpoints.clientes.create(), {
+    method: "POST",
     body: JSON.stringify(cliente),
-  });
-}
-export function updateCliente(id, cliente) {
-  return request(`/api/clientes/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify(cliente),
-  });
-}
-export function deleteCliente(id) {
-  return request(`/api/clientes/${id}`, {
-    method: 'DELETE',
-  }).catch((err) => {
-    console.error('Error al eliminar cliente:', err); // Aquí vemos el error completo
-    throw err; // Vuelve a lanzar el error para que sea manejado en el frontend
   });
 }
 
+export function updateCliente(id, cliente) {
+  return request(endpoints.clientes.update(id), {
+    method: "PUT",
+    body: JSON.stringify(cliente),
+  });
+}
+
+export function deleteCliente(id) {
+  return request(endpoints.clientes.remove(id), {
+    method: "DELETE",
+  });
+}
+
+// (Opcional) export estilo objeto
+export const ClienteApi = {
+  list: getClientes,
+  create: createCliente,
+  update: updateCliente,
+  remove: deleteCliente,
+};

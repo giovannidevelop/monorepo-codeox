@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { endpoints } from "../config/api";
 
 const Profile = () => {
-const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
-
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({
     name:  "",
@@ -13,7 +12,10 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // TODO: conecta con tu store de usuario real
   const user = null;
+
   useEffect(() => {
     if (user) {
       setFormData({
@@ -29,7 +31,7 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleEdit = () => setEditing(!editing);
+  const handleEdit = () => setEditing((v) => !v);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
     setSuccessMessage("");
     setIsLoading(true);
 
-    // Validaciones
+    // Validaciones mínimas
     if (editing && formData.password && formData.password.length < 6) {
       setError("La contraseña debe tener al menos 6 caracteres.");
       setIsLoading(false);
@@ -45,15 +47,15 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
     }
 
     try {
-      const response = await axios.put(
-        BASE_URL+"api/users/update-profile",
-        { ...formData },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      // Si tienes token de auth, lo agregas (opcional)
+      const token = localStorage.getItem("token");
+      const headers = {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      };
+
+      const url = endpoints.auth.users.updateProfile(); // -> /api/auth/users/update-profile
+      const response = await axios.put(url, { ...formData }, { headers });
 
       if (response.status === 200) {
         setSuccessMessage("Perfil actualizado con éxito.");
@@ -98,6 +100,7 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
             }}
           />
         </div>
+
         <div style={{ marginBottom: "1rem" }}>
           <label htmlFor="email">Correo electrónico:</label>
           <input
@@ -116,6 +119,7 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
             }}
           />
         </div>
+
         {editing && (
           <div style={{ marginBottom: "1rem" }}>
             <label htmlFor="password">Nueva contraseña:</label>
@@ -135,6 +139,7 @@ const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
             />
           </div>
         )}
+
         <div style={{ display: "flex", gap: "10px" }}>
           {editing ? (
             <>

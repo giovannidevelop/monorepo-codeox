@@ -4,8 +4,7 @@ import { TbEyeClosed } from "react-icons/tb";
 import { ImEye } from "react-icons/im";
 import Input from '../../../../component/common/input/Input';
 import SubmitButton from '../../../../component/common/button/SubmitButton';
-
-const BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
+import { endpoints } from "../../../../config/api";
 
 const VALIDATION_RULES = {
   username: {
@@ -39,7 +38,6 @@ const RegisterForm = () => {
     register_pass_temp: "",
     register_confirm_temp: "",
   });
-
   const [formErrors, setFormErrors] = useState({});
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
@@ -89,7 +87,6 @@ const RegisterForm = () => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    // Mapeamos los nombres para enviar al backend
     const registerData = {
       username: formData.register_user_temp,
       email: formData.register_email_temp,
@@ -97,19 +94,26 @@ const RegisterForm = () => {
     };
 
     try {
-      const res = await fetch(BASE_URL + '/api/auth/registrar', {
+      const res = await fetch(endpoints.auth.register(), {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(registerData)
       });
 
-      if (res.ok) {
-        alert("Registro exitoso");
-      } else {
-        alert("Error en el registro");
+      if (!res.ok) {
+        let msg = "Error en el registro";
+        try {
+          const ct = res.headers.get("content-type") || "";
+          msg = ct.includes("application/json") ? (await res.json()).message || msg : await res.text() || msg;
+        } catch {}
+        alert(msg);
+        return;
       }
+
+      alert("Registro exitoso");
     } catch (error) {
       console.error("Error en la solicitud:", error);
+      alert("No se pudo registrar. Intenta nuevamente.");
     }
   };
 

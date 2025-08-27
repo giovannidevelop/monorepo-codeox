@@ -2,11 +2,8 @@ import axios from "axios";
 import { AUTH_TYPE } from "../types/authType";
 import { isTokenExpired } from "../../../utils/tokenUtils";
 import PATH from "../../../router/path";
+import { endpoints } from "../../../config/api";
 
-// Base y endpoints
-const BASE_URL = (process.env.REACT_APP_API_URL || "").replace(/\/+$/, "");
-const URL_AUTH_LOGIN = `${BASE_URL}/api/auth/login`;
-const URL_AUTH_REGISTER = `${BASE_URL}/api/auth/register`;
 
 // Guardar token y user en localStorage
 const persistAuthData = (token, user) => {
@@ -29,7 +26,7 @@ const login = (formData, navigate) => {
         password: formData.login_pass_temp,
       };
 
-      const { data, status } = await axios.post(URL_AUTH_LOGIN, loginData, {
+      const { data, status } = await axios.post(endpoints.auth.login(), loginData, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -78,7 +75,7 @@ const register = (registerData, navigate) => {
     dispatch({ type: AUTH_TYPE.REGISTER_REQUEST });
 
     try {
-      const { status } = await axios.post(URL_AUTH_REGISTER, registerData, {
+      const { status } = await axios.post(endpoints.auth.register(), registerData, {
         headers: { "Content-Type": "application/json" },
       });
 

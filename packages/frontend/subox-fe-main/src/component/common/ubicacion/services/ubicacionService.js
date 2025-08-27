@@ -1,7 +1,7 @@
 // src/services/ubicacionService.js
 import axios from 'axios';
 
-const API_BASE = `${process.env.REACT_APP_CLIENTES_API_URL}api/ubicaciones`;
+const API_BASE = `${process.env.REACT_APP_API_CLIENTES}api/ubicaciones`;
 
 export const obtenerRegiones = () => {
   return axios.get(`${API_BASE}/regiones`).then(res => res.data);
