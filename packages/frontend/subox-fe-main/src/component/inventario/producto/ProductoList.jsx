@@ -8,6 +8,7 @@ import AlertModal from "../../common/modal/AlertModal";
 import { ProductoApi } from "./api/productos";
 import BarcodeScanner from "./BarcodeScanner";
 
+// Columnas usando estructura real del backend
 const columns = [
   "id",
   "codigoBarras",
@@ -17,6 +18,11 @@ const columns = [
   "precioVenta",
   "stock",
   "fechaIngreso",
+  "categoria",
+  "marca",
+  "calidad",
+  "estadoProducto",
+  "imagen",
 ];
 
 const rowsPerPage = 4;
@@ -26,19 +32,10 @@ const ProductoList = () => {
   const [editing, setEditing] = useState(null);
   const [productoRegistrado, setProductoRegistrado] = useState(null);
 
-  // filtros por columna (excepto id)
-  const defaultFilters = useMemo(() => {
-    const f = {};
-    columns.forEach((c) => {
-      if (c !== "id") f[c] = "";
-    });
-    return f;
-  }, []);
-
-  const [filters, setFilters] = useState(defaultFilters);
-  const [sortKey, setSortKey] = useState(null);
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [filters, setFilters] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortKey, setSortKey] = useState("fechaIngreso");
+  const [sortOrder, setSortOrder] = useState("desc");
 
   const [modals, setModals] = useState({
     productoFormModal: false,
@@ -47,23 +44,14 @@ const ProductoList = () => {
     modalMenuAcciones: false,
     idProductoEliminar: null,
     idProductoMenu: null,
-    idProductoEtiqueta: null,
     selectedProducto: null,
     alertMessage: null,
   });
 
   const menuRefs = useRef({});
 
-  // Cargar productos
   useEffect(() => {
     loadProductos();
-    // cargar filtros guardados si existen y sincronizar claves nuevas
-    const stored = localStorage.getItem("producto-filtros");
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      setFilters({ ...defaultFilters, ...parsed });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadProductos = async () => {
@@ -76,51 +64,70 @@ const ProductoList = () => {
     }
   };
 
-  // Reset página al cambiar filtros
   useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
 
-  // Persistir filtros
-  useEffect(() => {
-    localStorage.setItem("producto-filtros", JSON.stringify(filters));
-  }, [filters]);
-
-  // Filtrado (string-contains sobre cada filtro no vacío)
+  // --- Filtrado
   const filtered = productos.filter((p) =>
     Object.keys(filters).every((k) => {
       const v = (filters[k] ?? "").toString().trim().toLowerCase();
       if (!v) return true;
-      const cell = (p?.[k] ?? "").toString().toLowerCase();
-      return cell.includes(v);
+
+      let cell;
+      if (k === "categoria") cell = p.categoria?.nombre ?? "Sin categoría";
+      else if (k === "marca") cell = p.marca?.nombre ?? "Sin marca";
+      else if (k === "calidad") cell = p.calidad?.nombre ?? "Sin calidad";
+      else if (k === "estadoProducto") cell = p.estadoProducto?.estado ?? "Sin estado";
+      else cell = p?.[k] ?? "";
+
+      return cell.toString().toLowerCase().includes(v);
     })
   );
 
-  // Ordenamiento
+  // --- Ordenamiento
   const sortedData = [...filtered].sort((a, b) => {
     if (!sortKey) return 0;
-    const A = a?.[sortKey];
-    const B = b?.[sortKey];
+    let A, B;
+
+    if (sortKey === "categoria") {
+      A = a.categoria?.nombre ?? "Sin categoría";
+      B = b.categoria?.nombre ?? "Sin categoría";
+    } else if (sortKey === "marca") {
+      A = a.marca?.nombre ?? "Sin marca";
+      B = b.marca?.nombre ?? "Sin marca";
+    } else if (sortKey === "calidad") {
+      A = a.calidad?.nombre ?? "Sin calidad";
+      B = b.calidad?.nombre ?? "Sin calidad";
+    } else if (sortKey === "estadoProducto") {
+      A = a.estadoProducto?.estado ?? "Sin estado";
+      B = b.estadoProducto?.estado ?? "Sin estado";
+    } else {
+      A = a?.[sortKey];
+      B = b?.[sortKey];
+    }
+
     const valA = typeof A === "string" ? A.toLowerCase() : A;
     const valB = typeof B === "string" ? B.toLowerCase() : B;
+
     if (valA < valB) return sortOrder === "asc" ? -1 : 1;
     if (valA > valB) return sortOrder === "asc" ? 1 : -1;
     return 0;
   });
 
-  // Paginación
   const paginated = sortedData.slice(
     (currentPage - 1) * rowsPerPage,
     currentPage * rowsPerPage
   );
 
-  // Sort handler
   const handleSort = (key) => {
     setSortKey(key);
-    setSortOrder((prev) => (sortKey === key && prev === "asc" ? "desc" : "asc"));
+    setSortOrder((prev) =>
+      sortKey === key && prev === "asc" ? "desc" : "asc"
+    );
   };
 
-  // Guardar (POST/PUT)
+  // Guardar producto
   const handleSave = async (form) => {
     try {
       if (editing) {
@@ -148,59 +155,32 @@ const ProductoList = () => {
     }
   };
 
-  // Delete
-  const handleDelete = (id) => {
-    setModals((s) => ({ ...s, idProductoEliminar: id }));
-  };
-
-  const confirmDeleteAction = async () => {
-    try {
-      await ProductoApi.remove(modals.idProductoEliminar);
-      setProductos((prev) => prev.filter((p) => p.id !== modals.idProductoEliminar));
-      if (modals.selectedProducto?.id === modals.idProductoEliminar) {
-        setModals((s) => ({ ...s, selectedProducto: null }));
-      }
-      setModals((s) => ({ ...s, alertMessage: "Producto eliminado correctamente." }));
-    } catch (err) {
-      console.error("Error al eliminar producto:", err);
-      setModals((s) => ({ ...s, alertMessage: "Error al eliminar producto." }));
-    } finally {
-      setModals((s) => ({ ...s, idProductoEliminar: null }));
-    }
-  };
-
-  // Modales
-  const closeAllModals = () => {
-    setModals({
-      productoFormModal: false,
-      modalMenuAcciones: false,
-      productoHistorialModal: false,
-      productoEtiquetaModal: false,
-      idProductoEliminar: null,
-      alertMessage: null,
-      idProductoMenu: null,
-      idProductoEtiqueta: null,
-      selectedProducto: null,
-    });
-    setEditing(null);
-  };
-
-  const closeAlertModal = () => {
-    setModals((s) => ({ ...s, alertMessage: null }));
-    setProductoRegistrado(null);
-  };
-
+  // Acciones menú
   const abrirModalMenuAcciones = (producto) => {
-    closeAllModals();
     setModals((s) => ({
       ...s,
       modalMenuAcciones: true,
-      idProductoMenu: s.idProductoMenu === producto.id ? null : producto.id,
+      idProductoMenu: producto.id,
+      selectedProducto: producto,
     }));
   };
 
   return (
     <div style={{ padding: "1rem" }}>
+      {/* Botón Agregar producto */}
+      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
+        <button
+          onClick={() => {
+            setEditing(null);
+            setModals((s) => ({ ...s, productoFormModal: true }));
+          }}
+          style={styles.btnAdd}
+        >
+          ➕ Agregar producto
+        </button>
+      </div>
+
+      {/* Form modal */}
       <ProductoFormModal
         isOpen={modals.productoFormModal}
         onClose={() => setModals((s) => ({ ...s, productoFormModal: false }))}
@@ -208,18 +188,7 @@ const ProductoList = () => {
         onSave={handleSave}
       />
 
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
-        <button
-          onClick={() => setModals((s) => ({ ...s, productoFormModal: true }))}
-          style={styles.btnAdd}
-        >
-          ➕ Agregar producto
-        </button>
-      </div>
-
-      <div>
-        <BarcodeScanner />
-      </div>
+      <BarcodeScanner />
 
       <div style={styles.tableContainer}>
         <table style={styles.table}>
@@ -228,15 +197,19 @@ const ProductoList = () => {
               {columns.map((col) => (
                 <th key={col} style={styles.th}>
                   <label style={styles.label} onClick={() => handleSort(col)}>
-                    {col.toUpperCase()} {sortKey === col ? (sortOrder === "asc" ? "🔼" : "🔽") : null}
+                    {col.toUpperCase()}{" "}
+                    {sortKey === col ? (sortOrder === "asc" ? "🔼" : "🔽") : null}
                   </label>
-                  {col !== "id" && (
+                  {col !== "id" && col !== "imagen" && (
                     <input
                       type="text"
                       placeholder={`Filtrar ${col}`}
-                      value={filters[col]}
+                      value={filters[col] || ""}
                       onChange={(e) =>
-                        setFilters((f) => ({ ...f, [col]: e.target.value.toLowerCase() }))
+                        setFilters((f) => ({
+                          ...f,
+                          [col]: e.target.value.toLowerCase(),
+                        }))
                       }
                       style={styles.filterInput}
                     />
@@ -251,10 +224,32 @@ const ProductoList = () => {
               <tr key={p.id} style={{ backgroundColor: i % 2 === 0 ? "#fdfdfd" : "#f7f7f7" }}>
                 {columns.map((col) => (
                   <td key={col} style={styles.td}>
-                    {(p?.[col] ?? "").toString()}
+                    {col === "imagen" ? (
+                      <img
+                        src={p.imagen || "https://via.placeholder.com/50"}
+                        alt={p.nombre}
+                        style={{
+                          width: 50,
+                          height: 50,
+                          objectFit: "cover",
+                          borderRadius: 4,
+                          border: "1px solid #ccc",
+                        }}
+                      />
+                    ) : col === "categoria" ? (
+                      p.categoria?.nombre || "Sin categoría"
+                    ) : col === "marca" ? (
+                      p.marca?.nombre || "Sin marca"
+                    ) : col === "calidad" ? (
+                      p.calidad?.nombre || "Sin calidad"
+                    ) : col === "estadoProducto" ? (
+                      p.estadoProducto?.estado || "Sin estado"
+                    ) : (
+                      (p?.[col] ?? "").toString()
+                    )}
                   </td>
                 ))}
-                <td style={{ ...styles.td, position: "relative" }}>
+                <td style={styles.td}>
                   <button
                     ref={(el) => (menuRefs.current[p.id] = el)}
                     onClick={() => abrirModalMenuAcciones(p)}
@@ -264,7 +259,7 @@ const ProductoList = () => {
                   </button>
                   <ClienteMenuModal
                     isOpen={modals.idProductoMenu === p.id && modals.modalMenuAcciones}
-                    onClose={closeAllModals}
+                    onClose={() => setModals((s) => ({ ...s, modalMenuAcciones: false }))}
                     onEdit={() => {
                       setEditing(p);
                       setModals((s) => ({
@@ -274,25 +269,24 @@ const ProductoList = () => {
                       }));
                     }}
                     onDelete={() => {
-                      handleDelete(p.id);
                       setModals((s) => ({
                         ...s,
-                        modalMenuAcciones: false,
                         idProductoEliminar: p.id,
+                        modalMenuAcciones: false,
                       }));
                     }}
                     onHistorial={() => {
                       setModals((s) => ({
                         ...s,
                         selectedProducto: p,
-                        modalMenuAcciones: false,
                         productoHistorialModal: true,
+                        modalMenuAcciones: false,
                       }));
                     }}
                     onEtiqueta={() => {
                       setModals((s) => ({
                         ...s,
-                        idProductoEtiqueta: p,
+                        selectedProducto: p,
                         productoEtiquetaModal: true,
                         modalMenuAcciones: false,
                       }));
@@ -306,7 +300,7 @@ const ProductoList = () => {
         </table>
       </div>
 
-      {/* Paginación */}
+      {/* paginación */}
       <div style={styles.pagination}>
         {Array.from({ length: Math.ceil(sortedData.length / rowsPerPage) }, (_, i) => (
           <button
@@ -323,41 +317,43 @@ const ProductoList = () => {
         ))}
       </div>
 
-      {modals.selectedProducto && (
-        <HistorialClienteModal
-          producto={modals.selectedProducto}
-          isOpen={modals.productoHistorialModal}
-          onClose={closeAllModals}
-        />
-      )}
-
-      <EtiquetaClienteModal
-        producto={modals.idProductoEtiqueta}
-        isOpen={modals.productoEtiquetaModal}
-        onClose={closeAllModals}
-      />
-
+      {/* Modales auxiliares */}
       <ConfirmModal
         isOpen={!!modals.idProductoEliminar}
-        onClose={closeAllModals}
-        onConfirm={confirmDeleteAction}
+        onClose={() => setModals((s) => ({ ...s, idProductoEliminar: null }))}
+        onConfirm={async () => {
+          try {
+            await ProductoApi.remove(modals.idProductoEliminar);
+            setProductos((prev) => prev.filter((p) => p.id !== modals.idProductoEliminar));
+            setModals((s) => ({ ...s, idProductoEliminar: null, alertMessage: "Producto eliminado." }));
+          } catch (err) {
+            setModals((s) => ({ ...s, idProductoEliminar: null, alertMessage: "Error al eliminar." }));
+          }
+        }}
         message="¿Estás seguro que deseas eliminar este producto?"
       />
 
-      <AlertModal
-        isOpen={!!modals.alertMessage}
-        onClose={closeAlertModal}
-        message={modals.alertMessage}
-      />
-
-      {/* Modal de producto registrado */}
-      {productoRegistrado && (
-        <AlertModal
-          isOpen={!!modals.alertMessage}
-          onClose={closeAlertModal}
-          message={`Producto registrado: ${productoRegistrado.nombre} - ${productoRegistrado.codigoBarras ?? ""}`}
+      {modals.selectedProducto && modals.productoHistorialModal && (
+        <HistorialClienteModal
+          producto={modals.selectedProducto}
+          isOpen={true}
+          onClose={() => setModals((s) => ({ ...s, productoHistorialModal: false }))}
         />
       )}
+
+      {modals.selectedProducto && modals.productoEtiquetaModal && (
+        <EtiquetaClienteModal
+          producto={modals.selectedProducto}
+          isOpen={true}
+          onClose={() => setModals((s) => ({ ...s, productoEtiquetaModal: false }))}
+        />
+      )}
+
+      <AlertModal
+        isOpen={!!modals.alertMessage}
+        onClose={() => setModals((s) => ({ ...s, alertMessage: null }))}
+        message={modals.alertMessage}
+      />
     </div>
   );
 };
@@ -371,7 +367,7 @@ const styles = {
   },
   table: {
     width: "100%",
-    minWidth: "900px",
+    minWidth: "1100px",
     borderCollapse: "collapse",
     fontSize: "0.9rem",
   },

@@ -113,3 +113,81 @@
     color: red;
   }
 }
+
+.producto-modal__form--horizontal {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.producto-modal__form-left {
+  flex: 2; // formulario ocupa más espacio
+}
+
+.producto-modal__form-right {
+  flex: 1; // preview ocupa menos
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto-card {
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.producto-card__imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+/* Layout horizontal */
+.producto-modal__form--horizontal {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.producto-modal__form-left {
+  flex: 2;
+}
+
+.producto-modal__form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tarjeta */
+.producto-card {
+  width: 100%;
+  max-width: 260px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.producto-card__imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.producto-card__body {
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.producto-card__body h4 {
+  margin: 0 0 0.3rem;
+}
